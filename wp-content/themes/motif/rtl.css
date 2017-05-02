@@ -1,0 +1,375 @@
+/*
+Theme Name: Motif
+*/
+
+/* =Reset
+-------------------------------------------------------------- */
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+caption, th, td {
+	text-align: right;
+}
+
+/* =Global
+----------------------------------------------- */
+
+/* Text elements */
+ul,
+ol,
+li > ul,
+li > ol {
+	margin-left: 0;
+	margin-right: 1.1538461538em;
+}
+blockquote {
+	border-left: none;
+	border-right: 2px solid #e6e6e6;
+	padding-left: 0;
+	padding-right: 1.1538461538em;
+}
+
+/* Alignment */
+.alignleft {
+	float: right;
+	margin-right: 0;
+	margin-left: 1.5em;
+}
+.alignright {
+	float: left;
+	margin-left: 0;
+	margin-right: 1.5em;
+}
+
+/* =Menu
+----------------------------------------------- */
+
+.main-navigation li {
+	float: right;
+	padding-left: 2.267em;
+	padding-right: 0;
+}
+.main-navigation ul ul {
+	float: right;
+	left: auto;
+	right: -0.667em;
+}
+.main-navigation ul ul ul {
+	left: auto;
+	right: 100%;
+}
+
+/* --- Subordinate Navigation --- */
+.subordinate-navigation li {
+	float: right;
+	margin-left: 2.267em;
+	margin-right: 0;
+}
+
+/* =Layout
+----------------------------------------------- */
+
+.content-area {
+	float: right;
+	margin-left: 0;
+	margin-right: 24px:
+}
+.sidebar-widget-area {
+	float: left;
+	margin-left: 24px;
+	margin-right: 0;
+}
+
+/* =Content
+----------------------------------------------- */
+
+.featured-post:before,
+.entry-meta .date a:before {
+	margin-left: 3px;
+	margin-right: 0;
+}
+.entry-meta .comments-link a:before,
+.edit-link a:before,
+.categories-links:before,
+.tags-links:before {
+	margin-left: 2px;
+	margin-right: 0;
+}
+.featured-post,
+.post-format,
+.entry-meta .date,
+.entry-meta .author,
+.categories-links,
+.tags-links {
+	margin-left: 1rem;
+	margin-right: 0;
+}
+.edit-link,
+.entry-meta .comments-link {
+	float: left;
+	margin-left: 0;
+	margin-right: 1em;
+}
+
+/* =Post Formats
+----------------------------------------------- */
+
+.format-aside .post-format a:before,
+.format-audio .post-format a:before,
+.format-image .post-format a:before,
+.format-quote .post-format a:before,
+.format-status .post-format a:before,
+.format-video .post-format a:before {
+	margin-left: 2px;
+	margin-right: 0;
+}
+.format-chat .post-format a:before,
+.format-gallery .post-format a:before {
+	margin-left: 4px;
+	margin-right: 0;
+}
+.format-link .entry-title a:after {
+	content: '\00A0\2190';
+}
+.format-quote blockquote:before {
+	content: '\201D';
+	right: -5px;
+	left: auto;
+}
+.format-quote blockquote {
+	border-right: none;
+	margin-right: 0;
+	padding-right: 3.0769em;
+}
+
+/* =Navigation
+----------------------------------------------- */
+
+[class*="navigation"] .nav-previous {
+	float: right;
+}
+[class*="navigation"] .nav-next {
+	float: left;
+	text-align: left;
+}
+
+/* =Comments
+----------------------------------------------- */
+
+.comment-list {
+	margin-left: 0;
+	margin-right: 0;
+}
+.children .comment {
+	border-left: none;
+    border-right: 3px solid #f7f7f7;
+	padding-left: 0;
+	padding-right: 24px;
+}
+.comment-author .avatar {
+	float: right;
+	margin-left: 12px;
+	margin-right: 0;
+}
+.no-comments {
+	padding-left: 0;
+	padding-right: 24px;
+}
+
+/*  Widgets
+----------------------------------------------- */
+
+.widget li > ul,
+.widget li > ol {
+	margin-left: 0;
+	margin-right: 24px;
+}
+
+/* =Footer Widgets
+----------------------------------------------- */
+
+.footer-widgets {
+	float: right;
+}
+.first.footer-widgets,
+.second.footer-widgets {
+	margin-left: 34px;
+	margin-right: 0;
+}
+
+/* = Front Page Template
+----------------------------------------------- */
+
+/* Front page content with featured image */
+.front-page-content-area .with-featured-image .hentry {
+	margin-left: 0;
+	margin-right: 528px;
+}
+
+/* Front Page Widget Area and Testemonials */
+.front-widgets {
+	float: right;
+}
+.first.front-widgets {
+	margin-left: 35px;
+	margin-right: 0;
+}
+
+/* =Testimonials page
+----------------------------------------------- */
+
+.jetpack-testimonial {
+	float: right;
+	margin-left: 34px;
+	margin-right: 0;
+}
+.jetpack-testimonial:nth-child(even) {
+	margin-left: 0;
+}
+.testimonial-thumbnail {
+	float: right;
+	padding-left: 0;
+	padding-right: 1.3334em;
+}
+.jetpack-testimonial .entry-title {
+	text-align: left;
+}
+.jetpack-testimonial .entry-title:before {
+	content: "\2014";
+	margin-left: 0.5em;
+	margin-right: 0;
+}
+
+/* =Full Width Template
+----------------------------------------------- */
+.content-area.full-width {
+	margin-left: 24px;
+}
+
+/* = Grid Page
+----------------------------------------------- */
+
+.child-pages .grid-row {
+	margin-left: 0;
+	margin-right: -24px;
+}
+.child-page {
+	float: right;
+	margin-left: 0;
+	margin-right: 24px;
+}
+
+/* = Media Queries
+----------------------------------------------- */
+
+@media screen and (min-width: 1200px) {
+	.content-area {
+		margin-left: 0;
+		margin-right: 34px;
+	}
+	.sidebar-widget-area {
+		margin-left: 34px;
+		margin-right: 0;
+	}
+	.front-page-content-area .with-featured-image .hentry {
+		margin-right: 560px;
+	}
+	.first.front-widgets {
+		margin-left: 55px;
+		margin-right: 0;
+	}
+	.jetpack-testimonial {
+		margin-left: 55px;
+	}
+	.content-area.full-width {
+		margin-left: 34px;
+	}
+	.child-pages .grid-row {
+		margin-right: -35px;
+	}
+	.child-page {
+		margin-right: 35px;
+	}
+	.first.footer-widgets,
+	.second.footer-widgets {
+		margin-left: 55px;
+	}
+}
+
+@media screen and (max-width: 1010px) {
+	.content-area {
+		margin-right: 2.98245614%;
+		margin-left: 0;
+	}
+	.sidebar-widget-area {
+		margin-left: 2.98245614%;
+		margin-right: 0;
+	}
+	.front-page-content-area .with-featured-image .hentry {
+		margin-right: 53.49544073%;
+	}
+	.first.front-widgets {
+		margin-left: 5.13059701%;
+	}
+	.jetpack-testimonial {
+		margin-left: 5.130597%;
+	}
+	.content-area.full-width {
+		margin-left: 2.98245614%;
+	}
+	.child-pages .grid-row {
+		margin-right: -2.55591054%;
+	}
+	.child-page {
+		margin-right: 2.49221184%;
+	}
+	.first.footer-widgets,
+	.second.footer-widgets {
+		margin-left: 5.1305970149253734%;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.content-area {
+		margin-left: 2.98245614%;
+	}
+	.sidebar-widget-area {
+		margin-right: 2.98245614%;
+	}
+	.front-page-content-area .with-featured-image .hentry {
+		margin-left: 2.98245614%;
+		margin-right: 2.98245614%;
+		width: 94.03508772%;
+	}
+	.front-widgets {
+		margin-left: 0;
+	}
+	.jetpack-testimonial {
+		margin-right: 0;
+	}
+	.first.footer-widgets,
+	.second.footer-widgets {
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.menu-toggle:before {
+		margin-left: 12px;
+	}
+	.main-navigation ul ul {
+		float: none;
+		margin-left: 0;
+		margin-right: 2.15em;
+	}
+	.child-pages .grid-row {
+		margin-right: 0;
+	}
+	.child-page {
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

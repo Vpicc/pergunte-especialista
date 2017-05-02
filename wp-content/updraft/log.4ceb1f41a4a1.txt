@@ -1,0 +1,239 @@
+0000.002 (0) Opened log file at time: Sun, 23 Apr 2017 14:30:14 +0000 on https://www.if.ufrgs.br/novocref
+0000.005 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.12.40 WP: 4.7.4 PHP: 5.6.27-0+deb8u1 (apache2handler, Linux kiev 3.16.0-4-amd64 #1 SMP Debian 3.16.36-1+deb8u2 (2016-10-19) x86_64) MySQL: 5.5.44 WPLANG: pt_BR Server: Apache/2.4.10 (Debian) safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 50.3M | 51.3M) multisite: N openssl: OpenSSL 1.0.1t  3 May 2016 mcrypt: Y LANG: C ZipArchive::addFile: Y
+0000.007 (0) Free space on disk containing Updraft's temporary directory: 519697 MB
+0000.013 (0) Tasks: Backup files: 1 (schedule: daily) Backup DB:  (schedule: daily)
+0000.016 (0) Processed schedules. Combining jobs from identical schedules. Tasks now: Backup files: 1 Backup DB: 1
+0000.019 (0) Requesting semaphore lock (fd) (apparently via scheduler: last_scheduled_action_called_at=1492817720, seconds_ago=140094)
+0000.024 (0) Set semaphore last lock (fd) time to 2017-04-23 14:30:14
+0000.026 (0) Semaphore lock (fd) complete
+0000.032 (0) Backup run: resumption=0, nonce=4ceb1f41a4a1, begun at=1492957814 (0s ago), job type=backup
+0000.036 (0) Scheduling a resumption (1) after 300 seconds (1492958114) in case this run gets aborted
+0000.046 (0) Checking if we have a zip executable available
+0000.050 (0) Creation of backups of directories: beginning
+0000.057 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0001.753 (0) Total entities for the zip file: 736 directories, 3900 files (0 skipped as non-modified), 61.4 MB
+0001.831 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 100 files added (on-disk size: 0 KB)
+0001.882 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 200 files added (on-disk size: 0 KB)
+0001.932 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 300 files added (on-disk size: 0 KB)
+0001.987 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 400 files added (on-disk size: 0 KB)
+0002.044 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 500 files added (on-disk size: 0 KB)
+0002.047 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (2.7 MB, 3900 files batched, 501 (501) added so far); re-opening (prior size: 0 KB)
+0002.504 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 600 files added (on-disk size: 953.5 KB)
+0002.564 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 700 files added (on-disk size: 953.5 KB)
+0002.626 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 800 files added (on-disk size: 953.5 KB)
+0002.689 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 900 files added (on-disk size: 953.5 KB)
+0002.745 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 1000 files added (on-disk size: 953.5 KB)
+0002.750 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (2.1 MB, 3900 files batched, 501 (1002) added so far); re-opening (prior size: 953.5 KB)
+0003.120 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 1100 files added (on-disk size: 1790.5 KB)
+0003.182 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 1200 files added (on-disk size: 1790.5 KB)
+0003.235 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 1300 files added (on-disk size: 1790.5 KB)
+0003.289 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 1400 files added (on-disk size: 1790.5 KB)
+0003.341 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 1500 files added (on-disk size: 1790.5 KB)
+0003.345 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (21.4 MB, 3900 files batched, 501 (1503) added so far); re-opening (prior size: 1790.5 KB)
+0005.310 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 1600 files added (on-disk size: 8405.3 KB)
+0005.371 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 1700 files added (on-disk size: 8405.3 KB)
+0005.432 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 1800 files added (on-disk size: 8405.3 KB)
+0005.495 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 1900 files added (on-disk size: 8405.3 KB)
+0005.558 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 2000 files added (on-disk size: 8405.3 KB)
+0005.563 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (11.1 MB, 3900 files batched, 501 (2004) added so far); re-opening (prior size: 8405.3 KB)
+0006.856 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 2100 files added (on-disk size: 14911.5 KB)
+0006.924 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 2200 files added (on-disk size: 14911.5 KB)
+0006.988 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 2300 files added (on-disk size: 14911.5 KB)
+0007.057 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 2400 files added (on-disk size: 14911.5 KB)
+0007.124 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 2500 files added (on-disk size: 14911.5 KB)
+0007.130 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (2.1 MB, 3900 files batched, 501 (2505) added so far); re-opening (prior size: 14911.5 KB)
+0008.208 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 2600 files added (on-disk size: 15798.2 KB)
+0008.277 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 2700 files added (on-disk size: 15798.2 KB)
+0008.344 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 2800 files added (on-disk size: 15798.2 KB)
+0008.415 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 2900 files added (on-disk size: 15798.2 KB)
+0008.483 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 3000 files added (on-disk size: 15798.2 KB)
+0008.490 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (9.8 MB, 3900 files batched, 501 (3006) added so far); re-opening (prior size: 15798.2 KB)
+0010.055 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 3100 files added (on-disk size: 18767.7 KB)
+0010.131 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 3200 files added (on-disk size: 18767.7 KB)
+0010.203 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 3300 files added (on-disk size: 18767.7 KB)
+0010.275 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 3400 files added (on-disk size: 18767.7 KB)
+0010.347 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 3500 files added (on-disk size: 18767.7 KB)
+0010.394 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (7.1 MB, 3900 files batched, 501 (3507) added so far); re-opening (prior size: 18767.7 KB)
+0011.592 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 3600 files added (on-disk size: 21321 KB)
+0011.667 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 3700 files added (on-disk size: 21321 KB)
+0011.735 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 3800 files added (on-disk size: 21321 KB)
+0011.807 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip.tmp: 3900 files added (on-disk size: 21321 KB)
+0013.074 (0) Created plugins zip (0) - 23535.6 KB in 13 s (1808.7 KB/s) (sha1: 2f73c7003069690c8487633cdff5f3e4d27c74c0, sha256: 17b40d788c935dd09ee05925ae49989c7f6b4af218f4e31779923a8c815a972c)
+0013.081 (0) Beginning creation of dump of themes (split every: 400 MB)
+0013.579 (0) Total entities for the zip file: 178 directories, 1148 files (0 skipped as non-modified), 22.4 MB
+0013.633 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0013.679 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-themes.zip.tmp: 200 files added (on-disk size: 0 KB)
+0013.728 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-themes.zip.tmp: 300 files added (on-disk size: 0 KB)
+0013.780 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-themes.zip.tmp: 400 files added (on-disk size: 0 KB)
+0013.829 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-themes.zip.tmp: 500 files added (on-disk size: 0 KB)
+0013.832 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (7.6 MB, 1148 files batched, 501 (501) added so far); re-opening (prior size: 0 KB)
+0015.033 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-themes.zip.tmp: 600 files added (on-disk size: 4754.4 KB)
+0015.091 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-themes.zip.tmp: 700 files added (on-disk size: 4754.4 KB)
+0015.140 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-themes.zip.tmp: 800 files added (on-disk size: 4754.4 KB)
+0015.190 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-themes.zip.tmp: 900 files added (on-disk size: 4754.4 KB)
+0015.244 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-themes.zip.tmp: 1000 files added (on-disk size: 4754.4 KB)
+0015.248 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 500 files added on this batch (12.2 MB, 1148 files batched, 501 (1002) added so far); re-opening (prior size: 4754.4 KB)
+0016.958 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-themes.zip.tmp: 1100 files added (on-disk size: 11707.9 KB)
+0017.696 (0) Created themes zip (0) - 13478.1 KB in 4.6 s (2923.6 KB/s) (sha1: cc5e9f1c8e80c0a98fa9a5740c98cdec62123bb9, sha256: 75c9d310df91e91bcc7fc3e79507d88566523786b76a453d8060cfd8350e8ff5)
+0017.703 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots
+0017.704 (0) Looking for candidates to back up in: /srv/www/ifufrgs/public/htdocs/novocref/wp-content/uploads
+0017.707 (0) finding files: siteorigin-widgets: adding to list (1)
+0017.708 (0) finding files: hugeit-slider: adding to list (2)
+0017.710 (0) finding files: 2017: adding to list (3)
+0017.711 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0017.784 (0) Total entities for the zip file: 4 directories, 164 files (0 skipped as non-modified), 17 MB
+0017.834 (0) Zip: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-uploads.zip.tmp: 100 files added (on-disk size: 0 KB)
+0019.716 (0) Created uploads zip (0) - 17266.7 KB in 2 s (8631.2 KB/s) (sha1: 8108f0e41476841dc4abd86a276f9925a8bd69a2, sha256: 875e489f8cd7cbd301d4dcf7a60cc6a4b67e42ff45ab416d372d7a4f1fd6f5fa)
+0019.725 (0) Beginning backup of other directories found in the content directory (index: 0)
+0019.726 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0019.727 (0) Looking for candidates to back up in: /srv/www/ifufrgs/public/htdocs/novocref/wp-content
+0019.728 (0) finding files: uploads: skipping: this is the uploads directory
+0019.731 (0) finding files: updraft: skipping: this is the updraft directory
+0019.732 (0) finding files: index.php: adding to list (1)
+0019.735 (0) finding files: upgrade: skipping: excluded by options
+0019.736 (0) finding files: languages: adding to list (2)
+0019.738 (0) finding files: plugins: skipping: this is the plugins directory
+0019.739 (0) finding files: themes: skipping: this is the themes directory
+0019.758 (0) Total entities for the zip file: 3 directories, 25 files (0 skipped as non-modified), 2.5 MB
+0020.054 (0) Created others zip (0) - 733.3 KB in 0.3 s (2374.1 KB/s) (sha1: 3ee29c3e84ac10f1a63501329fbc24a3bf0991d2, sha256: 9399e6030e545389a9855ecbe70320fca247cd589ca764f87724fdec0298e3bc)
+0020.066 (0) Saving backup status to database (elements: 8)
+0020.071 (0) Beginning creation of database dump (WordPress DB)
+0020.076 (0) Testing: /usr/bin/mysqldump
+0020.105 (0) Binary mysqldump: error (code: 2)
+0020.120 (0) Table wp_options: Total expected rows (approximate): 248
+0020.163 (0) Table wp_options: Total rows added: 454 in 0.04 seconds
+0020.171 (0) Table wp_options: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_options.table.gz - 193.2 KB)
+0020.180 (0) Table wp_users: Total expected rows (approximate): 1
+0020.184 (0) Table wp_users: Total rows added: 1 in 0.00 seconds
+0020.187 (0) Table wp_users: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_users.table.gz - 0.5 KB)
+0020.195 (0) Table wp_usermeta: Total expected rows (approximate): 23
+0020.198 (0) Table wp_usermeta: Total rows added: 23 in 0.00 seconds
+0020.200 (0) Table wp_usermeta: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_usermeta.table.gz - 1.4 KB)
+0020.208 (0) Table wp_commentmeta: Total expected rows (approximate): 0
+0020.211 (0) Table wp_commentmeta: Total rows added: 0 in 0.00 seconds
+0020.213 (0) Table wp_commentmeta: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_commentmeta.table.gz - 0.4 KB)
+0020.222 (0) Table wp_comments: Total expected rows (approximate): 1
+0020.225 (0) Table wp_comments: Total rows added: 1 in 0.00 seconds
+0020.228 (0) Table wp_comments: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_comments.table.gz - 0.7 KB)
+0020.235 (0) Table wp_links: Total expected rows (approximate): 0
+0020.238 (0) Table wp_links: Total rows added: 0 in 0.00 seconds
+0020.241 (0) Table wp_links: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_links.table.gz - 0.4 KB)
+0020.249 (0) Table wp_postmeta: Total expected rows (approximate): 631
+0020.261 (0) Table wp_postmeta: Total rows added: 650 in 0.01 seconds
+0020.265 (0) Table wp_postmeta: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_postmeta.table.gz - 10.1 KB)
+0020.275 (0) Table wp_posts: Total expected rows (approximate): 239
+0020.288 (0) Table wp_posts: Total rows added: 149 in 0.01 seconds
+0020.292 (0) Table wp_posts: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_posts.table.gz - 15 KB)
+0020.302 (0) Table wp_term_relationships: Total expected rows (approximate): 30
+0020.305 (0) Table wp_term_relationships: Total rows added: 30 in 0.00 seconds
+0020.309 (0) Table wp_term_relationships: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_term_relationships.table.gz - 0.4 KB)
+0020.316 (0) Table wp_term_taxonomy: Total expected rows (approximate): 7
+0020.320 (0) Table wp_term_taxonomy: Total rows added: 7 in 0.00 seconds
+0020.324 (0) Table wp_term_taxonomy: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_term_taxonomy.table.gz - 0.5 KB)
+0020.332 (0) Table wp_termmeta: Total expected rows (approximate): 0
+0020.335 (0) Table wp_termmeta: Total rows added: 0 in 0.00 seconds
+0020.337 (0) Table wp_termmeta: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_termmeta.table.gz - 0.4 KB)
+0020.345 (0) Table wp_terms: Total expected rows (approximate): 7
+0020.348 (0) Table wp_terms: Total rows added: 7 in 0.00 seconds
+0020.352 (0) Table wp_terms: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_terms.table.gz - 0.5 KB)
+0020.359 (0) Table wp_hugeit_slider_slide: Total expected rows (approximate): 3
+0020.363 (0) Table wp_hugeit_slider_slide: Total rows added: 3 in 0.00 seconds
+0020.367 (0) Table wp_hugeit_slider_slide: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_hugeit_slider_slide.table.gz - 0.7 KB)
+0020.375 (0) Table wp_hugeit_slider_slider: Total expected rows (approximate): 1
+0020.377 (0) Table wp_hugeit_slider_slider: Total rows added: 1 in 0.00 seconds
+0020.380 (0) Table wp_hugeit_slider_slider: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_hugeit_slider_slider.table.gz - 0.6 KB)
+0020.388 (0) Table wp_statistics_exclusions: Total expected rows (approximate): 0
+0020.391 (0) Table wp_statistics_exclusions: Total rows added: 0 in 0.00 seconds
+0020.393 (0) Table wp_statistics_exclusions: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_statistics_exclusions.table.gz - 0.3 KB)
+0020.402 (0) Table wp_statistics_historical: Total expected rows (approximate): 0
+0020.405 (0) Table wp_statistics_historical: Total rows added: 0 in 0.00 seconds
+0020.408 (0) Table wp_statistics_historical: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_statistics_historical.table.gz - 0.3 KB)
+0020.415 (0) Table wp_statistics_pages: Total expected rows (approximate): 21
+0020.419 (0) Table wp_statistics_pages: Total rows added: 21 in 0.00 seconds
+0020.421 (0) Table wp_statistics_pages: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_statistics_pages.table.gz - 0.6 KB)
+0020.430 (0) Table wp_statistics_search: Total expected rows (approximate): 0
+0020.432 (0) Table wp_statistics_search: Total rows added: 0 in 0.00 seconds
+0020.435 (0) Table wp_statistics_search: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_statistics_search.table.gz - 0.3 KB)
+0020.443 (0) Table wp_statistics_useronline: Total expected rows (approximate): 1
+0020.446 (0) Table wp_statistics_useronline: Total rows added: 1 in 0.00 seconds
+0020.449 (0) Table wp_statistics_useronline: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_statistics_useronline.table.gz - 0.6 KB)
+0020.458 (0) Table wp_statistics_visit: Total expected rows (approximate): 5
+0020.460 (0) Table wp_statistics_visit: Total rows added: 5 in 0.00 seconds
+0020.463 (0) Table wp_statistics_visit: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_statistics_visit.table.gz - 0.4 KB)
+0020.471 (0) Table wp_statistics_visitor: Total expected rows (approximate): 18
+0020.474 (0) Table wp_statistics_visitor: Total rows added: 18 in 0.00 seconds
+0020.478 (0) Table wp_statistics_visitor: finishing file (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_statistics_visitor.table.gz - 1.3 KB)
+0020.485 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_options.table.gz (1/21): adding to final database dump
+0020.520 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_users.table.gz (2/21): adding to final database dump
+0020.524 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_usermeta.table.gz (3/21): adding to final database dump
+0020.528 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_commentmeta.table.gz (4/21): adding to final database dump
+0020.531 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_comments.table.gz (5/21): adding to final database dump
+0020.533 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_links.table.gz (6/21): adding to final database dump
+0020.536 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_postmeta.table.gz (7/21): adding to final database dump
+0020.542 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_posts.table.gz (8/21): adding to final database dump
+0020.549 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_term_relationships.table.gz (9/21): adding to final database dump
+0020.552 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_term_taxonomy.table.gz (10/21): adding to final database dump
+0020.554 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_termmeta.table.gz (11/21): adding to final database dump
+0020.556 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_terms.table.gz (12/21): adding to final database dump
+0020.559 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_hugeit_slider_slide.table.gz (13/21): adding to final database dump
+0020.563 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_hugeit_slider_slider.table.gz (14/21): adding to final database dump
+0020.565 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_statistics_exclusions.table.gz (15/21): adding to final database dump
+0020.568 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_statistics_historical.table.gz (16/21): adding to final database dump
+0020.571 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_statistics_pages.table.gz (17/21): adding to final database dump
+0020.573 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_statistics_search.table.gz (18/21): adding to final database dump
+0020.576 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_statistics_useronline.table.gz (19/21): adding to final database dump
+0020.580 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_statistics_visit.table.gz (20/21): adding to final database dump
+0020.583 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db-table-wp_statistics_visitor.table.gz (21/21): adding to final database dump
+0020.588 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db.gz: finished writing out complete database file (208 KB)
+0020.607 (0) Total database tables backed up: 21 (backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db.gz, size: 229242, sha256)
+0020.618 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0020.619 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0020.620 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0020.623 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-others.zip: others: This file has not yet been successfully uploaded: will queue
+0020.624 (0) backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db.gz: db: This file has not yet been successfully uploaded: will queue
+0020.626 (0) Saving backup history. Total backup size: 53.9 MB
+0020.631 (0) Requesting upload of the files that have not yet been successfully uploaded (5)
+0020.638 (0) Cloud backup selection (1/1):  (last)
+0020.639 (0) No remote despatch: user chose no remote backup service
+0020.643 (0) Recording as successfully uploaded: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-plugins.zip (bee8b1aaf9be2836c524e4b31b8fdf81)
+0020.654 (0) Recording as successfully uploaded: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-themes.zip (c2c594488ea433dec1d071e755dc1c6c)
+0020.660 (0) Recording as successfully uploaded: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-uploads.zip (761d4777d627e8cb584d878a0fed2054)
+0020.668 (0) Recording as successfully uploaded: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-others.zip (4d7f78f0503ce2028da7ae6d949d077a)
+0020.676 (0) Recording as successfully uploaded: backup_2017-04-23-1130_Pergunte_a_um_especialista_4ceb1f41a4a1-db.gz (37f9c2a8284d07e2b0769fe58fb68712)
+0020.683 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=7, retain_db=7
+0020.686 (0) Number of backup sets in history: 5; groups (db): 1
+0020.687 (0) Examining (for databases) backup set with group_id=0, nonce=4ceb1f41a4a1, datestamp=1492957814 (Apr 23 2017 14:30:14)
+0020.690 (0) This backup set is the backup set just made, so will not be deleted.
+0020.691 (0) Examining (for databases) backup set with group_id=0, nonce=507c7aeef553, datestamp=1492817720 (Apr 21 2017 23:35:20)
+0020.692 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0020.694 (0) Examining (for databases) backup set with group_id=0, nonce=062ca59714e6, datestamp=1492720535 (Apr 20 2017 20:35:35)
+0020.695 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0020.698 (0) Examining (for databases) backup set with group_id=0, nonce=65ade7d9ab25, datestamp=1492631304 (Apr 19 2017 19:48:24)
+0020.699 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0020.700 (0) Examining (for databases) backup set with group_id=0, nonce=baaa97a1d6d5, datestamp=1492623987 (Apr 19 2017 17:46:27)
+0020.702 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0020.703 (0) Number of backup sets in history: 5; groups (files): 1
+0020.706 (0) Examining (for files) backup set with nonce=4ceb1f41a4a1, datestamp=1492957814 (Apr 23 2017 14:30:14)
+0020.707 (0) This backup set is the backup set just made, so will not be deleted.
+0020.708 (0) This backup set is the backup set just made, so will not be deleted.
+0020.708 (0) This backup set is the backup set just made, so will not be deleted.
+0020.708 (0) This backup set is the backup set just made, so will not be deleted.
+0020.708 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0020.711 (0) Examining (for files) backup set with nonce=507c7aeef553, datestamp=1492817720 (Apr 21 2017 23:35:20)
+0020.712 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0020.714 (0) Examining (for files) backup set with nonce=062ca59714e6, datestamp=1492720535 (Apr 20 2017 20:35:35)
+0020.715 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0020.716 (0) Examining (for files) backup set with nonce=65ade7d9ab25, datestamp=1492631304 (Apr 19 2017 19:48:24)
+0020.718 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0020.720 (0) Examining (for files) backup set with nonce=baaa97a1d6d5, datestamp=1492623987 (Apr 19 2017 17:46:27)
+0020.722 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0020.723 (0) Retain: saving new backup history (sets now: 5) and finishing retain operation
+0020.730 (0) Resume backup (4ceb1f41a4a1, 0): finish run
+0020.734 (0) Decremented the semaphore (fd) by 1
+0020.736 (0) Semaphore (fd) unlocked
+0020.738 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0020.744 (0) The backup apparently succeeded and is now complete
+0020.746 (0) Fetching RSS news feed
+0021.008 (0) Fetched RSS news feed; result is a: SimplePie
+0021.065 (0) Sending email ('Arquivos e banco de dados (Backup Completo (Full))') report (attachments: 0, size: 0 KB) to: victo...
+0021.145 (0) O backup aparentemente foi bem sucedido e está completo agora.

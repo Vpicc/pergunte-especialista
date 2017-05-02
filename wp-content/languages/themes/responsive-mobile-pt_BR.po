@@ -1,0 +1,1010 @@
+# Translation of Themes - Responsive Mobile in Portuguese (Brazil)
+# This file is distributed under the same license as the Themes - Responsive Mobile package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2015-07-23 16:12:59+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: GlotPress/2.3.0-alpha\n"
+"Language: pt_BR\n"
+"Project-Id-Version: Themes - Responsive Mobile\n"
+
+#. Template Name of the plugin/theme
+msgid "Sitemap"
+msgstr "Mapa do site"
+
+#. Template Name of the plugin/theme
+msgid "Blog Excerpt (summary)"
+msgstr "Resumos do blog (sum&#225;rio)"
+
+#. Template Name of the plugin/theme
+msgid "Blog (full posts)"
+msgstr "Blog (posts completos)"
+
+#. Template Name of the plugin/theme
+msgid "Landing Page (no menu)"
+msgstr "P&#225;gina de entrada (sem menu)"
+
+#: template-parts/post-data.php:47
+msgid "Tagged with %1$s"
+msgstr "TAGS: %1$s"
+
+#: template-parts/post-data.php:53
+msgid "Edit"
+msgstr "Editar"
+
+#: template-parts/post-data.php:33
+msgid "Posted in %1$s"
+msgstr "Postado em %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: template-parts/post-data.php:26 template-parts/post-data.php:39
+msgid ", "
+msgstr ", "
+
+#: template-parts/loop-nav.php:29
+msgid "&rarr;"
+msgstr "&rarr;"
+
+#: template-parts/loop-nav.php:28
+msgid "&larr;"
+msgstr "&larr;"
+
+#: template-parts/loop-header.php:49
+msgid "Search Results for: %s"
+msgstr "Resultados da busca por: %s"
+
+#: template-parts/content-sitemap.php:43
+msgid "Pages"
+msgstr "Páginas"
+
+#: template-parts/content-sitemap.php:36
+msgid "Permanent Link to %s"
+msgstr "Link permanente para %s"
+
+#: template-parts/content-sitemap.php:32
+msgid "Latest Posts"
+msgstr "Últimos Posts"
+
+#: template-parts/content-none.php:63
+msgid "&larr; Home"
+msgstr "&larr; In&#237;cio"
+
+#: template-parts/content-sitemap.php:27
+msgid "Categories"
+msgstr "Categorias"
+
+#: template-parts/content-none.php:53
+msgid "Don&#39;t panic, we&#39;ll get through this together. Let&#39;s explore our options here."
+msgstr "N&#227;o entre em p&#226;nico, n&#243;s vamos passar por isso juntos. Vamos explorar nossas op&#231;&#245;es aqui."
+
+#: template-parts/content-none.php:58
+msgid "You can return %s or search for the page you were looking for."
+msgstr "Voc&#234; pode voltar %s ou buscar a p&#225;gina que voc&#234; estava procurando"
+
+#: template-parts/content-none.php:54
+msgid "The URL may be misspelled or the page you are looking for is no longer available."
+msgstr "A URL pode ser incorreto ou a página que você está procurando não está mais disponível."
+
+#: sidebar-left-half.php:28 sidebar-left.php:28 sidebar-right-half.php:28
+#: sidebar-right.php:28 sidebar.php:56
+msgid "In Archive"
+msgstr "Em arquivo"
+
+#: template-parts/content-none.php:50
+msgid "404 &#8212; Fancy meeting you here!"
+msgstr "404 &#8212; Extravagante encontrar voc&#234; por aqui!"
+
+#: sidebar-home.php:30
+msgid "This is your first home widget box. To edit please go to Appearance > Widgets and choose 6th widget from the top in area 6 called Home Widget 1. Title is also manageable from widgets as well."
+msgstr "Esta &#233; a sua primeira caixa de widget da p&#225;gina inicial. Para editar acesse Apar&#234;ncia > Widgets e escolha o sexto Widget do topo na &#225;rea seis chamada P&#225;gina Inicial Widget 1. T&#237;tulo tamb&#233;m &#233; gerenci&#225;vel a partir dos widgets desta maneira."
+
+#: sidebar-home.php:45
+msgid "This is your second home widget box. To edit please go to Appearance > Widgets and choose 7th widget from the top in area 7 called Home Widget 2. Title is also manageable from widgets as well."
+msgstr "Esta &#233; a sua segunda caixa de widget da p&#225;gina inicial. Para editar acesse Apar&#234;ncia > Widgets e escolha o s&#233;timo Widget do topo na &#225;rea sete chamada P&#225;gina Inicial Widget 2. T&#237;tulo tamb&#233;m &#233; gerenci&#225;vel a partir dos widgets desta maneira."
+
+#: sidebar-home.php:60
+msgid "This is your third home widget box. To edit please go to Appearance > Widgets and choose 8th widget from the top in area 8 called Home Widget 3. Title is also manageable from widgets as well."
+msgstr "Esta &#233; a sua terceira caixa de widget da p&#225;gina inicial. Para editar acesse Apar&#234;ncia > Widgets e escolha o oitavo Widget do topo na &#225;rea oito chamada P&#225;gina Inicial Widget 3. T&#237;tulo tamb&#233;m &#233; gerenci&#225;vel a partir dos widgets desta maneira."
+
+#: template-parts/content-none.php:34
+msgid "Ready to publish your first post?"
+msgstr "Pronto para publicar o seu primeiro post?"
+
+#: template-parts/content-none.php:35
+msgid "Get started here"
+msgstr "Comece aqui"
+
+#: template-parts/content-none.php:30
+msgid "No posts published yet"
+msgstr "Não há posts publicados ainda"
+
+#: template-parts/content-none.php:41
+msgid "No results"
+msgstr "Nenhum resultado"
+
+#: template-parts/content-none.php:44
+msgid "Your search for \"%s\" did not match any entries."
+msgstr "Sua busca por \"%s\" não combina com todas as entradas."
+
+#: sidebar-gallery.php:46
+msgid "ISO:"
+msgstr "ISO:"
+
+#: sidebar-gallery.php:50
+msgid "Shutter:"
+msgstr "Obturador:"
+
+#: sidebar-gallery.php:65
+msgid "Camera:"
+msgstr "C&#226;mera:"
+
+#: sidebar-gallery.php:37
+msgid "Aperture: f&#47;"
+msgstr "Abertura: f&#47;"
+
+#: sidebar-gallery.php:42
+msgid "Focal Length:"
+msgstr "Comprimento focal:"
+
+#: sidebar-gallery.php:42
+msgid "mm"
+msgstr "mm"
+
+#: sidebar-gallery.php:29
+msgid "Image Information"
+msgstr "Informa&#231;&#227;o da imagem"
+
+#: sidebar-gallery.php:33
+msgid "Full Size:"
+msgstr "Tamanho completo:"
+
+#: page-templates/blog-excerpt.php:54 page-templates/blog.php:66
+msgid "&#8249; Older posts"
+msgstr "&#8249; Posts anteriores"
+
+#: page-templates/blog-excerpt.php:55 page-templates/blog.php:68
+msgid "Newer posts &#8250;"
+msgstr "Posts recentes &#8250;"
+
+#: libraries/class-responsive-options.php:552
+#: libraries/class-responsive-options.php:575
+msgid "Options Imported"
+msgstr "Opções de importados"
+
+#: libraries/class-responsive-options.php:557
+#: libraries/class-responsive-options.php:580
+msgid "Invalid Data for Import"
+msgstr "Dados inválidos para importação"
+
+#: libraries/class-responsive-options.php:386
+msgid "Restore Defaults"
+msgstr "Restaurar configurações padrão"
+
+#: libraries/class-responsive-options.php:386
+msgid "Save Options"
+msgstr "Salvar Opções"
+
+#: libraries/class-responsive-options.php:110
+msgid "Options Saved"
+msgstr "Opções salvas"
+
+#: libraries/class-responsive-options.php:49
+msgid "All theme settings will be lost!"
+msgstr "Irá perder todas as definições do tema!"
+
+#: libraries/class-responsive-options.php:49
+msgid "Click OK to restore."
+msgstr "Clique em 'CONFIRMAR' para Restaurar."
+
+#: libraries/class-meta-box.php:1944
+msgid "or enter URL"
+msgstr "ou digite a URL"
+
+#: libraries/class-responsive-options.php:49
+msgid "Do you want to restore the default settings?"
+msgstr "Você quer restaurar as configurações padrão?"
+
+#: libraries/class-meta-box.php:1943
+msgid "Upload"
+msgstr "Fazer Upload"
+
+#: libraries/class-meta-box.php:1791 libraries/class-meta-box.php:1801
+msgid "Sorry, you cannot upload this file type for this field."
+msgstr "Desculpe, que você não pode carregar este tipo de arquivo para este campo."
+
+#: includes/functions.php:75
+msgid "Sub-Header Menu"
+msgstr "Sub-menu do cabe&#231;alho"
+
+#: includes/functions.php:76
+msgid "Footer Menu"
+msgstr "Menu do Rodapé"
+
+#: includes/functions.php:74
+msgid "Header Menu"
+msgstr "Menu superior"
+
+#: includes/functions-theme-options.php:355
+msgid "Embeds to footer.php &darr;"
+msgstr "Incorporar ao footer.php &darr;"
+
+#: includes/functions-theme-options.php:358
+msgid "Enter your custom footer script."
+msgstr "Entre com seu script de rodap&#233; personalizado."
+
+#: includes/functions.php:73
+msgid "Top Menu"
+msgstr "Menu do topo"
+
+#: includes/functions-theme-options.php:345
+msgid "Custom Scripts for Header and Footer"
+msgstr "Scripts personalizados para cabe&#231;alho e rodap&#233;"
+
+#: includes/functions-theme-options.php:347
+msgid "Embeds to header.php &darr;"
+msgstr "Incorporar ao header.php &darr;"
+
+#: includes/functions-theme-options.php:350
+msgid "Enter your custom header script."
+msgstr "Entre com seu script de cabe&#231;alho personalizado."
+
+#: includes/functions-theme-options.php:346
+msgid "Quick Tutorial"
+msgstr "Tutorial r&#225;pido"
+
+#: includes/functions-theme-options.php:342
+msgid "Scripts"
+msgstr "Scripts"
+
+#: includes/functions-theme-options.php:335
+msgid "Enter your custom CSS styles."
+msgstr "Coloque aqui a sua folha de estilo em cascata personalizada - CSS -<br/> Nota: colocando aqui sua estilização, ela será preservada de modificações futuras, quando o tema for atualizado pelo desenvolvedor."
+
+#: includes/functions-theme-options.php:321
+msgid "Enter your foursquare URL"
+msgstr "Informe sua URL do foursquare"
+
+#: includes/functions-theme-options.php:331
+msgid "Custom CSS Styles"
+msgstr "Coloque aqui a sua folha de estilo CSS personalizado!"
+
+#: includes/functions-theme-options.php:332
+msgid "CSS Tutorial"
+msgstr "W3Schools - Tutoriais para aprender CSS (Cascading Style Sheet - Folha de Estilo em Cascata)"
+
+#: includes/functions-theme-options.php:328
+msgid "CSS Styles"
+msgstr "Estilos CSS"
+
+#: includes/functions-theme-options.php:318
+msgid "foursquare"
+msgstr "FourSquare"
+
+#: includes/functions-theme-options.php:313
+msgid "Enter your Vimeo URL"
+msgstr "Informe sua URL do Vimeo"
+
+#: includes/functions-theme-options.php:310
+msgid "Vimeo"
+msgstr "Vimeo"
+
+#: includes/functions-theme-options.php:296
+msgid "Enter your Pinterest URL"
+msgstr "Informe sua URL do Pinterest"
+
+#: includes/functions-theme-options.php:293
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: includes/functions-theme-options.php:288
+msgid "Enter your Instagram URL"
+msgstr "Informe sua URL do Instagram"
+
+#: includes/functions-theme-options.php:285
+msgid "Instagram"
+msgstr "Instagram"
+
+#: includes/functions-theme-options.php:280
+msgid "Enter your Google+ URL"
+msgstr "Informe sua URL do Google+"
+
+#: includes/functions-theme-options.php:272
+msgid "Enter your RSS Feed URL"
+msgstr "Informe sua URL do Feed RSS"
+
+#: includes/functions-theme-options.php:277
+msgid "Google+"
+msgstr "Google +"
+
+#: includes/functions-theme-options.php:269
+msgid "RSS Feed"
+msgstr "Feed RSS"
+
+#: includes/functions-theme-options.php:264
+msgid "Enter your StumbleUpon URL"
+msgstr "Informe sua URL do StumbleUpon"
+
+#: includes/functions-theme-options.php:261
+msgid "StumbleUpon"
+msgstr "Stumbleupon"
+
+#: includes/functions-theme-options.php:256
+msgid "Enter your YouTube URL"
+msgstr "Informe sua URL do YouTube"
+
+#: includes/functions-theme-options.php:253
+msgid "YouTube"
+msgstr "YouTube"
+
+#: includes/functions-theme-options.php:248
+msgid "Enter your LinkedIn URL"
+msgstr "Informe sua URL do LinkedIn"
+
+#: includes/functions-theme-options.php:245
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: includes/functions-theme-options.php:240
+msgid "Enter your Facebook URL"
+msgstr "Informe sua URL do Facebook"
+
+#: includes/functions-theme-options.php:237
+msgid "Facebook"
+msgstr "Facebook"
+
+#: includes/functions-theme-options.php:232
+msgid "Enter your Twitter URL"
+msgstr "Informe sua URL do Twitter"
+
+#: includes/functions-theme-options.php:229
+msgid "Twitter"
+msgstr "Twitter"
+
+#: includes/functions-theme-options.php:189
+msgid "Paste your shortcode, video or image source"
+msgstr "Cole a fonte do seu shortcode, v&#237;deo ou imagem"
+
+#: includes/functions-theme-options.php:197
+msgid "Default Layouts"
+msgstr "Disposi&#231;&#245;es padr&#245;es"
+
+#: includes/functions-theme-options.php:200
+msgid "Default Static Page Layout"
+msgstr "Disposi&#231;&#227;o padr&#227;o de p&#225;gina est&#225;tica"
+
+#: includes/functions-theme-options.php:208
+msgid "Default Single Blog Post Layout"
+msgstr "Disposi&#231;&#227;o padr&#227;o de blog de post &#250;nico"
+
+#: includes/functions-theme-options.php:216
+msgid "Default Blog Posts Index Layout"
+msgstr "Disposi&#231;&#227;o padr&#227;o de &#237;ndice de posts do blog"
+
+#: includes/functions-theme-options.php:226
+msgid "Social Icons"
+msgstr "Ícones sociais"
+
+#: includes/functions-theme-options.php:185
+#: includes/functions-theme-options.php:186
+msgid "See Docs"
+msgstr "Ver documentos"
+
+#: includes/functions-theme-options.php:157
+msgid "Content Area"
+msgstr "Área do conteúdo"
+
+#: includes/functions-theme-options.php:160
+msgid "Enter your content"
+msgstr "Informe seu conte&#250;do"
+
+#: includes/functions-theme-options.php:184
+msgid "Featured Content"
+msgstr "Conteúdo Destacado"
+
+#: includes/functions-theme-options.php:143 template-parts/featured-area.php:26
+msgid "Hello, World!"
+msgstr "Ol&#225;, Mundo!"
+
+#: includes/functions-theme-options.php:152 template-parts/featured-area.php:36
+msgid "Your H2 subheadline here"
+msgstr "Seu subt&#237;tulo H2 aqui"
+
+#: includes/functions-theme-options.php:161 template-parts/featured-area.php:46
+msgid "Your title, subtitle and this very content is editable from Theme Option. Call to Action button and its destination link as well. Image on your right can be an image or even YouTube video if you like."
+msgstr "Seu t&#237;tulo, subt&#237;tulo e este conte&#250;do s&#227;o edit&#225;veis em Op&#231;&#245;es do tema. O bot&#227;o de Chamada para a&#231;&#227;o e seu link de destino tamb&#233;m. Imagem &#224; sua direita pode ser uma imagem ou at&#233; mesmo um v&#237;deo no YouTube, se quiser."
+
+#: includes/functions-theme-options.php:179 template-parts/featured-area.php:60
+msgid "Call to Action"
+msgstr "Chamada para a&#231;&#227;o"
+
+#: includes/functions-theme-options.php:148
+msgid "Subheadline"
+msgstr "Subt&#237;tulo"
+
+#: includes/functions-theme-options.php:151
+msgid "Enter your subheadline"
+msgstr "Informe seu subt&#237;tulo"
+
+#: includes/functions-theme-options.php:166
+msgid "Call to Action (URL)"
+msgstr "Chamada para a&#231;&#227;o (URL)"
+
+#: includes/functions-theme-options.php:169
+msgid "Enter your call to action URL"
+msgstr "Informe sua URL para sua Chamada para a&#231;&#227;o"
+
+#: includes/functions-theme-options.php:175
+msgid "Call to Action (Text)"
+msgstr "Chamada para a&#231;&#227;o (Texto)"
+
+#: includes/functions-theme-options.php:178
+msgid "Enter your call to action text"
+msgstr "Informe seu texto para sua Chamada para a&#231;&#227;o"
+
+#: includes/functions-theme-options.php:142
+msgid "Enter your headline"
+msgstr "Informe seu t&#237;tulo"
+
+#: includes/functions-theme-options.php:137
+msgid "Headline"
+msgstr "Frase de Apresentação (manchete)"
+
+#: includes/functions-theme-options.php:129
+msgid "Enable Custom Front Page"
+msgstr "Habilitar Página Inicial Personalizada"
+
+#: includes/functions-theme-options.php:132
+msgid "Overrides the WordPress %1sfront page option%2s"
+msgstr "Overrides the WordPress %1sfront page option%2s"
+
+#: includes/functions-theme-options.php:120
+msgid "Need to replace or remove default logo?"
+msgstr "Precisa substituir ou remover o logotipo padr&#227;o?"
+
+#: includes/functions-theme-options.php:126
+msgid "Home Page"
+msgstr "Home Page"
+
+#: includes/functions-theme-options.php:120
+msgid "Click here"
+msgstr "Clique aqui"
+
+#: includes/functions-theme-options.php:117
+msgid "Custom Header"
+msgstr "Personalizar cabeçalho"
+
+#: includes/functions-theme-options.php:114
+msgid "Logo Upload"
+msgstr "Enviar logo"
+
+#: includes/functions-theme-options.php:104
+msgid "Disable Call to Action Button?"
+msgstr "Desativar bot&#227;o Chamada para a&#231;&#227;o?"
+
+#: includes/functions-theme-options.php:96
+msgid "Use minified CSS"
+msgstr "Use CSS minified"
+
+#: includes/functions-theme-options.php:91
+#: includes/functions-theme-options.php:99
+#: includes/functions-theme-options.php:107
+msgid "Check to disable"
+msgstr "Marque aqui para desativar"
+
+#: includes/functions-theme-options.php:88
+msgid "Disable breadcrumb list?"
+msgstr "Desactivar lista de breadcrumbs?"
+
+#. #-#-#-#-#  responsive-mobile.pot (Responsive Mobile 1.1)  #-#-#-#-#
+#. Template Name of the plugin/theme
+#: includes/functions-theme-options.php:48
+msgid "Content/Sidebar"
+msgstr "Conte&#250;do/Barra lateral"
+
+#. #-#-#-#-#  responsive-mobile.pot (Responsive Mobile 1.1)  #-#-#-#-#
+#. Template Name of the plugin/theme
+#: includes/functions-theme-options.php:49
+msgid "Sidebar/Content"
+msgstr "Barra lateral/Conte&#250;do"
+
+#. #-#-#-#-#  responsive-mobile.pot (Responsive Mobile 1.1)  #-#-#-#-#
+#. Template Name of the plugin/theme
+#: includes/functions-theme-options.php:50
+msgid "Content/Sidebar Half Page"
+msgstr "Conte&#250;do/Barra lateral no meio da p&#225;gina"
+
+#: includes/functions-theme-options.php:51
+msgid "Sidebar/Content Half Page"
+msgstr "Barra lateral/Conte&#250;do no meio da p&#225;gina"
+
+#. #-#-#-#-#  responsive-mobile.pot (Responsive Mobile 1.1)  #-#-#-#-#
+#. Template Name of the plugin/theme
+#: includes/functions-theme-options.php:52
+msgid "Full Width Page (no sidebar)"
+msgstr "P&#225;gina de largura inteira (sem barra lateral)"
+
+#: includes/functions-theme-options.php:85
+msgid "Theme Elements"
+msgstr "Elementos do tema"
+
+#: includes/functions-theme-options.php:47
+msgid "Default"
+msgstr "Padrão"
+
+#: includes/functions-theme-options-page.php:109
+msgid "The Custom Front Page is disabled. You can enable it in the <a href=\"%1$s\">theme settings</a>."
+msgstr "Página Inicial Personalizada desativada. Poderá sativá-la nas <a href=\"%1$s\">definições do tema</a>"
+
+#: includes/functions-theme-options-page.php:107
+msgid "The Custom Front Page is enabled. You can disable it in the <a href=\"%1$s\">theme settings</a>."
+msgstr "Página Inicial Personalizada ativada. Poderá desativá-la nas <a href=\"%1$s\">definições do tema</a>."
+
+#: includes/functions-theme-options-page.php:83
+#: includes/functions-theme-options-page.php:84
+msgid "Showcase"
+msgstr "Showcase"
+
+#: includes/functions-theme-options-page.php:80
+#: includes/functions-theme-options-page.php:81
+msgid "Translate"
+msgstr "Traduzir"
+
+#: includes/functions-theme-options-page.php:75
+msgid "Instructions"
+msgstr "Instruções"
+
+#: includes/functions-theme-options-page.php:30
+msgid "Welcome to %s!"
+msgstr "Bem-vindo ao %s!"
+
+#: includes/functions-theme-options-page.php:74
+msgid "Guides"
+msgstr "Guias"
+
+#: includes/functions-template-tags.php:279
+msgid "Menu"
+msgstr "Menu"
+
+#: includes/functions-template-tags.php:261
+msgid "Archives"
+msgstr "Arquivos"
+
+#: includes/functions-template-tags.php:258
+msgid "Chats"
+msgstr "Chats"
+
+#: includes/functions-template-tags.php:255
+msgid "Audios"
+msgstr "Áudios"
+
+#: includes/functions-template-tags.php:252
+msgid "Statuses"
+msgstr "Status"
+
+#: includes/functions-template-tags.php:249
+msgid "Links"
+msgstr "Links"
+
+#: includes/functions-template-tags.php:246
+msgid "Quotes"
+msgstr "Citações"
+
+#: includes/functions-template-tags.php:243
+msgid "Videos"
+msgstr "Vídeos"
+
+#: includes/functions-template-tags.php:240
+msgid "Images"
+msgstr "Imagens"
+
+#: includes/functions-template-tags.php:237
+msgid "Galleries"
+msgstr "Galerias"
+
+#: includes/functions-template-tags.php:234
+msgid "Asides"
+msgstr "Notas"
+
+#: includes/functions-template-tags.php:231
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: includes/functions-template-tags.php:231
+msgid "Yearly Archives: %s"
+msgstr "Arquivos anuais: %s"
+
+#: includes/functions-template-tags.php:228
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: includes/functions-template-tags.php:228
+msgid "Monthly Archives: %s"
+msgstr "Arquivo mensais:%s"
+
+#: includes/functions-template-tags.php:225
+msgid "Daily Archives: %s"
+msgstr "Arquivo diários:%s"
+
+#: includes/functions-template-tags.php:222
+msgid "Author: %s"
+msgstr "Autor: %s"
+
+#: includes/functions-template-tags.php:163
+msgid "<span class=\"posted-on\">Posted on %1$s</span><span class=\"byline\"> by %2$s</span>"
+msgstr "<span class=\"posted-on\">Publicado em %1$s</span><span class=\"byline\"> por %2$s</span>"
+
+#: includes/functions-template-tags.php:134
+msgid "by"
+msgstr "por"
+
+#: includes/functions-template-tags.php:117
+msgid "Posted on"
+msgstr "Postada na"
+
+#. Translators: (Posted on )(Date)
+#. Translators: ( by )(Author)
+#: includes/functions-template-tags.php:116
+#: includes/functions-template-tags.php:133
+msgid "%1$s %2$s"
+msgstr "%1$ s %2$ s"
+
+#: includes/functions-template-tags.php:74
+msgctxt "Next post link"
+msgid "%title <span class=\"meta-nav\">&rarr;</span>"
+msgstr "%title <span class=\"meta-nav\">&rarr;</span>"
+
+#: includes/functions-template-tags.php:73
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&larr;</span> %title"
+msgstr "<span class=\"meta-nav\">&larr;</span> %title"
+
+#: includes/functions-template-tags.php:69 template-parts/loop-nav.php:25
+msgid "Post navigation"
+msgstr "Navegação de posts"
+
+#: includes/functions-template-tags.php:43
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Posts recentes <span class=\"meta-nav\">&rarr;</span>"
+
+#: includes/functions-template-tags.php:39
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&larr;</span> Posts antigos"
+
+#: includes/functions-sidebar.php:116
+msgid "Colophon Widget"
+msgstr "Widget de colof&#227;o"
+
+#: includes/functions-sidebar.php:126
+msgid "Top Widget"
+msgstr "Widget do topo"
+
+#: includes/functions-template-tags.php:34 page-templates/blog.php:62
+msgid "Posts navigation"
+msgstr "Navegação por posts"
+
+#: includes/functions-sidebar.php:117
+msgid "Area 10 - sidebar-colophon.php, 100% width Footer widgets"
+msgstr "Área 10 - sidebar-colophon.php, widgets de rodapé a 100% da largura"
+
+#: includes/functions-sidebar.php:127
+msgid "Area 11 - sidebar-top.php - Displays on the right of the header"
+msgstr "Área 11 - sidebar-top.php - Visível no lado direito do cabeçalho"
+
+#: includes/functions-sidebar.php:137
+msgid "Area 12 - sidebar-footer.php - Maximum of 3 widgets per row"
+msgstr "Área 12 - sidebar-footer.php - Máximo de 3 widgets por fila"
+
+#: includes/functions-sidebar.php:107
+msgid "Area 9 - sidebar-gallery.php - Displays on the page after an image has been clicked in a Gallery"
+msgstr "Área 9 - sidebar-gallery.php - Visível na página depois de uma imagem ter sido clicada em uma galeria"
+
+#: includes/functions-sidebar.php:136
+msgid "Footer Widget"
+msgstr "Widget de rodapé"
+
+#: includes/functions-sidebar.php:86 sidebar-home.php:44
+msgid "Home Widget 2"
+msgstr "P&#225;gina Inicial Widget 2"
+
+#: includes/functions-sidebar.php:96 sidebar-home.php:59
+msgid "Home Widget 3"
+msgstr "P&#225;gina Inicial Widget 3"
+
+#: includes/functions-sidebar.php:106
+msgid "Gallery Sidebar"
+msgstr "Barra lateral de galeria"
+
+#: includes/functions-sidebar.php:77
+msgid "Area 6 - sidebar-home.php - Displays on the Home Page"
+msgstr "Área 6 - sidebar-home.php - Visível na Home Page"
+
+#: includes/functions-sidebar.php:87
+msgid "Area 7 - sidebar-home.php - Displays on the Home Page"
+msgstr "Área 7 - sidebar-home.php - Visível na Home Page"
+
+#: includes/functions-sidebar.php:97
+msgid "Area 8 - sidebar-home.php - Displays on the Home Page"
+msgstr "Área 8 - sidebar-home.php - Visível na Home Page"
+
+#: includes/functions-sidebar.php:66
+msgid "Right Sidebar Half Page"
+msgstr "Barra lateral direita no meio da p&#225;gina"
+
+#: includes/functions-sidebar.php:76 sidebar-home.php:29
+msgid "Home Widget 1"
+msgstr "P&#225;gina Inicial Widget 1"
+
+#: includes/functions-sidebar.php:67
+msgid "Area 5 - sidebar-right-half.php - Displays on Content/Sidebar Half Page page templates"
+msgstr "Área 5 - sidebar-right-half.php - Visível em templates de Conteúdo/ Menu Lateral de Meia Página"
+
+#: includes/functions-sidebar.php:56
+msgid "Left Sidebar Half Page"
+msgstr "Barra lateral esquerda no meio da p&#225;gina"
+
+#: includes/functions-sidebar.php:47
+msgid "Area 3 - sidebar-left.php - Displays on Sidebar/Content page templates"
+msgstr "Área 3 - sidebar-left.php - Visível em templates de Conteúdo/Menu Lateral"
+
+#: includes/functions-sidebar.php:57
+msgid "Area 4 - sidebar-left-half.php - Displays on Sidebar Half Page/Content page templates"
+msgstr "Área 3 - sidebar-left-half.php - Visível em templates de Conteúdo/Menu Lateral de Meia Página"
+
+#: includes/functions-sidebar.php:46
+msgid "Left Sidebar"
+msgstr "Barra lateral esquerda"
+
+#: includes/functions-sidebar.php:37
+msgid "Area 2 - sidebar-right.php - Displays on Content/Sidebar page templates"
+msgstr "Área 2 - sidebar-right.php - Visível em templates de Conteúdo/Menu Lateral"
+
+#: includes/functions-sidebar.php:36
+msgid "Right Sidebar"
+msgstr "Barra lateral direita"
+
+#: includes/functions-sidebar.php:27
+msgid "Area 1 - sidebar.php - Displays on Default, Blog, Blog Excerpt page templates"
+msgstr "Area 1 - sidebar.php - Visível em templates de Página Default, Blogue e Excerto de Página de Blogue"
+
+#: includes/functions-sidebar.php:26
+msgid "Main Sidebar"
+msgstr "Barra lateral principal"
+
+#: includes/functions-plugins.php:43
+msgid "Responsive Theme"
+msgstr "Responsive Theme"
+
+#: includes/functions-meta-box.php:42
+msgid "Page Options"
+msgstr "Opções de página"
+
+#: includes/functions-meta-box.php:31
+msgid "Page Title"
+msgstr "Título da página"
+
+#: includes/functions-extras.php:184
+msgid "Read more %s"
+msgstr "Leia Mais %s "
+
+#: includes/functions-layout.php:104
+msgid "Layout"
+msgstr "Layout"
+
+#: includes/functions-extentions.php:206 includes/functions-extras.php:71
+#: includes/functions-extras.php:105
+msgid "Page %s"
+msgstr "Página: %s"
+
+#: includes/functions-extentions.php:59
+msgid "Error 404"
+msgstr "Erro 404 - Página não encontrada."
+
+#: includes/functions-extentions.php:58
+#: includes/functions-template-tags.php:138
+msgid "View all posts by %s"
+msgstr "Ver todos os posts de %s"
+
+#: includes/functions-extentions.php:57
+msgid "Posts tagged %s"
+msgstr "Posts marcados com %s"
+
+#: includes/functions-extentions.php:55
+msgid "Archive for %s"
+msgstr "Arquivo para %s"
+
+#: includes/functions-extentions.php:56
+msgid "Search results for: %s"
+msgstr "Resultados da busca por: %s"
+
+#: includes/functions-extentions.php:54 template-parts/content-none.php:62
+msgid "Home"
+msgstr "Início"
+
+#: image.php:74
+msgid "Posted in %s"
+msgstr "Publicado em %s"
+
+#: image.php:73
+msgid "Tagged with:"
+msgstr "Marcado com:"
+
+#: image.php:59
+msgid "Read more &#8250;"
+msgstr "Leia mais &#8250;"
+
+#: image.php:61 template-parts/content-excerpt.php:40
+#: template-parts/content-page.php:40 template-parts/content-single.php:37
+#: template-parts/content-sitemap.php:48 template-parts/content.php:57
+msgid "Pages:"
+msgstr "Páginas:"
+
+#: image.php:48 template-parts/post-meta-page.php:33
+#: template-parts/post-meta.php:40
+msgid "1 Comment &darr;"
+msgstr "1 Comentário &darr;"
+
+#: image.php:48 template-parts/post-meta-page.php:33
+#: template-parts/post-meta.php:40
+msgid "% Comments &darr;"
+msgstr "% Comentários &darr;"
+
+#: image.php:37
+msgid "&#8249; Return to"
+msgstr "&#8249; Voltar para"
+
+#: image.php:48 template-parts/post-meta-page.php:33
+#: template-parts/post-meta.php:40
+msgid "No Comments &darr;"
+msgstr "Seja Você o Primeiro a Comentar! &darr;"
+
+#: header.php:48
+msgid "Skip to main menu"
+msgstr "Pular para menu principal"
+
+#: header.php:87
+msgid "Mobile menu toggle"
+msgstr "Toggle menu móvel"
+
+#: header.php:47
+msgid "Skip to content"
+msgstr "Pular para o conteúdo"
+
+#: footer.php:80
+msgid "scroll to top"
+msgstr "rolar para cima"
+
+#: footer.php:80
+msgid "&uarr;"
+msgstr "&uarr;"
+
+#: footer.php:72 includes/functions-plugins.php:44
+msgid "WordPress"
+msgstr "WordPress"
+
+#. Translators: Responsive Theme powered by WordPress
+#: footer.php:70 includes/functions-plugins.php:42
+msgid "%1$s powered by %2$s"
+msgstr "%1$ s por %2$ s"
+
+#: footer.php:71
+msgid "Responsive II"
+msgstr "Responsivo II"
+
+#: core/functions-theme-upsell.php:157
+msgid "Live Preview"
+msgstr "Ver ao vivo"
+
+#: core/functions-theme-upsell.php:153
+msgid "Install Now"
+msgstr "Instalar agora"
+
+#: core/functions-theme-upsell.php:138
+msgid "Already installed"
+msgstr "Já Instalado"
+
+#: core/functions-theme-upsell.php:92
+msgid "Current theme"
+msgstr "Tema atual:"
+
+#: core/functions-theme-upsell.php:57
+msgid "Themes You Can Trust"
+msgstr "Temas Que Pode Confiar"
+
+#: core/functions-theme-upsell.php:29 core/functions-theme-upsell.php:30
+#: includes/functions-theme-options-page.php:86
+#: includes/functions-theme-options-page.php:87
+msgid "More Themes"
+msgstr "Mais temas"
+
+#: core/functions-install.php:144
+msgid "%s is not installed. Please install this plugin manually."
+msgstr "%s não está instalado. Por favor, instale este plugin manualmente."
+
+#: core/functions-install.php:149
+msgid "Hide Notice"
+msgstr "Ocultar o aviso"
+
+#: core/functions-install.php:139
+msgid "Install"
+msgstr "Instalar"
+
+#: core/functions-install.php:134
+msgid "Activate"
+msgstr "Ativar"
+
+#: core/functions-install.php:121
+msgid "This theme recommends the following plugins:"
+msgstr "Este tema recomenda os seguintes plugins:"
+
+#: core/functions-install.php:38 includes/functions-theme-options-page.php:77
+#: includes/functions-theme-options-page.php:78
+msgid "Help"
+msgstr "Ajuda"
+
+#: core/functions-install.php:37 includes/functions-theme-options-page.php:127
+#: libraries/class-responsive-options.php:62
+#: libraries/class-responsive-options.php:63
+#: libraries/class-responsive-options.php:106
+msgid "Theme Options"
+msgstr "Opções do tema"
+
+#: core/functions-install.php:35
+msgid "Visit site"
+msgstr "Visitar site"
+
+#: core/functions-install.php:31
+msgid "Settings saved and %s activated successfully."
+msgstr "Configurações salvas e %s ativado com sucesso."
+
+#: core/functions-install.php:33
+msgid "%s activated successfully."
+msgstr "%s ativado com sucesso."
+
+#: comments.php:101
+msgid "Website"
+msgstr "Site"
+
+#: comments.php:99
+msgid "E-mail"
+msgstr "Email"
+
+#: comments.php:97
+msgid "Name"
+msgstr "Nome"
+
+#: comments.php:79
+msgid "Pings&#47;Trackbacks"
+msgstr "Pings&#47;Trackbacks"
+
+#: comments.php:82
+msgid "%1$d %2$s for \"%3$s\""
+msgstr "%1$d %2$s para \"%3$s\""
+
+#: comments.php:73
+msgid "Comments are closed."
+msgstr "Os comentários estão fechados."
+
+#: comments.php:46 comments.php:63
+msgid "Newer Comments &rarr;"
+msgstr "Comentários recentes &rarr;"
+
+#: comments.php:45 comments.php:62
+msgid "&larr; Older Comments"
+msgstr "&larr; Comentários antigos"
+
+#: comments.php:44 comments.php:61
+msgid "Comment navigation"
+msgstr "Navegação de comentários"
+
+#: comments.php:27
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Este post é protegido por senha. Digite a senha pra ver os comentários."
+
+#. Author URI of the plugin/theme
+msgid "http://cyberchimps.com"
+msgstr "http://cyberchimps.com"
