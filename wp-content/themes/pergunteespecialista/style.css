@@ -92,3 +92,8 @@ article.post:last-of-type{
   padding-right: 10px;
   border-right: 1px dotted #BBB
 }
+
+/* Page Layout */
+article.page h2{
+  font-size: 300%;
+}
