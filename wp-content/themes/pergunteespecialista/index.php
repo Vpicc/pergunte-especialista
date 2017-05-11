@@ -1,7 +1,7 @@
 <?php
 get_header();
 
-query_posts( 'posts_per_page=5' );
+
   if(have_posts()){
     while(have_posts()){the_post();
 

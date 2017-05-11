@@ -18,7 +18,7 @@ p{
   line-height: 1.65em;
 }
 
-/* General Layot*/
+/* General Layout*/
 
 div.container{
   max-width: 920px;
@@ -45,4 +45,50 @@ article.post:last-of-type{
 .site-footer{
   margin-top: 30px;
   border-top: 2px solid #999;
+}
+
+/* Navigation Menus */
+.site-nav ul{
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav ul:before,
+.site-nav ul:after { content: ""; display: table;}
+.site-nav ul:after{clear: both;}
+.site-nav ul {*zoom: 1;}
+
+.site-nav ul li{
+  list-style: none;
+  float:left;
+}
+
+/* Site Header Menu */
+.site-header nav ul li{
+  margin-right: 5px;
+}
+.site-header nav ul li a:link,
+.site-header nav ul li a:visited{
+  display:block;
+  padding: 10px 18px;
+  border: 1px solid black;
+  border-bottom: none;
+  text-decoration: none;
+  background-color: white;
+}
+
+.site-header nav ul li a:hover{
+  background-color: #BBB;
+}
+.site-header nav ul li.current_page_item a:link,
+.site-header nav ul li.current_page_item a:visited{
+  background-color: #006ec3;
+  color: white;
+}
+
+/* Site Footer Menu */
+.site-footer nav ul li {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px dotted #BBB
 }
