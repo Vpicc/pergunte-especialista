@@ -30,6 +30,7 @@ div.container{
 /* Header */
 .site-header{
   border-bottom: 2px solid #999;
+  margin-bottom: 20px;
 }
 
 /* Post */
@@ -81,7 +82,9 @@ article.post:last-of-type{
   background-color: #BBB;
 }
 .site-header nav ul li.current_page_item a:link,
-.site-header nav ul li.current_page_item a:visited{
+.site-header nav ul li.current_page_item a:visited,
+.site-header nav ul li.current-page-ancestor a:link,
+.site-header nav ul li.current-page-ancestor a:visited{
   background-color: #006ec3;
   color: white;
 }
@@ -96,4 +99,42 @@ article.post:last-of-type{
 /* Page Layout */
 article.page h2{
   font-size: 300%;
+}
+
+/* Children Links */
+.children-links{
+  margin-bottom: 20px;
+  font-size: 80%;
+}
+.children-links a:link,
+.children-links a:visited{
+  text-decoration: none;
+}
+children-links ul{
+  float:left;
+}
+
+.children-links li{
+  margin-right: 20px;
+}
+
+.children-links .parent-link{
+  float: left;
+  margin-right: 20px;
+  padding-right: 20px;
+  border-right: 1px solid #DDD;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.children-links .parent-link a:link,
+.children-links .parent-link a:visited{
+  color: #333;
+}
+
+.children-links .current_page_item a:link,
+.children-links .current_page_item a:visited{
+  border-bottom: 1px solid #DDD;
+  color: #333;
+  cursor: default;
 }
