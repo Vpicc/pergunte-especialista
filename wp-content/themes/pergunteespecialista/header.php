@@ -20,8 +20,11 @@
         <?php
         $args = array(
           'theme_location' => 'primary',
+          'echo' => FALSE,
         );
-        wp_nav_menu( $args );
+        $array_menu = wp_nav_menu( $args );
+        echo str_replace("</ul></div>","",$array_menu);
         ?>
+        </ul></div>
       </nav>
     </header><!-- /site-header -->

@@ -83,6 +83,8 @@ article.post:last-of-type{
 }
 .site-header nav ul li.current_page_item a:link,
 .site-header nav ul li.current_page_item a:visited,
+.site-header nav ul li.current-menu-item a:link,
+.site-header nav ul li.current-menu-item a:visited,
 .site-header nav ul li.current-page-ancestor a:link,
 .site-header nav ul li.current-page-ancestor a:visited{
   background-color: #006ec3;
@@ -110,9 +112,9 @@ article.page h2{
 .children-links a:visited{
   text-decoration: none;
 }
-children-links ul{
+/*children-links ul{
   float:left;
-}
+}*/
 
 .children-links li{
   margin-right: 20px;
