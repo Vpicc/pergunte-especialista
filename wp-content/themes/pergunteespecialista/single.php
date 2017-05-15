@@ -34,9 +34,7 @@ get_header();
 
       </p>
 
-    <p><?php echo get_the_excerpt();?>
-        <a href="<?php the_permalink(); ?>">Ler mais&raquo;</a>
-    </p>
+    <h3><?php the_content('Ler mais &raquo;');?></h3>
   </article>
 
 <?php }} else {

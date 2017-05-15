@@ -36,4 +36,11 @@ function has_children(){
   $pages = get_pages('child_of=' . $post->ID);
   return count($pages);
 }
+
+// Customizar o tamanho dos resumos das paginas
+function custom_excerpt_length(){
+  return 55;
+}
+
+add_filter('excerpt_length', 'custom_excerpt_length');
 ?>
