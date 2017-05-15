@@ -140,3 +140,19 @@ article.page h2{
   color: #333;
   cursor: default;
 }
+
+/* Post Styles */
+.post-title {
+  margin-bottom: 0;
+}
+
+p.post-info{
+  font-size: 80%;
+  color: #999;
+  margin-top: 0;
+}
+
+p.post-info a:link,
+p.post-info a:visited{
+  color:#999;
+}
