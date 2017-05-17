@@ -6,7 +6,13 @@ get_header();
     while(have_posts()){the_post();
 
 ?>
-  <article class="post">
+  <article class="post <?php if(has_post_thumbnail()){ ?>has-thumbnail <?php } ?>">
+
+    <!-- post-thumbnail -->
+    <div class="post-thumbnail">
+      <a href="<?php the_permalink() ?>"><?php the_post_thumbnail('small-thumbnail'); ?></a>
+    </div><!-- /post-thumbnail -->
+
     <h2 class="post-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
       <p class="post-info"><?php
         the_time('j');
@@ -34,9 +40,10 @@ get_header();
 
       </p>
 
-    <p><?php echo get_the_excerpt();?>
+      <p><?php echo get_the_excerpt();?>
         <a href="<?php the_permalink(); ?>">Ler mais&raquo;</a>
-    </p>
+      </p>
+
   </article>
 
 <?php }} else {

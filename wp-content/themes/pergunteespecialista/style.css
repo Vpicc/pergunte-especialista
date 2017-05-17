@@ -18,7 +18,7 @@ p{
   line-height: 1.65em;
 }
 
-/* General Layout*/
+/* Layout Geral */
 
 div.container{
   max-width: 920px;
@@ -48,7 +48,7 @@ article.post:last-of-type{
   border-top: 2px solid #999;
 }
 
-/* Navigation Menus */
+/* Menus de navegacao */
 .site-nav ul{
   margin: 0;
   padding: 0;
@@ -92,13 +92,13 @@ article.post:last-of-type{
 }
 
 /* Site Footer Menu */
-.site-footer nav ul li {
+.site-footer nav ul li{
   margin-right: 10px;
   padding-right: 10px;
   border-right: 1px dotted #BBB
 }
 
-/* Page Layout */
+/* Layout da pagina */
 article.page h2{
   font-size: 300%;
 }
@@ -142,7 +142,7 @@ article.page h2{
 }
 
 /* Post Styles */
-.post-title {
+.post-title{
   margin-bottom: 0;
 }
 
@@ -155,4 +155,22 @@ p.post-info{
 p.post-info a:link,
 p.post-info a:visited{
   color:#999;
+}
+
+/* Estilos de Imagem */
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+.has-thumbnail{
+  position: relative;
+  padding-left: 200px;
+}
+
+.post-thumbnail{
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 3px solid #DDD;
 }

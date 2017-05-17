@@ -7,6 +7,9 @@ get_header();
 
 ?>
   <article class="post">
+
+
+
     <h2 class="post-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
       <p class="post-info"><?php
         the_time('j');
@@ -34,7 +37,13 @@ get_header();
 
       </p>
 
-    <h3><?php the_content('Ler mais &raquo;');?></h3>
+      <!-- post-thumbnail -->
+      <div>
+        <?php the_post_thumbnail('banner-image'); ?>
+      </div><!-- /post-thumbnail -->
+      
+      <?php the_content();?>
+
   </article>
 
 <?php }} else {
