@@ -172,5 +172,20 @@ img{
   position: absolute;
   top: 0;
   left: 0;
-  border: 3px solid #DDD;
+}
+
+/* Pesquisa */
+div.hd-search{
+  float: right;
+}
+
+div.hd-search label span{
+  opacity: 0;
+}
+
+div.hd-search #searchsubmit{
+  background-color: #006ec3;
+  color: #fff;
+  padding: 5px 14px;
+  border: none;
 }
