@@ -189,3 +189,46 @@ div.hd-search #searchsubmit{
   padding: 5px 14px;
   border: none;
 }
+
+/* Estilos de Nota */
+article.post-aside,
+article.post-link{
+  font-size: 125%;
+  background-color: #FFF5CB;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, .1);
+  border-bottom:0;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+article.post-aside p{
+  margin: 0px;
+}
+
+/* Estilos de Post de Link */
+article.post-link{
+  padding:10px;
+  background-color: #E0EBFF;
+}
+
+.mini-meta{
+  font-size: 68%;
+  margin: 0;
+  color: #777;
+}
+
+
+/* Estilos de Galeria */
+
+article.post-gallery{
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+}
+
+article.post-gallery h2{
+  text-align: center;
+  margin: 0;
+}

@@ -6,7 +6,7 @@ get_header();
     <h2>Resultados da Pesquisa: <?php the_search_query(); ?></h2>
     <?php
     while(have_posts()){the_post();
-      get_template_part( 'content');
+      get_template_part( 'content', get_post_format());
     ?>
 
 

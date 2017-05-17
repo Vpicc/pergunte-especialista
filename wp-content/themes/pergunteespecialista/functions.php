@@ -40,7 +40,7 @@ function custom_excerpt_length(){
 
 add_filter('excerpt_length', 'custom_excerpt_length');
 
-
+// Setup do tema
 function pergunteEspecialista_setup(){
 
   // Menus de navegacao
@@ -53,6 +53,9 @@ function pergunteEspecialista_setup(){
   add_theme_support( 'post-thumbnails');
   add_image_size( 'small-thumbnail', 180, 120, true );
   add_image_size('banner-image', 920, 210, array('left','top'));
+
+  //Adiciona suporte a formato de post
+  add_theme_support( 'post-formats', array('aside', 'gallery', 'link'));
 }
 
 add_action( 'after_setup_theme','pergunteEspecialista_setup');
