@@ -18,8 +18,10 @@
 
   <div class="front-posts">
     <?php // Loop dos ultimos posts
+    if ( get_query_var( 'paged' ) ) { $ourCurrentPage = get_query_var( 'paged' ); }
+    elseif ( get_query_var( 'page' ) ) { $ourCurrentPage = get_query_var( 'page' ); }
+    else { $ourCurrentPage = 1; }
 
-    $ourCurrentPage = get_query_var('page');
 
     $allPosts = new WP_Query(array(
       'post_type'=> 'post',
