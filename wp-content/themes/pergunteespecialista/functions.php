@@ -110,4 +110,97 @@ function initWidgets(){
 }
 add_action('widgets_init', 'initWidgets');
 
+// Opcoes para customizar aparencia
+function pergunteEspecialista_customize_register($wp_customize){
+
+  // Cor de links
+  $wp_customize->add_setting('pe_link_color', array(
+    'default'=> '#006ec3',
+    'transport'=> 'refresh',
+  ));
+
+  $wp_customize->add_section('pe_standard_colors', array(
+    'title'=> __('Cores Padrão', 'Pergunte a um Especialista'),
+    'priority'=> 30,
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'pe_link_color_control', array(
+    'label'=> __('Cores de Links','Pergunte a um Especialista'),
+    'section'=> 'pe_standard_colors',
+    'settings'=> 'pe_link_color',
+  )));
+
+  // Cor de botoes
+  $wp_customize->add_setting('pe_button_color', array(
+    'default'=> '#006ec3',
+    'transport'=> 'refresh',
+  ));
+
+  $wp_customize->add_section('pe_standard_colors', array(
+    'title'=> __('Cores Padrão', 'Pergunte a um Especialista'),
+    'priority'=> 30,
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'pe_button_color_control', array(
+    'label'=> __('Cores de Botões','Pergunte a um Especialista'),
+    'section'=> 'pe_standard_colors',
+    'settings'=> 'pe_button_color',
+  )));
+
+  // Cor de Highlight de botoes
+  $wp_customize->add_setting('pe_highlightbtn_color', array(
+    'default'=> '#0046a3',
+    'transport'=> 'refresh',
+  ));
+
+  $wp_customize->add_section('pe_standard_colors', array(
+    'title'=> __('Cores Padrão', 'Pergunte a um Especialista'),
+    'priority'=> 30,
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'pe_highlightbtn_color_control', array(
+    'label'=> __('Cor de Hover em Botão','Pergunte a um Especialista'),
+    'section'=> 'pe_standard_colors',
+    'settings'=> 'pe_highlightbtn_color',
+  )));
+
+
+}
+
+add_action('customize_register', 'pergunteEspecialista_customize_register');
+
+// Saida de customizacao de CSS
+function pergunteEspecialista_customize_css(){ ?>
+
+    <style type="text/css">
+      /* Cor de links */
+      a:link,
+      a:visited{
+          color: <?php echo get_theme_mod('pe_link_color'); ?>
+      }
+      .site-header nav ul li.current_page_item a:link,
+      .site-header nav ul li.current_page_item a:visited,
+      .site-header nav ul li.current-menu-item a:link,
+      .site-header nav ul li.current-menu-item a:visited,
+      .site-header nav ul li.current-page-ancestor a:link,
+      .site-header nav ul li.current-page-ancestor a:visited{
+        background-color: <?php echo get_theme_mod('pe_link_color'); ?>;
+      }
+
+      /* Cor de botoes */
+      div.hd-search #searchsubmit{
+        background-color: <?php echo get_theme_mod('pe_button_color');?>;
+      }
+
+      /* Cor de Highlight de botao*/
+      div.hd-search #searchsubmit:hover{
+        background-color: <?php echo get_theme_mod('pe_highlightbtn_color');?>;
+      }
+
+
+    </style>
+
+<?php }
+
+add_action('wp_head', 'pergunteEspecialista_customize_css');
 ?>

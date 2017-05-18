@@ -214,6 +214,10 @@ div.hd-search #searchsubmit{
   border: none;
 }
 
+div.hd-search #searchsubmit:hover{
+  background-color: #0046a3;
+}
+
 /* Estilos de Nota */
 article.post-aside,
 article.post-link{
