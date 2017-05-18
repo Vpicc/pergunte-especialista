@@ -119,6 +119,7 @@ article.post:last-of-type{
 
 /* Layout da pagina */
 article.page h2{
+  margin-top: 0;
   font-size: 300%;
 }
 
@@ -260,4 +261,17 @@ article.post-gallery h2{
 .clearfix{
   overflow: auto;
   zoom: 1;
+}
+
+/* Front Page */
+.front-page h2{
+  font-size: 270%;
+  text-align: center;
+  margin-top: 0;
+}
+
+.front-page p{
+  font-size: 14px;
+  text-align: center;
+  font-weight: normal;
 }

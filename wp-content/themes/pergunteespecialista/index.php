@@ -1,5 +1,5 @@
-<?php
-get_header(); ?>
+<?php get_header(); ?>
+
 <div class="site-content clearfix">
 
   <?php if(is_active_sidebar('sidebar1')){ ?>
