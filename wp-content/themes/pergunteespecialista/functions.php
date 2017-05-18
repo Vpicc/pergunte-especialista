@@ -265,4 +265,5 @@ function pergunteEspecialista_footer_callout($wp_customize){
 }
 
 add_action('customize_register', 'pergunteEspecialista_footer_callout');
+
 ?>

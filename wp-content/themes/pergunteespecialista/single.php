@@ -48,7 +48,11 @@ get_header();
 
 <?php }
 
-echo paginate_links();
+if(comments_open()){
+  comments_template();
+}
+
+
 
 } else {
     echo 'Não foi encontrado nenhum post</p>';

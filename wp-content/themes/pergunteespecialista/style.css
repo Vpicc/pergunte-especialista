@@ -59,6 +59,10 @@ article.post:last-of-type{
   border-top: 2px solid #999;
 }
 
+.footer-text{
+  text-align: center;
+}
+
 /* Area de Widget do Footer */
 .footer-widgets-area{
   width: 25%;
@@ -311,4 +315,21 @@ article.post-gallery h2{
 
 .footer-callout-text p{
   font-size: 0.9rem;
+}
+
+/* Comentarios */
+.comment-body{
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px dotted #ddd;
+}
+
+.comments-area{
+  border-top: 2px solid #BBB;
+  margin-top: 10px;
+}
+
+.nav-link{
+  border-bottom: 2px solid #bbb;
+  padding-bottom: 20px;
 }

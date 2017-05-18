@@ -39,7 +39,8 @@
       <?php } ?>
 
     </div>
-      <p><?php bloginfo('name');?> - &copy; <?php echo date('Y');?></p>
+
+      <p class="footer-text"><?php bloginfo('name');?> - &copy; <?php echo date('Y');?></p>
 
       <?php
       $args = array(
