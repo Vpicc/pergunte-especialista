@@ -41,12 +41,16 @@ get_header();
       <div>
         <?php the_post_thumbnail('banner-image'); ?>
       </div><!-- /post-thumbnail -->
-      
+
       <?php the_content();?>
 
   </article>
 
-<?php }} else {
+<?php }
+
+echo paginate_links();
+
+} else {
     echo 'Não foi encontrado nenhum post</p>';
   }
 

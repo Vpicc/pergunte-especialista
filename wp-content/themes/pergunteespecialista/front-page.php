@@ -19,13 +19,28 @@
   <div class="front-posts">
     <?php // Loop dos ultimos posts
 
-    $allPosts = new WP_Query('post_type=post&posts_per_page=4');
+    $ourCurrentPage = get_query_var('page');
+
+    $allPosts = new WP_Query(array(
+      'post_type'=> 'post',
+      'posts_per_page'=> 4,
+      'paged'=> $ourCurrentPage
+    ));
     if($allPosts->have_posts()){
       while($allPosts->have_posts()){ $allPosts->the_post(); ?>
 
         <?php get_template_part('content', get_post_format()); ?>
 
-      <?php }} else {
+      <?php }
+
+      echo paginate_links(array(
+        'total'=> $allPosts->max_num_pages,
+        'current'=> $ourCurrentPage,
+        'prev_next'=> true
+      ));
+
+
+    } else {
         echo 'Não foi encontrado nenhum post</p>';
       }
     wp_reset_postdata();

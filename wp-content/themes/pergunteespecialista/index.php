@@ -10,7 +10,11 @@
           get_template_part('content', get_post_format());
         ?>
 
-      <?php }} else {
+      <?php }
+
+      echo paginate_links();
+
+    } else {
         echo 'Não foi encontrado nenhum post</p>';
       }?>
 
@@ -24,9 +28,13 @@
       get_template_part('content', get_post_format());
     ?>
 
-  <?php }} else {
+  <?php }
+
+  echo paginate_links();
+
+  } else {
     echo 'Não foi encontrado nenhum post</p>';
-  }} ?>
+  }}  ?>
 
 
 <?php get_footer(); ?>

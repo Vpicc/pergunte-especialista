@@ -10,7 +10,9 @@ get_header();
     ?>
 
 
-<?php }} else {
+<?php }
+  echo paginate_links();
+} else {
     echo 'Não foi encontrado nenhum post</p>';
   }
 
