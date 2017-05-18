@@ -12,7 +12,7 @@
         </div>
     </div>
     <?php } ?>
-    <div class="footer-widgets">
+    <div class="footer-widgets clearfix">
 
       <?php if (is_active_sidebar('footer1')){ ?>
         <div class="footer-widgets-area">
@@ -40,7 +40,7 @@
 
     </div>
 
-      <p class="footer-text"><?php bloginfo('name');?> - &copy; <?php echo date('Y');?></p>
+      <p class="footer-text clearfix"><?php bloginfo('name');?> - &copy; <?php echo date('Y');?></p>
 
       <?php
       $args = array(
