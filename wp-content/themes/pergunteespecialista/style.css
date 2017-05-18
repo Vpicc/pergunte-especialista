@@ -21,7 +21,7 @@ p{
 /* Layout Geral */
 
 div.container{
-  max-width: 920px;
+  max-width: 1200px;
   margin: 0 auto;
   padding-left: 20px;
   padding-right: 20px;
@@ -31,6 +31,17 @@ div.container{
 .site-header{
   border-bottom: 2px solid #999;
   margin-bottom: 20px;
+}
+/* Coluna Principal */
+.main-column{
+  width: 80%;
+  float:left;
+}
+
+/* Coluna da Lateral */
+.secondary-column{
+  width: 17%;
+  float: right;
 }
 
 /* Post */
@@ -46,6 +57,14 @@ article.post:last-of-type{
 .site-footer{
   margin-top: 30px;
   border-top: 2px solid #999;
+}
+
+/* Area de Widget do Footer */
+.footer-widgets-area{
+  width: 25%;
+  float: left;
+  padding-right: 40px;
+  box-sizing: border-box;
 }
 
 /* Menus de navegacao */
@@ -103,6 +122,10 @@ article.page h2{
   font-size: 300%;
 }
 
+article.page p{
+  font-size: 14px;
+  font-weight: normal;
+}
 /* Children Links */
 .children-links{
   margin-bottom: 20px;
@@ -231,4 +254,10 @@ article.post-gallery{
 article.post-gallery h2{
   text-align: center;
   margin: 0;
+}
+
+/* Clearfix */
+.clearfix{
+  overflow: auto;
+  zoom: 1;
 }
