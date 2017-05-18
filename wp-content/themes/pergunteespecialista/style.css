@@ -275,3 +275,9 @@ article.post-gallery h2{
   text-align: center;
   font-weight: normal;
 }
+
+.front-posts{
+  margin-top: 20px;
+  border-top: 2px solid #bbbbbb;
+  padding-top: 20px;
+}
