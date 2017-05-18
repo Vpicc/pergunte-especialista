@@ -110,7 +110,7 @@ function initWidgets(){
 }
 add_action('widgets_init', 'initWidgets');
 
-// Opcoes para customizar aparencia
+// Opcoes para customizar cores
 function pergunteEspecialista_customize_register($wp_customize){
 
   // Cor de links
@@ -136,11 +136,6 @@ function pergunteEspecialista_customize_register($wp_customize){
     'transport'=> 'refresh',
   ));
 
-  $wp_customize->add_section('pe_standard_colors', array(
-    'title'=> __('Cores Padrão', 'Pergunte a um Especialista'),
-    'priority'=> 30,
-  ));
-
   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'pe_button_color_control', array(
     'label'=> __('Cores de Botões','Pergunte a um Especialista'),
     'section'=> 'pe_standard_colors',
@@ -151,11 +146,6 @@ function pergunteEspecialista_customize_register($wp_customize){
   $wp_customize->add_setting('pe_highlightbtn_color', array(
     'default'=> '#0046a3',
     'transport'=> 'refresh',
-  ));
-
-  $wp_customize->add_section('pe_standard_colors', array(
-    'title'=> __('Cores Padrão', 'Pergunte a um Especialista'),
-    'priority'=> 30,
   ));
 
   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'pe_highlightbtn_color_control', array(
@@ -203,4 +193,76 @@ function pergunteEspecialista_customize_css(){ ?>
 <?php }
 
 add_action('wp_head', 'pergunteEspecialista_customize_css');
+
+// Adiciona Customizacao de footer callout
+function pergunteEspecialista_footer_callout($wp_customize){
+  $wp_customize->add_section('pe_footer_callout_section', array(
+    'title' => __('Chamada no Footer', 'Pergunte a um Especialista'),
+  ));
+
+  // Pergunta se quer ou nao exibir
+  $wp_customize->add_setting('pe_footer_callout_display', array(
+    'default'=> 'No',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_footer_callout_display_control', array(
+     'label'=> 'Exibir a chamada no Footer?',
+     'section'=> 'pe_footer_callout_section',
+     'settings'=> 'pe_footer_callout_display',
+     'type'=> 'select',
+     'choices'=> array('No'=> 'Não', 'Yes'=>'Sim')
+  )));
+
+  // Titulo
+  $wp_customize->add_setting('pe_footer_callout_headline', array(
+    'default'=> 'Exemplo de título',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_footer_callout_headline_control', array(
+     'label'=> 'Título',
+     'section'=> 'pe_footer_callout_section',
+     'settings'=> 'pe_footer_callout_headline'
+   )));
+
+   // Texto
+
+   $wp_customize->add_setting('pe_footer_callout_text', array(
+     'default'=> 'Exemplo de texto',
+   ));
+
+   $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+    'pe_footer_callout_text_control', array(
+      'label'=> 'Título',
+      'section'=> 'pe_footer_callout_section',
+      'settings'=> 'pe_footer_callout_text',
+      'type'=> 'textarea'
+    )));
+
+    // Link
+    $wp_customize->add_setting('pe_footer_callout_link');
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+     'pe_footer_callout_link_control', array(
+       'label'=> 'Link',
+       'section'=> 'pe_footer_callout_section',
+       'settings'=> 'pe_footer_callout_link',
+       'type'=> 'dropdown-pages'
+     )));
+
+     // Imagem
+     $wp_customize->add_setting('pe_footer_callout_image');
+
+     $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize,
+      'pe_footer_callout_image_control', array(
+        'label'=> 'Imagem',
+        'section'=> 'pe_footer_callout_section',
+        'settings'=> 'pe_footer_callout_image',
+        'width'=> 750,
+        'height'=> 500
+      )));
+}
+
+add_action('customize_register', 'pergunteEspecialista_footer_callout');
 ?>

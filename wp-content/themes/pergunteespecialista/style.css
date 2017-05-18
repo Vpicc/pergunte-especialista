@@ -285,3 +285,30 @@ article.post-gallery h2{
   border-top: 2px solid #bbbbbb;
   padding-top: 20px;
 }
+
+/* Footer Callout */
+.footer-callout{
+  background-color: #DDD;
+  padding: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-callout-image{
+  float: left;
+  width: 30%;
+}
+
+.footer-callout-text{
+  float: right;
+  width: 67%;
+}
+
+.footer-callout-text h2{
+  font-size: 1.7rem;
+  margin-bottom: 0.35rem;
+}
+
+.footer-callout-text p{
+  font-size: 0.9rem;
+}

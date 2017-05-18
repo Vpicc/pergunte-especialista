@@ -1,4 +1,17 @@
   <footer class="site-footer">
+
+    <?php if(get_theme_mod('pe_footer_callout_display') == "Yes"){?>
+    <div class="footer-callout clearfix">
+        <div class="footer-callout-image">
+          <img src="<?php echo wp_get_attachment_url(get_theme_mod('pe_footer_callout_image')); ?>">
+        </div>
+        <div class="footer-callout-text">
+          <h2><a href="<?php echo get_permalink(get_theme_mod('pe_footer_callout_link')); ?>">
+            <?php echo get_theme_mod('pe_footer_callout_headline'); ?></a></h2>
+            <?php echo wpautop(get_theme_mod('pe_footer_callout_text')); ?>
+        </div>
+    </div>
+    <?php } ?>
     <div class="footer-widgets">
 
       <?php if (is_active_sidebar('footer1')){ ?>
