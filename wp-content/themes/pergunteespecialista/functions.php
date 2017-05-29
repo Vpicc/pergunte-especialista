@@ -3,11 +3,12 @@
 // styles da pagina
 function pergunteEspecialista_resources(){
 
+	wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' );
   wp_enqueue_style('style', get_stylesheet_uri());
 
 }
 
-//adiciona style
+//adiciona style e bootstrap
 add_action('wp_enqueue_scripts', 'pergunteEspecialista_resources');
 
 
