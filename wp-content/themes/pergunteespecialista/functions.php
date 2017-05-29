@@ -51,8 +51,8 @@ function pergunteEspecialista_setup(){
 
   // Adicionar suporte a imagem destacada
   add_theme_support( 'post-thumbnails');
-  add_image_size( 'small-thumbnail', 180, 120, true );
-  add_image_size('banner-image', 920, 210, array('left','top'));
+  add_image_size( 'small-thumbnail', 360, 240, true );
+  add_image_size('banner-image', 1200, 210, array('left','top'));
 
   //Adiciona suporte a formato de post
   add_theme_support( 'post-formats', array('aside', 'gallery', 'link'));
