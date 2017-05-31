@@ -12,7 +12,7 @@ if($slides->have_posts()){ ?>
     <ul class="bxslider">
   <?php while($slides->have_posts()){ $slides->the_post(); ?>
       <li>
-        <?php the_post_thumbnail('slides'); ?>
+        <?php the_post_thumbnail('slides'); ?></a>
       </li>
 
 <?php } ?>

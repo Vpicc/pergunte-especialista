@@ -352,3 +352,10 @@ article.post-gallery h2{
   border-bottom: 2px solid #bbb;
   padding-bottom: 20px;
 }
+
+/* Numeros de paginas */
+.page-numbers{
+  background-color: #FFF;
+  padding: 5px 10px;
+  border: 1px solid #999;
+}
