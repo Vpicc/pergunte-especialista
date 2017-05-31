@@ -47,7 +47,7 @@
         'theme_location' => 'footer'
       );
       ?>
-      <nav class="site-nav">
+      <nav class="footer-menu">
         <?php wp_nav_menu( $args ); ?>
       </nav>
   </footer>

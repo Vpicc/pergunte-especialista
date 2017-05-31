@@ -36,7 +36,7 @@ if(post_password_required()){
     </p>
   <?php } ?>
   <?php if(get_comment_pages_count() > 1 && get_option('page_comments')){ ?>
-        <nav id="comment-nav-top" class="comment-navigation" role="navigation">
+        <nav id="comment-nav" class="comment-navigation" role="navigation">
           <div class="nav-link">
             <?php echo get_the_comments_pagination(); ?>
           </div>

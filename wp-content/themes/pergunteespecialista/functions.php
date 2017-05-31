@@ -3,8 +3,18 @@
 // styles da pagina
 function pergunteEspecialista_resources(){
 
-	wp_enqueue_style( 'bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' );
+	// global.js
+	wp_register_script('global-js', get_template_directory_uri() . '/lib/js/global.js', array('jquery'), '1.0', true);
+	wp_enqueue_script('global-js');
+	// bxslider
+	wp_register_script('bxslider', get_template_directory_uri() . '/lib/js/jquery.bxslider.min.js', array('jquery'), '4.2.12', true);
+	wp_register_style('bxslider', get_template_directory_uri() . '/lib/css/jquery.bxslider.min.css', array(), '4.2.12');
+	// bootstrap
+	wp_enqueue_style('bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' );
+	// style.css
   wp_enqueue_style('style', get_stylesheet_uri());
+	wp_enqueue_style('bxslider');
+	wp_enqueue_script('bxslider');
 
 }
 
@@ -54,7 +64,8 @@ function pergunteEspecialista_setup(){
   add_theme_support( 'post-thumbnails');
   add_image_size( 'small-thumbnail', 360, 240, true );
   add_image_size('banner-image', 1200, 210, array('left','top'));
-
+	// Imagens de Slider
+	add_image_size('slides', 1200, 400, true);
   //Adiciona suporte a formato de post
   add_theme_support( 'post-formats', array('aside', 'gallery', 'link'));
 }
@@ -267,4 +278,41 @@ function pergunteEspecialista_footer_callout($wp_customize){
 
 add_action('customize_register', 'pergunteEspecialista_footer_callout');
 
+// Tipos de posts customizados
+
+function pergunteEspecialista_custom_post_type(){
+
+	$labels = array(
+		'name' => 'Slider',
+		'singular_name' => 'Slider',
+		'add_new' => 'Adicionar Nova Imagem',
+		'all_items' => 'Todas as Imagens',
+		'add_new_item' => 'Adicionar Nova Imagem',
+		'edit_item' => 'Editar Item',
+		'new_item' => 'Novo Item',
+		'view_item' => 'Ver Item',
+		'search_item' => 'Procurar Slider',
+		'not_found' => 'Não foi encontrado nenhum item',
+		'not_found_in_trash' => 'Não foi encontrado nenhum item na lixeira',
+		'parent_item_colon' => 'Item Parente'
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'has_archive' => false,
+		'publicly_queryable' => true,
+		'query_var' => true,
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'supports' => array(
+			'thumbnail',
+			'title'
+		),
+		'menu_position' => 5,
+		'exclude_from_search' => true
+	);
+	register_post_type('slider', $args);
+}
+
+add_action('init','pergunteEspecialista_custom_post_type');
 ?>

@@ -1,7 +1,27 @@
 <?php get_header(); ?>
+
+<?php
+// adiciona slider
+$args = array(
+  'post_type' => 'slider',
+  'orderby' => 'menu_order',
+  'posts_per_page' => -1
+);
+$slides =new WP_Query($args);
+if($slides->have_posts()){ ?>
+    <ul class="bxslider">
+  <?php while($slides->have_posts()){ $slides->the_post(); ?>
+      <li>
+        <?php the_post_thumbnail('slides'); ?>
+      </li>
+
+<?php } ?>
+    </ul>
+<?php } // fim de slider?>
+
+
 <?php if(is_active_sidebar('sidebar1')){ ?>
   <div class="front-page clearfix">
-
     <?php
     if(have_posts()){
     while(have_posts()){ the_post();
@@ -41,11 +61,11 @@
         'prev_next'=> true
       ));
 
-
     } else {
         echo 'Não foi encontrado nenhum post</p>';
       }
     wp_reset_postdata();
     ?>
+
   </div>
 <?php get_footer(); ?>
