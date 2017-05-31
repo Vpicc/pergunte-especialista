@@ -315,4 +315,8 @@ function pergunteEspecialista_custom_post_type(){
 }
 
 add_action('init','pergunteEspecialista_custom_post_type');
+
+
+
+
 ?>

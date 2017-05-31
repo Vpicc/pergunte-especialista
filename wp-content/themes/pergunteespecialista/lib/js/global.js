@@ -2,6 +2,7 @@
 jQuery(document).ready(function($){
   'use strict';
 
+  // Slider
   $(document).ready(function(){
   $('.bxslider').bxSlider({
     pause: 7000,
@@ -10,8 +11,11 @@ jQuery(document).ready(function($){
     auto: true,
     pager: false,
     autoHover: true,
-
   });
+
+  // Submissao de Perguntas
+  //$('#contact-form').on('submit')
+
 });
 
 
