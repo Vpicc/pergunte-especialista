@@ -12,11 +12,21 @@ jQuery(document).ready(function($){
     pager: false,
     autoHover: true,
   });
-
-  // Submissao de Perguntas
-  //$('#contact-form').on('submit')
-
 });
+// Submissao de Perguntas
+$('#contact-form-pergunta').on('submit', function(e){
 
+  e.preventDefault();
+
+  var form = $(this);
+
+  var name = form.find('#name').val(),
+      email = form.find('#email').val(),
+      message = tinyMCE.activeEditor.getContent();;
+
+  console.log(message);
+  console.log(email);
+  console.log(name);
+});
 
 }(jQuery));

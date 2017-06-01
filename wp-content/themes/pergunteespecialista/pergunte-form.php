@@ -1,4 +1,4 @@
-<form id="contact-form" action="#" method="POST" enctype="multipart/form-data">
+<form id="contact-form-pergunta" action="#" method="POST" enctype="multipart/form-data">
 	<div class="row">
 		<label for="name">Nome:</label><br />
 		<input id="name" class="input" name="name" type="text" value="" size="30" /><br />
@@ -9,8 +9,10 @@
 	</div>
 	<div class="row">
 		<label for="message">Mensagem:</label><br />
-    <?php
-    wp_editor( '', 'my_id', array( 'media_buttons' => true, 'textarea_rows' => 5, 'tinymce' => array( 'plugins' => 'wordpress' ) ) );  ?>
+
+      <?php
+      wp_editor( '', 'message', array( 'media_buttons' => true, 'textarea_name' => 'message' , 'textarea_rows' => 5) );  ?>
+
 	</div>
 	<input id="submit_button" type="submit" value="Send email" />
 
