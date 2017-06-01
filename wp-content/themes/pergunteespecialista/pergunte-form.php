@@ -1,4 +1,4 @@
-<form id="contact-form-pergunta" action="#" method="POST" enctype="multipart/form-data">
+<form id="contact-form-pergunta" action=# method="POST" data-url="<?php echo admin_url('admin-ajax.php'); ?>">
 	<div class="row">
 		<label for="name">Nome:</label><br />
 		<input id="name" class="input" name="name" type="text" value="" size="30" /><br />
@@ -14,6 +14,7 @@
       wp_editor( '', 'message', array( 'media_buttons' => true, 'textarea_name' => 'message' , 'textarea_rows' => 5) );  ?>
 
 	</div>
-	<input id="submit_button" type="submit" value="Send email" />
+	<input id="submit_button" type="submit" value="Mandar" />
+		<input type="hidden" name="submitted" id="submitted" value="true" />
 
 </form>

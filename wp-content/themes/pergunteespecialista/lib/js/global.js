@@ -22,8 +22,31 @@ $('#contact-form-pergunta').on('submit', function(e){
 
   var name = form.find('#name').val(),
       email = form.find('#email').val(),
-      message = tinyMCE.activeEditor.getContent();;
+      message = tinyMCE.activeEditor.getContent(),
+      ajaxurl = form.data('url');
 
+  if(name === '' || email === '' || message === ''){
+    console.log('Todos os campos devem ser preenchidos');
+    return;
+  }
+
+  $.ajax({
+    url : ajaxurl,
+    type: 'post',
+    data: {
+      name : name,
+      email : email,
+      message : message,
+      action : 'pergunteEspecialistaSaveUserContactForm'
+    },
+    error : function(response){
+      console.log(response);
+    },
+    success : function(response){
+
+    }
+  });
+  console.log(ajaxurl);
   console.log(message);
   console.log(email);
   console.log(name);

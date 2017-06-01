@@ -316,6 +316,25 @@ function pergunteEspecialista_custom_post_type(){
 
 add_action('init','pergunteEspecialista_custom_post_type');
 
+// Perguntas
+
+function pergunteEspecialistaSaveUserContactForm(){
+
+	$title = wp_strip_all_tags($_POST["name"]);
+	$email = wp_strip_all_tags($_POST["email"]);
+	$message = $_POST["message"];
+
+	wp_insert_post();
+
+	echo $title . ',' . $email . ',' . $message;
+
+	die();
+
+}
+
+
+add_action('wp_ajax_nopriv_pergunteEspecialistaSaveUserContactForm', 'pergunteEspecialistaSaveUserContactForm');
+add_action('pergunteEspecialistaSaveUserContactForm', 'pergunteEspecialistaSaveUserContactForm');
 
 
 
