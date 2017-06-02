@@ -43,7 +43,11 @@ $('#contact-form-pergunta').on('submit', function(e){
       console.log(response);
     },
     success : function(response){
-
+      if( response == 0){
+        console.log('Nao foi possivel salvar sua mensagem');
+      } else {
+        console.log('Mensagem salva!');
+      }
     }
   });
   console.log(ajaxurl);
