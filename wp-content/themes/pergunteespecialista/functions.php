@@ -440,7 +440,7 @@ function pergunteEspecialista_save_contact_email_data($post_id){
 		return;
 	}
 
-	if(!wp_verify_nonce('pergunteEspecialista_email_meta_box_nonce','pergunteEspecialista_save_contact_email_data')){
+	if(!wp_verify_nonce($_POST['pergunteEspecialista_email_meta_box_nonce'],'pergunteEspecialista_save_contact_email_data')){
 		return;
 	}
 
