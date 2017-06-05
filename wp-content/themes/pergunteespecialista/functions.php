@@ -291,7 +291,7 @@ function pergunteEspecialista_custom_post_type(){
 		'edit_item' => 'Editar Item',
 		'new_item' => 'Novo Item',
 		'view_item' => 'Ver Item',
-		'search_item' => 'Procurar Slider',
+		'search_items' => 'Procurar Slider',
 		'not_found' => 'Não foi encontrado nenhum item',
 		'not_found_in_trash' => 'Não foi encontrado nenhum item na lixeira',
 		'parent_item_colon' => 'Item Parente'
@@ -319,35 +319,6 @@ add_action('init','pergunteEspecialista_custom_post_type');
 
 // Perguntas
 
-function pergunteEspecialistaSaveUserContactForm(){
-
-	$title = wp_strip_all_tags($_POST["name"]);
-	$email = wp_strip_all_tags($_POST["email"]);
-	$message = $_POST["message"];
-
-$args = array(
-	'post_title' => $title,
-	'post_content' => $message,
-	'post_author' => 1,
-	'post_type' => 'contact-pergunta',
-	'meta_input' => array(
-		'contact_email' => $email
-	)
-
-);
-
-	$postID = wp_insert_post($args, $wp_error);
-
-	echo $postID;
-
-	die();
-
-}
-
-
-add_action('wp_ajax_nopriv_pergunteEspecialistaSaveUserContactForm', 'pergunteEspecialistaSaveUserContactForm');
-add_action('pergunteEspecialistaSaveUserContactForm', 'pergunteEspecialistaSaveUserContactForm');
-
 // Post type de perguntas
 function pergunteEspecialista_perguntas_post_type(){
 
@@ -360,7 +331,7 @@ function pergunteEspecialista_perguntas_post_type(){
 			'edit_item' => 'Editar Item',
 			'new_item' => 'Novo Item',
 			'view_item' => 'Ver Item',
-			'search_item' => 'Procurar Pergunta',
+			'search_items' => 'Procurar Pergunta',
 			'not_found' => 'Não foi encontrado nenhum item',
 			'not_found_in_trash' => 'Não foi encontrado nenhum item na lixeira',
 			'parent_item_colon' => 'Item Parente'
@@ -381,6 +352,39 @@ function pergunteEspecialista_perguntas_post_type(){
 		);
 		register_post_type('contact-pergunta', $args);
 }
+
+// Salva o Form
+function pergunteEspecialistaSaveUserContactForm(){
+
+	$title = wp_strip_all_tags($_POST["name"]);
+	$email = wp_strip_all_tags($_POST["email"]);
+	$message = $_POST["message"];
+
+$args = array(
+	'post_title' => $title,
+	'post_content' => $message,
+	'post_author' => 1,
+	'post_type' => 'contact-pergunta',
+	'meta_input' => array(
+		'_contact_email_value_key' => $email,
+	)
+
+);
+
+	$postID = wp_insert_post($args);
+
+
+	echo $postID;
+
+	die();
+
+
+}
+
+
+add_action('wp_ajax_nopriv_pergunteEspecialistaSaveUserContactForm', 'pergunteEspecialistaSaveUserContactForm');
+add_action('wp_ajax_pergunteEspecialistaSaveUserContactForm', 'pergunteEspecialistaSaveUserContactForm');
+
 
 // Gera as colunas do post type
 add_action('init','pergunteEspecialista_perguntas_post_type');
@@ -403,6 +407,7 @@ function pergunteEspecialista_perguntas_custom_column($column, $post_id){
 	switch($column){
 
 		case 'message':
+
 			echo get_the_excerpt();
 			break;
 
