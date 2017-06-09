@@ -19,10 +19,8 @@ function pergunteEspecialista_resources(){
 
 }
 
-//adiciona style e bootstrap
+// adiciona style e bootstrap
 add_action('wp_enqueue_scripts', 'pergunteEspecialista_resources');
-
-
 
 // Pegar o ancestral da pagina
 function get_top_ancestor_id() {

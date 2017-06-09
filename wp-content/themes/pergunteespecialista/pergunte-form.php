@@ -12,7 +12,7 @@
 	<div id="warnmessage" class="form-group">
 		<label for="message" class="control-label">Mensagem:</label><br>
 			<?php
-			wp_editor( '', 'message', array( 'media_buttons' => true, 'textarea_name' => 'message' , 'textarea_rows' => 5,) );
+			wp_editor( '', 'message', array( 'media_buttons' => true, 'textarea_name' => 'message' , 'textarea_rows' => 5,'tinymce' => array('toolbar1')) );
 			?>
 			<small class="text-danger form-control-msg">É necessário preencher este campo.</small>
 	</div>
