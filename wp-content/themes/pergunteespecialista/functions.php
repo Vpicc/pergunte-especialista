@@ -10,7 +10,8 @@ function pergunteEspecialista_resources(){
 	wp_register_script('bxslider', get_template_directory_uri() . '/lib/js/jquery.bxslider.min.js', array('jquery'), '4.2.12', true);
 	wp_register_style('bxslider', get_template_directory_uri() . '/lib/css/jquery.bxslider.min.css', array(), '4.2.12');
 	// bootstrap
-	wp_enqueue_style('bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css' );
+	wp_enqueue_style( 'bootstrap_css', get_template_directory_uri() . '/lib/css/bootstrap.css' );
+	wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/lib/js/bootstrap.min.js' );
 	// style.css
   wp_enqueue_style('style', get_stylesheet_uri());
 	wp_enqueue_style('bxslider');
@@ -154,6 +155,17 @@ function pergunteEspecialista_customize_register($wp_customize){
     'settings'=> 'pe_button_color',
   )));
 
+	// Cor de texto de botoes
+  $wp_customize->add_setting('pe_button_textcolor', array(
+    'default'=> '#FFF',
+    'transport'=> 'refresh',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'pe_button_textcolor_control', array(
+    'label'=> __('Cores de Texto de Botões','Pergunte a um Especialista'),
+    'section'=> 'pe_standard_colors',
+    'settings'=> 'pe_button_textcolor',
+  )));
   // Cor de Highlight de botoes
   $wp_customize->add_setting('pe_highlightbtn_color', array(
     'default'=> '#0046a3',
@@ -194,10 +206,28 @@ function pergunteEspecialista_customize_css(){ ?>
         background-color: <?php echo get_theme_mod('pe_button_color');?>;
       }
 
+			.btn{
+				background-color: <?php echo get_theme_mod('pe_button_color');?>;
+			}
+
+			/* Cor de Texto de botao */
+			div.hd-search #searchsubmit{
+				color: <?php echo get_theme_mod('pe_button_textcolor');?>;
+			}
+
+			.btn{
+				color: <?php echo get_theme_mod('pe_button_textcolor');?>;
+			}
+
       /* Cor de Highlight de botao*/
       div.hd-search #searchsubmit:hover{
         background-color: <?php echo get_theme_mod('pe_highlightbtn_color');?>;
       }
+
+			.btn:hover{
+				background-color: <?php echo get_theme_mod('pe_button_color');?>;
+			}
+
 
 
     </style>
