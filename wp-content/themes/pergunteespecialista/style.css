@@ -36,6 +36,7 @@ div.container{
 .main-column{
   width: 80%;
   float:left;
+  padding-bottom: 10px;
 }
 
 /* Coluna da Lateral */
