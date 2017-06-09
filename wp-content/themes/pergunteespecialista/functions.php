@@ -214,7 +214,7 @@ function pergunteEspecialista_customize_css(){ ?>
 			}
 
 			.btn{
-				color: <?php echo get_theme_mod('pe_button_textcolor');?>;
+				color: <?php echo get_theme_mod('pe_button_textcolor');?> !important;
 			}
 
       /* Cor de Highlight de botao*/

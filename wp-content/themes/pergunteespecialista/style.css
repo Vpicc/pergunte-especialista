@@ -31,7 +31,24 @@ div.container{
 .site-header{
   border-bottom: 2px solid #999;
   margin-bottom: 0px;
+  background-color: #006ec3;
+  padding-left: 20px;
+  padding-right: 0px;
 }
+
+.site-header h1{
+  margin-top: 0px;
+}
+
+.site-header h1 a,
+.site-header h5{
+  color: white;
+}
+
+.search-submit{
+  border: 2px solid black !important;
+}
+
 /* Coluna Principal */
 .main-column{
   width: 80%;
@@ -356,11 +373,8 @@ article.post-gallery h2{
 
 /* Numeros de paginas */
 .page-numbers{
-  background-color: #FFF;
-  padding: 5px 10px;
-  border: 1px solid #999;
-}
 
+}
 
 /* Formulario de Perguntas */
 .form-control-msg{

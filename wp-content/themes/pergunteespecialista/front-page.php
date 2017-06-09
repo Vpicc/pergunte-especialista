@@ -52,7 +52,6 @@ if($slides->have_posts()){ ?>
       while($allPosts->have_posts()){ $allPosts->the_post(); ?>
 
         <?php get_template_part('content', get_post_format()); ?>
-
       <?php }
 
       echo paginate_links(array(
@@ -66,6 +65,5 @@ if($slides->have_posts()){ ?>
       }
     wp_reset_postdata();
     ?>
-
   </div>
 <?php get_footer(); ?>
