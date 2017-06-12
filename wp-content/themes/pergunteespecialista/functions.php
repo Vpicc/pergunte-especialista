@@ -203,8 +203,11 @@ function pergunteEspecialista_customize_css(){ ?>
           color: <?php echo get_theme_mod('pe_link_color'); ?>
       }
 
+
       .site-header nav ul li.current_page_item a,
+      .site-header nav ul li.current_page_item a:visited,
       .site-header nav ul li.current-menu-item a,
+			.site-header nav ul li.current-menu-item a:visited,
 			.site-header nav ul li.current-menu-ancestor > a,
 			.site-header nav ul li.current-menu-parent > a,
 			.site-header nav ul li.current-menu-parent li.current_page_item > a,
