@@ -176,6 +176,18 @@ function pergunteEspecialista_customize_register($wp_customize){
     'settings'=> 'pe_highlightbtn_color',
   )));
 
+	// Cor de menu
+	$wp_customize->add_setting('pe_menu_selected_color', array(
+    'default'=> '#006ec3',
+    'transport'=> 'refresh',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'pe_menu_selected_color_control', array(
+    'label'=> __('Cor de Menu Selecionado','Pergunte a um Especialista'),
+    'section'=> 'pe_standard_colors',
+    'settings'=> 'pe_menu_selected_color',
+  )));
+
 
 }
 
@@ -190,13 +202,14 @@ function pergunteEspecialista_customize_css(){ ?>
       a:visited{
           color: <?php echo get_theme_mod('pe_link_color'); ?>
       }
-      .site-header nav ul li.current_page_item a:link,
-      .site-header nav ul li.current_page_item a:visited,
-      .site-header nav ul li.current-menu-item a:link,
-      .site-header nav ul li.current-menu-item a:visited,
-      .site-header nav ul li.current-page-ancestor a:link,
-      .site-header nav ul li.current-page-ancestor a:visited{
-        background-color: <?php echo get_theme_mod('pe_link_color'); ?>;
+
+      .site-header nav ul li.current_page_item a,
+      .site-header nav ul li.current-menu-item a,
+			.site-header nav ul li.current-menu-ancestor > a,
+			.site-header nav ul li.current-menu-parent > a,
+			.site-header nav ul li.current-menu-parent li.current_page_item > a,
+			.site-header nav ul li.current-menu-parent li.current-menu-item > a{
+        background-color: <?php echo get_theme_mod('pe_menu_selected_color'); ?>;
       }
 
       /* Cor de botoes */

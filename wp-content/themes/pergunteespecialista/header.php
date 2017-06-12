@@ -26,9 +26,8 @@
           'echo' => FALSE,
         );
         $array_menu = wp_nav_menu( $args );
-        echo str_replace("</ul></div>","",$array_menu);
+        echo $array_menu;
         ?>
-        </ul></div>
       </nav>
-      
+
     </header><!-- /site-header -->

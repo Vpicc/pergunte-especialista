@@ -17,6 +17,7 @@ jQuery(document).ready(function($){
 // Paginacao, adiciona bootstrap aos botoes
 $('.page-numbers').addClass('btn');
 
+
 // Submissao de Perguntas
 $('#contact-form-pergunta').on('submit', function(e){
 
