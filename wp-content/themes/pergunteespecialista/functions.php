@@ -272,6 +272,15 @@ function pergunteEspecialista_customize_css(){ ?>
 				background-color: <?php echo get_theme_mod('pe_menu_color');?>;
 			}
 
+			/* Cor de highlight de menu*/
+
+			.site-header nav ul li:hover > a{
+				-webkit-transition: background-color  0.2s ease;
+				background-color: <?php echo get_theme_mod('pe_highlightmenu_color');?>;
+				-webkit-transition: color  0.2s ease;
+				color: <?php echo get_theme_mod('pe_highlightmenu_text_color');?>;
+			}
+
 			/* Cor de Menu Selecionado */
       .site-header nav ul li.current_page_item > a,
       .site-header nav ul li.current_page_item > a:visited,
@@ -284,14 +293,6 @@ function pergunteEspecialista_customize_css(){ ?>
         background-color: <?php echo get_theme_mod('pe_menu_selected_color'); ?>;
       }
 
-			/* Cor de highlight de menu*/
-
-			.site-header nav ul li:hover > a{
-				-webkit-transition: background-color  0.2s ease;
-				background-color: <?php echo get_theme_mod('pe_highlightmenu_color');?>;
-				-webkit-transition: color  0.2s ease;
-				color: <?php echo get_theme_mod('pe_highlightmenu_text_color');?>;
-			}
 
 			/* Cor de Texto de Menu */
 
