@@ -1,4 +1,4 @@
-// Scripts globais
+// Scripts
 jQuery(document).ready(function($){
   'use strict';
 

@@ -12,11 +12,11 @@
 	<div id="warnmessage" class="form-group">
 		<label for="message" class="control-label">Mensagem:</label><br>
 			<?php
-			wp_editor( '', 'message', array( 'media_buttons' => true, 'textarea_name' => 'message' , 'textarea_rows' => 5,'tinymce' => array('toolbar1')) );
+			wp_editor( '', 'message', array( 'media_buttons' => false, 'textarea_name' => 'message' , 'textarea_rows' => 5, 'quicktags' => false, 'drag_drop_upload' => true) );
 			?>
 			<small class="text-danger form-control-msg">É necessário preencher este campo.</small>
 	</div>
-	<button id="submit_button" class="btn btn-default search-button" type="submit">Enviar Pergunta</button>
+	<button id="submit_button" class="btn btn-default" type="submit">Enviar Pergunta</button>
 		<input type="hidden" name="submitted" id="submitted" value="true" />
 
 	<small class="text-success form-control-msg js-form-success">Pergunta enviada!</small>
