@@ -175,10 +175,21 @@ function pergunteEspecialista_customize_register($wp_customize){
     'section'=> 'pe_standard_colors',
     'settings'=> 'pe_highlightbtn_color',
   )));
+	// Cor de menu selecionado
+	$wp_customize->add_setting('pe_menu_color', array(
+		'default'=> '#006ec3',
+		'transport'=> 'refresh',
+	));
 
-	// Cor de menu
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'pe_menu_color_control', array(
+		'label'=> __('Cor de Menu','Pergunte a um Especialista'),
+		'section'=> 'pe_standard_colors',
+		'settings'=> 'pe_menu_color',
+	)));
+
+	// Cor de menu selecionado
 	$wp_customize->add_setting('pe_menu_selected_color', array(
-    'default'=> '#006ec3',
+    'default'=> '#00056b',
     'transport'=> 'refresh',
   ));
 
@@ -187,6 +198,54 @@ function pergunteEspecialista_customize_register($wp_customize){
     'section'=> 'pe_standard_colors',
     'settings'=> 'pe_menu_selected_color',
   )));
+
+	// Cor de Highlight de menu
+	$wp_customize->add_setting('pe_highlightmenu_color', array(
+		'default'=> '#0046a3',
+		'transport'=> 'refresh',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'pe_highlightmenu_color_control', array(
+		'label'=> __('Cor de Hover em Menu','Pergunte a um Especialista'),
+		'section'=> 'pe_standard_colors',
+		'settings'=> 'pe_highlightmenu_color',
+	)));
+
+	// Cor de texto de menu
+	$wp_customize->add_setting('pe_menu_text_color', array(
+		'default'=> '#FFF',
+		'transport'=> 'refresh',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'pe_menu_text_color_control', array(
+		'label'=> __('Cor de Texto em Menu','Pergunte a um Especialista'),
+		'section'=> 'pe_standard_colors',
+		'settings'=> 'pe_menu_text_color',
+	)));
+
+	// Cor de highlight de texto de menu
+	$wp_customize->add_setting('pe_highlightmenu_text_color', array(
+		'default'=> '#FFF',
+		'transport'=> 'refresh',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'pe_highlightmenu_text_color_control', array(
+		'label'=> __('Cor de Hover de Texto em Menu','Pergunte a um Especialista'),
+		'section'=> 'pe_standard_colors',
+		'settings'=> 'pe_highlightmenu_text_color',
+	)));
+
+	// Cor de header
+	$wp_customize->add_setting('pe_header_color', array(
+		'default'=> '#006ec3',
+		'transport'=> 'refresh',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'pe_header_color_control', array(
+		'label'=> __('Cor do Header','Pergunte a um Especialista'),
+		'section'=> 'pe_standard_colors',
+		'settings'=> 'pe_header_color',
+	)));
 
 
 }
@@ -197,23 +256,49 @@ add_action('customize_register', 'pergunteEspecialista_customize_register');
 function pergunteEspecialista_customize_css(){ ?>
 
     <style type="text/css">
+			/* Cor do Header */
+			.site-header{
+			  background-color: <?php echo get_theme_mod('pe_header_color'); ?>;
+			}
       /* Cor de links */
       a:link,
       a:visited{
-          color: <?php echo get_theme_mod('pe_link_color'); ?>
+          color: <?php echo get_theme_mod('pe_link_color'); ?>;
       }
+			/* Cor de Menu */
+			.site-header nav ul li a:link,
+			.site-header nav ul li a:visited{
+				-webkit-transition: background-color  0.2s ease;
+				background-color: <?php echo get_theme_mod('pe_menu_color');?>;
+			}
 
-
-      .site-header nav ul li.current_page_item a,
-      .site-header nav ul li.current_page_item a:visited,
-      .site-header nav ul li.current-menu-item a,
-			.site-header nav ul li.current-menu-item a:visited,
+			/* Cor de Menu Selecionado */
+      .site-header nav ul li.current_page_item > a,
+      .site-header nav ul li.current_page_item > a:visited,
+      .site-header nav ul li.current-menu-item > a,
+			.site-header nav ul li.current-menu-item > a:visited,
 			.site-header nav ul li.current-menu-ancestor > a,
 			.site-header nav ul li.current-menu-parent > a,
 			.site-header nav ul li.current-menu-parent li.current_page_item > a,
 			.site-header nav ul li.current-menu-parent li.current-menu-item > a{
         background-color: <?php echo get_theme_mod('pe_menu_selected_color'); ?>;
       }
+
+			/* Cor de highlight de menu*/
+
+			.site-header nav ul li:hover > a{
+				-webkit-transition: background-color  0.2s ease;
+				background-color: <?php echo get_theme_mod('pe_highlightmenu_color');?>;
+				-webkit-transition: color  0.2s ease;
+				color: <?php echo get_theme_mod('pe_highlightmenu_text_color');?>;
+			}
+
+			/* Cor de Texto de Menu */
+
+			.site-header nav ul li a{
+				-webkit-transition: color  0.2s ease;
+				color: <?php echo get_theme_mod('pe_menu_text_color');?>;
+			}
 
       /* Cor de botoes */
       div.hd-search #searchsubmit{

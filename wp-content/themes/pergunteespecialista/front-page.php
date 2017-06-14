@@ -19,8 +19,6 @@ if($slides->have_posts()){ ?>
     </ul>
 <?php } // fim de slider?>
 
-
-<?php if(is_active_sidebar('sidebar1')){ ?>
   <div class="front-page clearfix">
     <?php
     if(have_posts()){
@@ -32,7 +30,7 @@ if($slides->have_posts()){ ?>
 
     <?php }} else {
     echo 'Não foi encontrado nenhum post</p>';
-    }} ?>
+    } ?>
 
   </div>
 
@@ -64,6 +62,5 @@ if($slides->have_posts()){ ?>
         echo 'Não foi encontrado nenhum post</p>';
       }
     wp_reset_postdata();
-    ?>
-  </div>
+    ?>  </div>
 <?php get_footer(); ?>
