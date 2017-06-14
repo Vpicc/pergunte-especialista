@@ -247,6 +247,30 @@ function pergunteEspecialista_customize_register($wp_customize){
 		'settings'=> 'pe_header_color',
 	)));
 
+	// Cor de footer
+	$wp_customize->add_setting('pe_footer_color', array(
+		'default'=> '#006ec3',
+		'transport'=> 'refresh',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'pe_footer_color_control', array(
+		'label'=> __('Cor do footer','Pergunte a um Especialista'),
+		'section'=> 'pe_standard_colors',
+		'settings'=> 'pe_footer_color',
+	)));
+
+	// Cor de texto de menu de footer
+	$wp_customize->add_setting('pe_footermenu_text_color', array(
+		'default'=> '#FFF',
+		'transport'=> 'refresh',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'pe_footermenu_text_color_control', array(
+		'label'=> __('Cor do texto do menu de footer','Pergunte a um Especialista'),
+		'section'=> 'pe_standard_colors',
+		'settings'=> 'pe_footermenu_text_color',
+	)));
+
 
 }
 
@@ -293,7 +317,6 @@ function pergunteEspecialista_customize_css(){ ?>
         background-color: <?php echo get_theme_mod('pe_menu_selected_color'); ?>;
       }
 
-
 			/* Cor de Texto de Menu */
 
 			.site-header nav ul li a{
@@ -328,7 +351,21 @@ function pergunteEspecialista_customize_css(){ ?>
 				background-color: <?php echo get_theme_mod('pe_button_color');?>;
 			}
 
+			/* Cor de Footer */
 
+			.site-footer{
+			  background-color: <?php echo get_theme_mod('pe_footer_color');?>;
+			}
+
+			/* Cor de Texto de menu de Footer */
+
+			.footer-menu a{
+				color: <?php echo get_theme_mod('pe_footermenu_text_color');?>;
+			}
+
+			.footer-text{
+				color: <?php echo get_theme_mod('pe_footermenu_text_color');?>;
+			}
 
     </style>
 

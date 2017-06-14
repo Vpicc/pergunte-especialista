@@ -73,11 +73,12 @@ article.post:last-of-type{
 /* Footer */
 .site-footer{
   margin-top: 30px;
-  border-top: 2px solid #999;
+  background-color: #006ec3;
 }
 
 .footer-text{
   text-align: center;
+  color: white;
 }
 
 /* Area de Widget do Footer */
