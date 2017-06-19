@@ -56,7 +56,7 @@ function pedev_google_analytics() {
 	$GAPICode = get_option('Google_code');
 	if(@$GAPICode != ''){
 ?>
-<script>
+	<script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -68,8 +68,6 @@ function pedev_google_analytics() {
 
 <?php }}
 add_action( 'wp_head', 'pedev_google_analytics', 10 );
-
-
 
 // Pegar o ancestral da pagina
 function get_top_ancestor_id() {
@@ -341,16 +339,16 @@ function pergunteEspecialista_customize_css(){ ?>
 			/* Cor de Menu */
 			.site-header nav ul li a:link,
 			.site-header nav ul li a:visited{
-				-webkit-transition: background-color  0.2s ease;
+				-webkit-transition: background-color  0.3s ease-in-out;
 				background-color: <?php echo get_theme_mod('pe_menu_color');?>;
 			}
 
 			/* Cor de highlight de menu*/
 
 			.site-header nav ul li:hover > a{
-				-webkit-transition: background-color  0.2s ease;
+				-webkit-transition: background-color  0.3s ease-in-out;
 				background-color: <?php echo get_theme_mod('pe_highlightmenu_color');?>;
-				-webkit-transition: color  0.2s ease;
+				-webkit-transition: color  0.3s ease-in-out;
 				color: <?php echo get_theme_mod('pe_highlightmenu_text_color');?>;
 			}
 
@@ -369,7 +367,7 @@ function pergunteEspecialista_customize_css(){ ?>
 			/* Cor de Texto de Menu */
 
 			.site-header nav ul li a{
-				-webkit-transition: color  0.2s ease;
+				-webkit-transition: color  0.3s ease-in-out;
 				color: <?php echo get_theme_mod('pe_menu_text_color');?>;
 			}
 
@@ -493,6 +491,41 @@ function pergunteEspecialista_footer_callout($wp_customize){
 }
 
 add_action('customize_register', 'pergunteEspecialista_footer_callout');
+
+// Adiciona Customizacao de Logo
+function pergunteEspecialista_logo($wp_customize){
+  $wp_customize->add_section('pe_logo_section', array(
+    'title' => __('Logo do Site', 'Pergunte a um Especialista'),
+  ));
+
+  // Pergunta se quer ou nao exibir
+  $wp_customize->add_setting('pe_logo_display', array(
+    'default'=> 'No',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_footer_callout_display_control', array(
+     'label'=> 'Exibir Logo do Website?',
+     'section'=> 'pe_logo_section',
+     'settings'=> 'pe_logo_display',
+     'type'=> 'select',
+     'choices'=> array('No'=> 'Não', 'Yes'=>'Sim')
+  )));
+
+  // Imagem
+  $wp_customize->add_setting('pe_logo_image');
+
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize,
+  	'pe_logo_image_control', array(
+    'label'=> 'Imagem',
+    'section'=> 'pe_logo_section',
+    'settings'=> 'pe_logo_image',
+    'width'=> 1200,
+    'height'=> 150,
+  )));
+}
+
+add_action('customize_register', 'pergunteEspecialista_logo');
 
 // Tipos de posts customizados
 

@@ -44,8 +44,10 @@ div.container{
   color: white;
 }
 
-.search-submit{
-  border: 2px solid black !important;
+/* Logo */
+.site-logo > a > img{
+  width: 1200px;
+  height: auto;
 }
 
 /* Coluna Principal */
@@ -116,7 +118,7 @@ article.post:last-of-type{
 .site-header nav ul li a:link,
 .site-header nav ul li a:visited{
   display:block;
-  padding: 10px 18px;
+  padding: 18px 18px 18px 18px;
   border-bottom: none;
   text-decoration: none;
   background-color: #006ec3;
@@ -125,7 +127,7 @@ article.post:last-of-type{
 .site-header ul ul {
   position: absolute;
 	display: none;
-  margin-top: 2px;
+  margin-top: 18px;
 	top: 38px;
 	left: 0;
 	float: left;
@@ -263,6 +265,7 @@ img{
 /* Pesquisa */
 div.hd-search{
   float: right;
+  padding: 8px;
 }
 
 div.hd-search label span{
@@ -272,8 +275,9 @@ div.hd-search label span{
 div.hd-search #searchsubmit{
   background-color: #006ec3;
   color: #fff;
-  padding: 5px 14px;
-  border: none;
+  padding: 8px 14px;
+  border: 1px solid black;
+  margin-right: 2px;
 }
 
 div.hd-search #searchsubmit:hover{

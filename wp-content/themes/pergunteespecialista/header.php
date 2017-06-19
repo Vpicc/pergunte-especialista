@@ -13,8 +13,14 @@
 
     <!-- site-header -->
     <header class="site-header">
-      <h1><a href="<?php echo home_url();?>"><?php bloginfo('name'); ?></a></h1>
-      <h5><?php bloginfo('description'); ?></h5>
+      <?php if(get_theme_mod('pe_logo_display') == "Yes"){ ?>
+        <div class="site-logo">
+          <a href="<?php echo home_url();?>"><img src="<?php echo wp_get_attachment_url(get_theme_mod('pe_logo_image')); ?>"></a>
+        </div>
+      <?php } else { ?>
+        <h1><a href="<?php echo home_url();?>"><?php bloginfo('name'); ?></a></h1>
+        <h5><?php bloginfo('description'); ?></h5>
+      <?php } ?>
       <div class="hd-search">
         <?php get_search_form(); ?>
       </div>
