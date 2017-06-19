@@ -1,7 +1,7 @@
 <h1>Google Analytics</h1>
 <?php settings_errors(); ?>
 <p>
-  Caso queira utilizar Google Analytics em sua página, marque a caixa e cole o codigo de API do google no campo abaixo.
+  Caso queira utilizar Google Analytics em sua página, cole o codigo de API do google no campo abaixo.
 </p>
 
 <form method="post" action="options.php">

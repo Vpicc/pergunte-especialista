@@ -15,11 +15,10 @@
     <header class="site-header">
       <h1><a href="<?php echo home_url();?>"><?php bloginfo('name'); ?></a></h1>
       <h5><?php bloginfo('description'); ?></h5>
-
       <div class="hd-search">
         <?php get_search_form(); ?>
       </div>
-      
+
       <nav class="site-nav">
         <?php
         $args = array(
