@@ -69,6 +69,7 @@ function pedev_google_analytics() {
 <?php }}
 add_action( 'wp_head', 'pedev_google_analytics', 10 );
 
+
 // Pegar o ancestral da pagina
 function get_top_ancestor_id() {
 
@@ -318,6 +319,18 @@ function pergunteEspecialista_customize_register($wp_customize){
 		'settings'=> 'pe_footermenu_text_color',
 	)));
 
+	// Cor de fundo
+	$wp_customize->add_setting('pe_background_color', array(
+		'default'=> '#F4F5F7',
+		'transport'=> 'refresh',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize,'pe_background_color_control', array(
+		'label'=> __('Cor de fundo','Pergunte a um Especialista'),
+		'section'=> 'pe_standard_colors',
+		'settings'=> 'pe_background_color',
+	)));
+
 
 }
 
@@ -327,6 +340,10 @@ add_action('customize_register', 'pergunteEspecialista_customize_register');
 function pergunteEspecialista_customize_css(){ ?>
 
     <style type="text/css">
+			/* Cor de fundo */
+			body{
+				background-color: <?php echo get_theme_mod('pe_background_color'); ?>;
+			}
 			/* Cor do Header */
 			.site-header{
 			  background-color: <?php echo get_theme_mod('pe_header_color'); ?>;
@@ -607,6 +624,7 @@ function pergunteEspecialistaSaveUserContactForm(){
 
 	$title = wp_strip_all_tags($_POST["name"]);
 	$email = wp_strip_all_tags($_POST["email"]);
+	$job = wp_strip_all_tags($_POST["job"]);
 	$message = $_POST["message"];
 
 $args = array(
@@ -616,14 +634,14 @@ $args = array(
 	'post_type' => 'contact-pergunta',
 	'meta_input' => array(
 		'_contact_email_value_key' => $email,
+		'_contact_job_value_key' => $job
 	)
 
 );
 
-	$postID = wp_insert_post($args);
+	$post_id = wp_insert_post($args);
 
-
-	echo $postID;
+	echo $post_id;
 
 	die();
 
@@ -644,6 +662,7 @@ function pergunteEspecialista_set_perguntas_columns($columns){
 		$newColumns['title'] = 'Nome Completo';
 		$newColumns['message'] = 'Mensagem';
 		$newColumns['email'] = 'Email';
+		$newColumns['job'] = 'Profissão';
 		$newColumns['date'] = 'Data';
 
 		return $newColumns;
@@ -665,6 +684,12 @@ function pergunteEspecialista_perguntas_custom_column($column, $post_id){
 			$email = get_post_meta( $post_id, '_contact_email_value_key', true);
 			echo '<a href="mailto:"'.$email.'">'.$email.'</a>';
 			break;
+
+		case 'job':
+
+		$job = get_post_meta( $post_id, '_contact_job_value_key', true);
+		echo $job;
+		break;
 	}
 }
 
@@ -673,6 +698,7 @@ add_action('manage_contact-pergunta_posts_custom_column', 'pergunteEspecialista_
 // Adiciona a meta-box para colocar o email do contato
 function pergunteEspecialista_pergunta_add_meta_box(){
 	add_meta_box('contact_email', 'Email do Usuário', 'pergunteEspecialista_pergunta_email_callback', 'contact-pergunta', 'side');
+	add_meta_box('contact_job', 'Profissão do Usuário', 'pergunteEspecialista_pergunta_job_callback', 'contact-pergunta', 'side');
 }
 
 add_action('add_meta_boxes', 'pergunteEspecialista_pergunta_add_meta_box');
@@ -686,6 +712,47 @@ function pergunteEspecialista_pergunta_email_callback($post){
 	echo '<input type="email" id="pergunteEspecialista_email_field" name="pergunteEspecialista_email_field" value="'.esc_attr($value).'"
 	size="25"/>';
 }
+
+function pergunteEspecialista_pergunta_job_callback($post){
+	wp_nonce_field( 'pergunteEspecialista_save_contact_job_data','pergunteEspecialista_job_meta_box_nonce');
+
+	$value = get_post_meta($post->ID,'_contact_job_value_key', true);
+
+	echo '<label for="pergunteEspecialista_job_field">Profissão do Usuário</label>';
+	echo '<input type="text" id="pergunteEspecialista_job_field" name="pergunteEspecialista_job_field" value="'.esc_attr($value).'"
+	size="25"/>';
+}
+
+// Funcao que salva a profissão da pergunta
+function pergunteEspecialista_save_contact_job_data($post_id){
+
+	if(!isset($_POST['pergunteEspecialista_job_meta_box_nonce'])){
+		return;
+	}
+
+	if(!wp_verify_nonce($_POST['pergunteEspecialista_job_meta_box_nonce'],'pergunteEspecialista_save_contact_job_data')){
+		return;
+	}
+
+	if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){
+		return;
+	}
+
+	if(!current_user_can('edit_post',$post_id)){
+		return;
+	}
+
+	if(!isset($_POST['pergunteEspecialista_job_field'])){
+		return;
+	}
+
+	$my_data = sanitize_text_field($_POST['pergunteEspecialista_job_field']);
+
+	update_post_meta($post_id, '_contact_job_value_key', $my_data);
+
+}
+
+add_action('save_post', 'pergunteEspecialista_save_contact_job_data');
 
 // Funcao que salva o email da pergunta
 function pergunteEspecialista_save_contact_email_data($post_id){

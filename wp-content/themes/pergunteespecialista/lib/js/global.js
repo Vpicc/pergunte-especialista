@@ -29,11 +29,13 @@ $('#contact-form-pergunta').on('submit', function(e){
 
   var name = form.find('#name').val(),
       email = form.find('#email').val(),
+      job = form.find('#job').val(),
       message = tinyMCE.activeEditor.getContent(),
       ajaxurl = form.data('url');
 
+
   // Checa se todos os campos foram preenchidos
-  if(name === '' || email === '' || message === ''){
+  if(name === '' || email === '' || message === '' || job === ''){
   if(name === ''){
     $('#name').parent('.form-group').addClass('has-error');
   }
@@ -43,9 +45,11 @@ $('#contact-form-pergunta').on('submit', function(e){
   if(message === ''){
     $('#warnmessage').addClass('has-error');
   }
+  if(job === ''){
+    $('#job').parent('.form-group').addClass('has-error');
+  }
   return;
 }
-
   // Desativando inputs
   form.find('input, button, textarea').attr('disabled','disabled');
   tinymce.activeEditor.getBody().setAttribute('contenteditable', false);
@@ -58,6 +62,7 @@ $('#contact-form-pergunta').on('submit', function(e){
       name : name,
       email : email,
       message : message,
+      job: job,
       action : 'pergunteEspecialistaSaveUserContactForm'
     },
     error : function(response){
