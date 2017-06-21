@@ -412,7 +412,7 @@ function pergunteEspecialista_customize_css(){ ?>
       }
 
 			.btn:hover{
-				background-color: <?php echo get_theme_mod('pe_button_color');?>;
+				background-color: <?php echo get_theme_mod('pe_highlightbtn_color');?>;
 			}
 
 			/* Cor de Footer */
