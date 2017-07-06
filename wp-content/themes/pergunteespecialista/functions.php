@@ -336,14 +336,79 @@ function pergunteEspecialista_customize_register($wp_customize){
 
 add_action('customize_register', 'pergunteEspecialista_customize_register');
 
+// Adiciona Customizacao de fonte
+function pergunteEspecialista_customize_fonts($wp_customize){
+	// Seção de fontes
+	$wp_customize->add_section('pe_font_section', array(
+    'title' => __('Fonte do Website', 'Pergunte a um Especialista'),
+  ));
+
+	// Fonte padrao: Arial
+	$wp_customize->add_setting('pe_font_select', array(
+    'default'=> '',
+  ));
+
+	// Controle de fonte
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_font_control', array(
+     'label'=> 'Fonte (Nome no Google Fonts)',
+     'section'=> 'pe_font_section',
+     'settings'=> 'pe_font_select'
+   )));
+
+	 // Controle de tamanho de fonte
+	 $wp_customize->add_setting('pe_font_size', array(
+     'default'=> '16',
+   ));
+
+   $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+    'pe_font_size_control', array(
+      'label'=> 'Tamanho da fonte',
+      'section'=> 'pe_font_section',
+      'settings'=> 'pe_font_size'
+    )));
+
+		// Controle de tamanho de fonte de titulo de posts
+ 	 $wp_customize->add_setting('pe_title_font_size', array(
+      'default'=> '30',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+     'pe_title_font_size_control', array(
+       'label'=> 'Tamanho do título dos posts',
+       'section'=> 'pe_font_section',
+       'settings'=> 'pe_title_font_size'
+     )));
+
+}
+
+add_action('customize_register', 'pergunteEspecialista_customize_fonts');
+
+
+function pe_load_fonts() {
+	$fonte = 'http://fonts.googleapis.com/css?family=' . str_replace(' ','+',get_theme_mod('pe_font_select'));
+	wp_register_style('et-googleFonts', $fonte);
+  wp_enqueue_style( 'et-googleFonts');
+}
+add_action('wp_print_styles', 'pe_load_fonts');
+
+
 // Saida de customizacao de CSS
 function pergunteEspecialista_customize_css(){ ?>
 
     <style type="text/css">
-			/* Cor de fundo */
+			/* Cor de fundo e fonte */
 			body{
 				background-color: <?php echo get_theme_mod('pe_background_color'); ?>;
+				font-family: <?php echo get_theme_mod('pe_font_select'); ?>, sans-serif;
+				font-size: <?php echo get_theme_mod('pe_font_size'); ?>px;
 			}
+			/* Fonte dos titulos do blog */
+
+			h2.post-title a{
+			    font-size: <?php echo get_theme_mod('pe_title_font_size');?>px;
+			}
+
 			/* Cor do Header */
 			.site-header{
 			  background-color: <?php echo get_theme_mod('pe_header_color'); ?>;
