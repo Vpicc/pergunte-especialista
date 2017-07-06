@@ -52,6 +52,7 @@ div.container{
 
 /* Coluna Principal */
 .main-column{
+  padding-left: 20px;
   width: 80%;
   float:left;
   padding-bottom: 10px;
@@ -64,8 +65,20 @@ div.container{
 }
 
 /* Post */
+.post-body{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.post-body h2{
+  padding-left: 10px;
+}
+
+.post-body p.post-info{
+  padding-left: 10px;
+}
 article.post{
-  border-bottom: 2px dotted #bbbbbb;
+  border-bottom: 1px solid #eeeeee;
 }
 
 article.post:last-of-type{
@@ -166,11 +179,11 @@ article.post:last-of-type{
 .site-footer nav ul li{
   margin-right: 10px;
   padding-right: 10px;
-  border-right: 1px dotted #BBB;
+  border-right: 1px solid #BBB;
 }
 
 .site-footer nav ul li:first-of-type{
-  border-left: 1px dotted #BBB;
+  border-left: 1px solid #BBB;
   margin-left: 10px;
   padding-left: 10px;
 }
@@ -397,7 +410,7 @@ article.post-gallery h2{
 .comment-body{
   margin-bottom: 10px;
   padding-bottom: 20px;
-  border-bottom: 1px dotted #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 .comments-area{

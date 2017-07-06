@@ -499,6 +499,7 @@ function pergunteEspecialista_customize_css(){ ?>
 			.footer-widgets-area{
 				color: <?php echo get_theme_mod('pe_footermenu_text_color');?>;
 			}
+			
 			.footer-widgets-area caption{
 				color: <?php echo get_theme_mod('pe_footermenu_text_color');?>;
 			}

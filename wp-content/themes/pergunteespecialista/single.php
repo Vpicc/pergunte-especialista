@@ -6,6 +6,8 @@ get_header();
     while(have_posts()){the_post();
 
 ?>
+<div class="post-body">
+
   <article class="post">
 
 
@@ -56,8 +58,7 @@ if(comments_open()){
 
 } else {
     echo 'Não foi encontrado nenhum post</p>';
-  }
+  } ?>
+</div>
 
-get_footer();
-
- ?>
+<?php get_footer(); ?>
