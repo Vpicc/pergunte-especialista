@@ -395,12 +395,13 @@ article.post-gallery h2{
 }
 
 .footer-callout-text h2{
-  font-size: 1.7rem;
+  font-size: 3rem;
   margin-bottom: 0.35rem;
 }
 
 .footer-callout-text p{
-  font-size: 0.9rem;
+  font-size: 1.5rem;
+  margin-left: 2px;
 }
 
 /* Comentarios */
