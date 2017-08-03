@@ -50,6 +50,13 @@ div.container{
   height: auto;
 }
 
+.site-logo-side > a > img{
+  max-width: 355px;
+  float: left;
+  margin: 10px 10px 10px 10px;
+}
+
+
 /* Coluna Principal */
 .main-column{
   padding-left: 20px;
@@ -140,7 +147,7 @@ article.post:last-of-type{
 .site-header nav ul li a:link,
 .site-header nav ul li a:visited{
   display:block;
-  padding: 18px 18px 18px 18px;
+  padding: 40px 18px 40px 18px;
   border-bottom: none;
   text-decoration: none;
   background-color: #006ec3;
@@ -149,7 +156,7 @@ article.post:last-of-type{
 .site-header ul ul {
   position: absolute;
 	display: none;
-  margin-top: 18px;
+  margin-top: 64px;
 	top: 38px;
 	left: 0;
 	float: left;
@@ -291,10 +298,11 @@ div.hd-search{
 }
 
 div.hd-search label span{
-  opacity: 0;
+  display: none;
 }
 
 div.hd-search #searchsubmit{
+  display: none;
   background-color: #006ec3;
   color: #fff;
   padding: 8px 14px;
@@ -454,4 +462,9 @@ article.post-gallery h2{
   .has-thumbnail{
     padding-top: 200px;
   }
+
+
+    .site-logo-side > a > img{
+      max-width: 320px;
+    }
 }

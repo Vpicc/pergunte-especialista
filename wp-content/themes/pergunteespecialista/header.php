@@ -13,11 +13,15 @@
 
     <!-- site-header -->
     <header class="site-header">
-      <?php if(get_theme_mod('pe_logo_display') == "Yes"){ ?>
+      <?php if(get_theme_mod('pe_logo_display') == "Top"){ ?>
         <div class="site-logo">
-          <a href="<?php echo home_url();?>"><img src="<?php echo wp_get_attachment_url(get_theme_mod('pe_logo_image')); ?>"></a>
+          <a href="<?php echo home_url();?>"><img src="<?php echo wp_get_attachment_url(get_theme_mod('pe_logo_top_image')); ?>"></a>
         </div>
-      <?php } else { ?>
+      <?php } else if(get_theme_mod('pe_logo_display') == "Side"){?>
+        <div class="site-logo-side">
+          <a href="<?php echo home_url();?>"><img src="<?php echo wp_get_attachment_url(get_theme_mod('pe_logo_top_image')); ?>"></a>
+        </div>
+      <?php } else{ ?>
         <h1><a href="<?php echo home_url();?>"><?php bloginfo('name'); ?></a></h1>
         <h5><?php bloginfo('description'); ?></h5>
       <?php } ?>

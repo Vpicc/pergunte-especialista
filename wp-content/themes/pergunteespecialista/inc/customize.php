@@ -222,6 +222,70 @@ function pe_load_fonts() {
 }
 add_action('wp_print_styles', 'pe_load_fonts');
 
+// Adiciona Customizacao de Menu
+function pergunteEspecialista_customize_menu($wp_customize){
+	// Seção de tamanho de menu
+	$wp_customize->add_section('pe_menu_section', array(
+    'title' => __('Tamanho de Menu', 'Pergunte a um Especialista'),
+  ));
+
+	// Padding top
+	$wp_customize->add_setting('pe_padding_top_select', array(
+    'default'=> '40',
+  ));
+
+	// Controle
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_padding_top_control', array(
+     'label'=> 'Padding Top',
+     'section'=> 'pe_menu_section',
+     'settings'=> 'pe_padding_top_select'
+   )));
+
+   // Padding bottom
+   $wp_customize->add_setting('pe_padding_bottom_select', array(
+      'default'=> '40',
+    ));
+
+   // Controle
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+     'pe_padding_bottom_control', array(
+       'label'=> 'Padding bottom',
+       'section'=> 'pe_menu_section',
+       'settings'=> 'pe_padding_bottom_select'
+     )));
+
+     // Padding Side
+     $wp_customize->add_setting('pe_padding_side_select', array(
+        'default'=> '18',
+      ));
+
+     // Controle
+      $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+       'pe_padding_side_control', array(
+         'label'=> 'Padding Side',
+         'section'=> 'pe_menu_section',
+         'settings'=> 'pe_padding_side_select'
+       )));
+
+
+       // Margin top de submenu
+       $wp_customize->add_setting('pe_menu_margin_top_select', array(
+          'default'=> '64',
+        ));
+
+       // Controle
+        $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+         'pe_menu_margin_top_control', array(
+           'label'=> 'Margin Top de Submenu',
+           'section'=> 'pe_menu_section',
+           'settings'=> 'pe_menu_margin_top_select'
+         )));
+}
+
+add_action('customize_register', 'pergunteEspecialista_customize_menu');
+
+
 
 // Saida de customizacao de CSS
 function pergunteEspecialista_customize_css(){ ?>
@@ -342,6 +406,22 @@ function pergunteEspecialista_customize_css(){ ?>
         color: <?php echo get_theme_mod('pe_footer_callout_text_color');?>;
       }
 
+      /* Padding de Menu */
+
+      .site-header nav ul li a:link,
+      .site-header nav ul li a:visited{
+        padding-top: <?php echo get_theme_mod('pe_padding_top_select');?>px;
+        padding-bottom: <?php echo get_theme_mod('pe_padding_bottom_select');?>px;
+        padding-left: <?php echo get_theme_mod('pe_padding_side_select');?>px;
+        padding-right: <?php echo get_theme_mod('pe_padding_side_select');?>px;
+      }
+
+      /* Margin de submenu */
+
+      .site-header ul ul {
+        margin-top: <?php echo get_theme_mod('pe_menu_margin_top_select');?>px;
+      }
+
     </style>
 
 <?php }
@@ -446,6 +526,7 @@ function pergunteEspecialista_footer_callout($wp_customize){
 
 add_action('customize_register', 'pergunteEspecialista_footer_callout');
 
+
 // Adiciona Customizacao de Logo
 function pergunteEspecialista_logo($wp_customize){
   $wp_customize->add_section('pe_logo_section', array(
@@ -463,21 +544,27 @@ function pergunteEspecialista_logo($wp_customize){
      'section'=> 'pe_logo_section',
      'settings'=> 'pe_logo_display',
      'type'=> 'select',
-     'choices'=> array('No'=> 'Não', 'Yes'=>'Sim')
+     'choices'=> array('No'=> 'Não', 'Top'=>'Em cima', 'Side'=> 'Ao lado')
   )));
 
   // Imagem
-  $wp_customize->add_setting('pe_logo_image');
+
+  $wp_customize->add_setting('pe_logo_top_image');
 
   $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize,
-  	'pe_logo_image_control', array(
+  	'pe_logo_image_top_control', array(
     'label'=> 'Imagem',
     'section'=> 'pe_logo_section',
-    'settings'=> 'pe_logo_image',
+    'settings'=> 'pe_logo_top_image',
     'width'=> 1200,
-    'height'=> 150,
+    'height' => 150,
+    'flex_width' => true,
+    'flex_height' => true
   )));
+
+
 }
+
 
 add_action('customize_register', 'pergunteEspecialista_logo');
  ?>
