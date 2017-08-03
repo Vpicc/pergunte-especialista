@@ -255,32 +255,98 @@ function pergunteEspecialista_customize_menu($wp_customize){
        'settings'=> 'pe_padding_bottom_select'
      )));
 
-     // Padding Side
-     $wp_customize->add_setting('pe_padding_side_select', array(
-        'default'=> '18',
+   // Padding Side
+   $wp_customize->add_setting('pe_padding_side_select', array(
+      'default'=> '18',
+    ));
+
+   // Controle
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+     'pe_padding_side_control', array(
+       'label'=> 'Padding Side',
+       'section'=> 'pe_menu_section',
+       'settings'=> 'pe_padding_side_select'
+     )));
+
+
+     // Margin top de submenu
+     $wp_customize->add_setting('pe_menu_margin_top_select', array(
+        'default'=> '64',
       ));
 
      // Controle
       $wp_customize->add_control(new WP_Customize_Control($wp_customize,
-       'pe_padding_side_control', array(
-         'label'=> 'Padding Side',
+       'pe_menu_margin_top_control', array(
+         'label'=> 'Margin Top de Submenu',
          'section'=> 'pe_menu_section',
-         'settings'=> 'pe_padding_side_select'
+         'settings'=> 'pe_menu_margin_top_select'
        )));
 
-
-       // Margin top de submenu
-       $wp_customize->add_setting('pe_menu_margin_top_select', array(
-          'default'=> '64',
+       // Tamanho de fonte de botao de pesquisa
+       $wp_customize->add_setting('pe_font_size_menu_select', array(
+          'default'=> '16',
         ));
 
        // Controle
         $wp_customize->add_control(new WP_Customize_Control($wp_customize,
-         'pe_menu_margin_top_control', array(
-           'label'=> 'Margin Top de Submenu',
+         'pe_font_size_menu_control', array(
+           'label'=> 'Tamanho de fonte de menu',
            'section'=> 'pe_menu_section',
-           'settings'=> 'pe_menu_margin_top_select'
+           'settings'=> 'pe_font_size_menu_select'
          )));
+
+     	// Padding top de botao de pesquisa
+     	$wp_customize->add_setting('pe_padding_top_search_select', array(
+         'default'=> '14',
+       ));
+
+     	// Controle
+       $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+        'pe_padding_top_search_control', array(
+          'label'=> 'Padding Top de botao de pesquisa',
+          'section'=> 'pe_menu_section',
+          'settings'=> 'pe_padding_top_search_select'
+        )));
+
+      // Padding bottom de botao de pesquisa
+      $wp_customize->add_setting('pe_padding_bottom_search_select', array(
+         'default'=> '14',
+       ));
+
+      // Controle
+       $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+        'pe_padding_bottom_search_control', array(
+          'label'=> 'Padding bottom de botao de pesquisa',
+          'section'=> 'pe_menu_section',
+          'settings'=> 'pe_padding_bottom_search_select'
+        )));
+
+        // Padding side de botao de pesquisa
+        $wp_customize->add_setting('pe_padding_side_search_select', array(
+           'default'=> '5',
+         ));
+
+        // Controle
+         $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+          'pe_padding_side_search_control', array(
+            'label'=> 'Padding side de botao de pesquisa',
+            'section'=> 'pe_menu_section',
+            'settings'=> 'pe_padding_side_search_select'
+          )));
+
+          // Tamanho de fonte de botao de pesquisa
+          $wp_customize->add_setting('pe_font_size_search_select', array(
+             'default'=> '50',
+           ));
+
+          // Controle
+           $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+            'pe_font_size_search_control', array(
+              'label'=> 'Tamanho de botao de pesquisa',
+              'section'=> 'pe_menu_section',
+              'settings'=> 'pe_font_size_search_select'
+            )));
+
 }
 
 add_action('customize_register', 'pergunteEspecialista_customize_menu');
@@ -352,6 +418,10 @@ function pergunteEspecialista_customize_css(){ ?>
         background-color: <?php echo get_theme_mod('pe_button_color');?>;
       }
 
+      #pe_search_button{
+        background-color: <?php echo get_theme_mod('pe_button_color');?>;
+      }
+
 			.btn{
 				background-color: <?php echo get_theme_mod('pe_button_color');?>;
 			}
@@ -367,6 +437,10 @@ function pergunteEspecialista_customize_css(){ ?>
 
       /* Cor de Highlight de botao*/
       div.hd-search #searchsubmit:hover{
+        background-color: <?php echo get_theme_mod('pe_highlightbtn_color');?>;
+      }
+
+      #pe_search_button:hover{
         background-color: <?php echo get_theme_mod('pe_highlightbtn_color');?>;
       }
 
@@ -416,10 +490,26 @@ function pergunteEspecialista_customize_css(){ ?>
         padding-right: <?php echo get_theme_mod('pe_padding_side_select');?>px;
       }
 
+      /* Tamanho de fonte de Menu */
+
+      .site-header nav ul li a:link,
+      .site-header nav ul li a:visited{
+        font-size: <?php echo get_theme_mod('pe_font_size_menu_select');?>px;
+      }
+
       /* Margin de submenu */
 
       .site-header ul ul {
         margin-top: <?php echo get_theme_mod('pe_menu_margin_top_select');?>px;
+      }
+
+      /* Botao de pesquisa */
+      #pe_search_button{
+        padding-top: <?php echo get_theme_mod('pe_padding_top_search_select');?>px;
+        padding-bottom: <?php echo get_theme_mod('pe_padding_bottom_search_select');?>px;
+        padding-right: <?php echo get_theme_mod('pe_padding_side_search_select');?>px;
+        padding-let:<?php echo get_theme_mod('pe_padding_side_search_select');?>px;
+        font-size: <?php echo get_theme_mod('pe_font_size_search_select');?>px;
       }
 
     </style>

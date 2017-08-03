@@ -2,6 +2,11 @@
 jQuery(document).ready(function($){
   'use strict';
 
+  // Pesquisa
+  $( "#pe_search_button" ).click( function() {
+    $( "#searchform" ).toggle('fast');
+  });
+
   // Slider
   $(document).ready(function(){
   $('.bxslider').bxSlider({
@@ -83,6 +88,8 @@ $('#contact-form-pergunta').on('submit', function(e){
         $('.js-form-success').slideDown(300);
       }
     }
+
+
   });
 });
 

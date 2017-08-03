@@ -292,22 +292,50 @@ img{
 }
 
 /* Pesquisa */
-div.hd-search{
-  float: right;
-  padding: 8px;
+.looking-glass-rotate{
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
-
 div.hd-search label span{
   display: none;
 }
 
-div.hd-search #searchsubmit{
+#searchform{
+  position: absolute;
+  z-index: 9999;
   display: none;
+  float: left;
+}
+
+article.post{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+#pe_search_button{
+  float:right;
+  padding-top: 14px;
+  padding-bottom:14px;
+  font-size:50px;
+}
+
+
+div.hd-search #searchsubmit{
   background-color: #006ec3;
   color: #fff;
   padding: 8px 14px;
   border: 1px solid black;
-  margin-right: 2px;
+  margin-right: 0px;
+  margin-left: -4px;
+}
+
+.search-field{
+  background-color: #2d2d2d;
+  color: #DDD;
+  margin-bottom: 0px;
 }
 
 div.hd-search #searchsubmit:hover{

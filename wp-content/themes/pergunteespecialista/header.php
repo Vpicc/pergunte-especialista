@@ -25,9 +25,12 @@
         <h1><a href="<?php echo home_url();?>"><?php bloginfo('name'); ?></a></h1>
         <h5><?php bloginfo('description'); ?></h5>
       <?php } ?>
-      <div class="hd-search">
-        <?php get_search_form(); ?>
-      </div>
+
+      <button id="pe_search_button" class="btn"><div class="looking-glass-rotate">
+          &#9906;
+        </div>
+    </button>
+
 
       <nav class="site-nav">
         <?php
@@ -39,5 +42,7 @@
         echo $array_menu;
         ?>
       </nav>
-
+      <div class="hd-search">
+        <?php get_search_form(); ?>
+      </div>
     </header><!-- /site-header -->
