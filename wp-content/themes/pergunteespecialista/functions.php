@@ -10,5 +10,4 @@
 	require get_template_directory(  ) . '/inc/customize.php';
 	require get_template_directory(  ) . '/inc/perguntas.php';
 
-
 ?>

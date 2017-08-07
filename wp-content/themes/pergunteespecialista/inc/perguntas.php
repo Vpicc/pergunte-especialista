@@ -137,6 +137,7 @@ add_action( 'admin_menu', 'pergunteEspecialista_remove_meta_box' );
 function pergunteEspecialista_pergunta_add_meta_box(){
 	add_meta_box('contact_email', 'Email do Usuário', 'pergunteEspecialista_pergunta_email_callback', 'contact-pergunta', 'side');
 	add_meta_box('contact_job', 'Profissão do Usuário', 'pergunteEspecialista_pergunta_job_callback', 'contact-pergunta', 'side');
+	add_meta_box('mail_question', 'Encaminhar para Email:', 'pergunteEspecialista_pergunta_mailto_callback', 'contact-pergunta', 'normal');
 }
 
 add_action('add_meta_boxes', 'pergunteEspecialista_pergunta_add_meta_box');
@@ -160,6 +161,69 @@ function pergunteEspecialista_pergunta_job_callback($post){
 	echo '<input type="text" id="pergunteEspecialista_job_field" name="pergunteEspecialista_job_field" value="'.esc_attr($value).'"
 	size="25"/>';
 }
+
+function pergunteEspecialista_pergunta_mailto_callback(){
+	wp_nonce_field( 'pergunteEspecialista_mailto_data','pergunteEspecialista_mailto_meta_box_nonce');
+
+	echo '<form method="POST" action="">';
+	echo '<label>Encaminhar pergunta para email:</label>';
+	echo '<input type="email" name="pe_mailto_field" size="25"/>';
+	echo 	'<button type="submit">Enviar Pergunta</button>';
+	echo '</form>';
+
+
+}
+
+function pergunteEspecialista_mailto_data(){
+	if(!isset($_POST['pergunteEspecialista_mailto_meta_box_nonce'])){
+		return;
+	}
+
+	if(!isset($_POST['pe_mailto_field'])){
+			return;
+	}
+
+	if(!wp_verify_nonce($_POST['pergunteEspecialista_mailto_meta_box_nonce'],'pergunteEspecialista_mailto_data')){
+		return;
+	}
+
+
+
+	if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){
+		return;
+	}
+
+	if(!current_user_can('edit_post',$post_id)){
+		return;
+	}
+
+	$mailtofield = sanitize_email(wp_strip_all_tags($_POST["pe_mailto_field"]));
+
+	$title=apply_filters('the_title', get_post_field('post_title'));
+
+	$content=apply_filters('the_content', get_post_field('post_content'));
+
+	$email = sanitize_text_field($_POST['pergunteEspecialista_email_field']);
+
+
+	// Mandar email 
+	$to = $mailtofield;
+	$from = get_bloginfo( 'admin_email' );
+	$subject = 'Pergunte a um Especialista - ' . $title;
+	$headers[] = 'From: ' . get_bloginfo('name') . '<'. $from .'>';
+	$headers[] = 'Reply-To: ' . $title . '<'. $email .'>';
+	$headers[] = 'Content-Type: text/html: charset=UTF-8';
+
+	wp_mail($to, $subject, $content, $headers);
+
+
+
+
+}
+
+add_action('save_post', 'pergunteEspecialista_mailto_data');
+
+
 
 // Funcao que salva a profissão da pergunta
 function pergunteEspecialista_save_contact_job_data($post_id){
