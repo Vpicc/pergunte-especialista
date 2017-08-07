@@ -26,6 +26,10 @@ function pergunteEspecialista_perguntas_post_type(){
 			'menu_position' => 26,
 			'menu_icon' => 'dashicons-email-alt',
 			'capability_type' => 'post',
+			'map_meta_cap' => true,
+			'capabilities' => array(
+            'create_posts' => false
+        ),
 			'supports' => array(
 				'editor',
 				'title',
@@ -58,7 +62,7 @@ $args = array(
 	$post_id = wp_insert_post($args);
 
 	if($post_id !== 0){
-
+		// Mandar email quando uma pergunta for enviada
 		$to = get_bloginfo( 'admin_email' );
 		$subject = 'Pergunte a um Especialista - ' . $title;
 		$headers[] = 'From: ' . get_bloginfo('name') . '<'. $to .'>';
@@ -123,6 +127,11 @@ function pergunteEspecialista_perguntas_custom_column($column, $post_id){
 }
 
 add_action('manage_contact-pergunta_posts_custom_column', 'pergunteEspecialista_perguntas_custom_column', 10, 2);
+
+function pergunteEspecialista_remove_meta_box(){
+	remove_meta_box('authordiv', 'contact-pergunta', 'normal');
+}
+add_action( 'admin_menu', 'pergunteEspecialista_remove_meta_box' );
 
 // Adiciona a meta-box para colocar o email do contato
 function pergunteEspecialista_pergunta_add_meta_box(){
