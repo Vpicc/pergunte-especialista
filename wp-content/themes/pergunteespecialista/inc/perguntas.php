@@ -57,7 +57,20 @@ $args = array(
 
 	$post_id = wp_insert_post($args);
 
-	echo $post_id;
+	if($post_id !== 0){
+
+		$to = get_bloginfo( 'admin_email' );
+		$subject = 'Pergunte a um Especialista - ' . $title;
+		$headers[] = 'From: ' . get_bloginfo('name') . '<'. $to .'>';
+		$headers[] = 'Reply-To: ' . $title . '<'. $email .'>';
+		$headers[] = 'Content-Type: text/html: charset=UTF-8';
+
+		wp_mail($to, $subject, $message, $headers);
+
+		echo $post_id;
+	} else{
+		echo 0;
+	}
 
 	die();
 
