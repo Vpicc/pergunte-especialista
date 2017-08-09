@@ -45,7 +45,7 @@ function pergunteEspecialistaSaveUserContactForm(){
 	$title = wp_strip_all_tags($_POST["name"]);
 	$email = wp_strip_all_tags($_POST["email"]);
 	$job = wp_strip_all_tags($_POST["job"]);
-	$message = $_POST["message"];
+	$message = wp_kses_post($_POST["message"]);
 
 $args = array(
 	'post_title' => $title,
@@ -174,7 +174,7 @@ function pergunteEspecialista_pergunta_mailto_callback(){
 
 }
 
-function pergunteEspecialista_mailto_data(){
+function pergunteEspecialista_mailto_data($post_id){
 	if(!isset($_POST['pergunteEspecialista_mailto_meta_box_nonce'])){
 		return;
 	}
@@ -206,7 +206,7 @@ function pergunteEspecialista_mailto_data(){
 	$email = sanitize_text_field($_POST['pergunteEspecialista_email_field']);
 
 
-	// Mandar email 
+	// Mandar email
 	$to = $mailtofield;
 	$from = get_bloginfo( 'admin_email' );
 	$subject = 'Pergunte a um Especialista - ' . $title;
@@ -286,4 +286,60 @@ function pergunteEspecialista_save_contact_email_data($post_id){
 }
 
 add_action('save_post', 'pergunteEspecialista_save_contact_email_data');
+
+
+// Quando a pergunta é publicada, cria-se automaticamente um post rascunho
+function pergunteEspecialista_create_post_draft($postid, $post){
+		if(isset($postid)){
+			if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE )
+			 	return;
+
+			if(!current_user_can('edit_post',$post_id))
+			 	return;
+
+			if ( wp_is_post_revision( $post_id ) )
+				return;
+
+
+			$post_type = get_post_type( $post_id );
+
+			$post_status = get_post_status( $post_id );
+
+			if ( "contact-pergunta" != $post_type )
+			 return;
+
+		  remove_action('save_post', 'pergunteEspecialista_create_post_draft');
+
+
+		if('contact-pergunta' == $post_type && $post_status == 'draft'){
+
+
+			$user = get_current_user_id();
+
+			$title=wp_strip_all_tags(get_post_field('post_title'));
+
+			$content=wp_kses_post($_POST['content']);
+
+			$text = $title . " escreveu:<br>" . "<blockquote>" . $content . "</blockquote>";
+
+			$args = array(
+				'post_title' => $title,
+				'post_content' => $text,
+				'post_author' => $user,
+				'post_type' => 'post',
+				'post_status' => 'draft',
+			);
+
+				$post_id = wp_insert_post($args);
+
+				echo $post_id;
+		}
+
+		add_action('save_post','pergunteEspecialista_create_post_draft');
+
+	}
+
+}
+
+add_action('save_post','pergunteEspecialista_create_post_draft');
  ?>
