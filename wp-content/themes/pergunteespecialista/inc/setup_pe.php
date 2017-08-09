@@ -20,7 +20,7 @@ function pergunteEspecialista_setup(){
   add_image_size( 'small-thumbnail', 360, 240, true );
   add_image_size('banner-image', 1200, 210, array('left','top'));
 	// Imagens de Slider
-	add_image_size('slides', 1200, 400, true);
+	add_image_size('slides', 1200, 550, true);
   //Adiciona suporte a formato de post
   add_theme_support( 'post-formats', array('aside', 'gallery', 'link'));
 }

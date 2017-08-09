@@ -1,5 +1,5 @@
 /*
-Theme Name: Pergunte à um especialista
+Theme Name: Pergunte a um especialista
 Author: Victor Piccoli
 Version: 1.0
 */
@@ -69,6 +69,22 @@ div.container{
 .secondary-column{
   width: 17%;
   float: right;
+}
+
+/* Slider */
+
+.bxslider {
+    list-style:none;
+    margin:0;
+    padding:0
+}
+.bx-wrapper img{
+    width: 1200px;
+    height: auto;
+    display: block;
+}
+.bx-wrapper li {
+    text-align: center;
 }
 
 /* Post */
