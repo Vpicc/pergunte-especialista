@@ -163,6 +163,12 @@ article.post:last-of-type{
 	z-index: 99999;
 }
 
+.site-header ul ul li a:link,
+.site-header ul ul li a:visited{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 .site-header ul li:hover > ul {
 	display: block;
 }
@@ -492,7 +498,7 @@ article.post-gallery h2{
   }
 
 
-    .site-logo-side > a > img{
+  .site-logo-side > a > img{
       max-width: 320px;
     }
 }

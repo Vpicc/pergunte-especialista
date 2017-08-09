@@ -282,6 +282,19 @@ function pergunteEspecialista_customize_menu($wp_customize){
          'settings'=> 'pe_menu_margin_top_select'
        )));
 
+       // Padding vertical de submenu
+     	$wp_customize->add_setting('pe_padding_vertical_submenu_select', array(
+         'default'=> '10',
+       ));
+
+     	// Controle
+       $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+        'pe_padding_vertical_submenu_control', array(
+          'label'=> 'Padding Vertical de Submenu',
+          'section'=> 'pe_menu_section',
+          'settings'=> 'pe_padding_vertical_submenu_select'
+        )));
+
        // Tamanho de fonte de botao de pesquisa
        $wp_customize->add_setting('pe_font_size_menu_select', array(
           'default'=> '16',
@@ -503,6 +516,14 @@ function pergunteEspecialista_customize_css(){ ?>
         margin-top: <?php echo get_theme_mod('pe_menu_margin_top_select');?>px;
       }
 
+      /* Padding de submenu */
+
+      .site-header ul ul li a:link,
+      .site-header ul ul li a:visited{
+      	padding-top: <?php echo get_theme_mod('pe_padding_vertical_submenu_select');?>px;
+      	padding-bottom:<?php echo get_theme_mod('pe_padding_vertical_submenu_select');?>px;
+      }
+
       /* Botao de pesquisa */
       #pe_search_button{
         padding-top: <?php echo get_theme_mod('pe_padding_top_search_select');?>px;
@@ -510,6 +531,12 @@ function pergunteEspecialista_customize_css(){ ?>
         padding-right: <?php echo get_theme_mod('pe_padding_side_search_select');?>px;
         padding-let:<?php echo get_theme_mod('pe_padding_side_search_select');?>px;
         font-size: <?php echo get_theme_mod('pe_font_size_search_select');?>px;
+      }
+
+      /* Imagem de fundo */
+
+      body{
+        background-image: url("<?php echo wp_get_attachment_url(get_theme_mod('pe_background_image_setting')); ?>") !important;
       }
 
     </style>
@@ -655,6 +682,33 @@ function pergunteEspecialista_logo($wp_customize){
 
 }
 
-
 add_action('customize_register', 'pergunteEspecialista_logo');
+
+// Imagem de fundo
+
+function pergunteEspecialista_background_image($wp_customize){
+  $wp_customize->add_section('pe_background_image_section', array(
+    'title' => __('Imagem de fundo', 'Pergunte a um Especialista'),
+  ));
+
+  // Imagem
+
+  $wp_customize->add_setting('pe_background_image_setting');
+
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize,
+  	'pe_background_image_control', array(
+    'label'=> 'Imagem',
+    'section'=> 'pe_background_image_section',
+    'settings'=> 'pe_background_image_setting',
+    'flex_width' => true,
+    'flex_height' => true
+  )));
+
+
+}
+
+add_action('customize_register', 'pergunteEspecialista_background_image');
+
+
+
  ?>
