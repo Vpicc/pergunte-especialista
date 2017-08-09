@@ -342,4 +342,22 @@ function pergunteEspecialista_create_post_draft($postid, $post){
 }
 
 add_action('save_post','pergunteEspecialista_create_post_draft');
+
+// Esconde a funcao de visibilidade, pois nao é utilizado
+function pergunteEspecialista_hide_publishing_actions(){
+        $my_post_type = 'contact-pergunta';
+        global $post;
+        if($post->post_type == $my_post_type){
+            echo '
+                <style type="text/css">
+
+                    #visibility{
+                        display:none;
+                    }
+                </style>
+            ';
+        }
+}
+add_action('admin_head-post.php', 'pergunteEspecialista_hide_publishing_actions');
+add_action('admin_head-post-new.php', 'pergunteEspecialista_hide_publishing_actions');
  ?>
