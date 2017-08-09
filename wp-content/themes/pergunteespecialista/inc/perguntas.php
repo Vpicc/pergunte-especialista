@@ -308,9 +308,6 @@ function pergunteEspecialista_create_post_draft($postid, $post){
 			if ( "contact-pergunta" != $post_type )
 			 return;
 
-		  remove_action('save_post', 'pergunteEspecialista_create_post_draft');
-
-
 		if('contact-pergunta' == $post_type && $post_status == 'draft'){
 
 
@@ -335,13 +332,11 @@ function pergunteEspecialista_create_post_draft($postid, $post){
 				echo $post_id;
 		}
 
-		add_action('save_post','pergunteEspecialista_create_post_draft');
-
 	}
 
 }
 
-add_action('save_post','pergunteEspecialista_create_post_draft');
+add_action('publish_contact-pergunta','pergunteEspecialista_create_post_draft');
 
 // Esconde a funcao de visibilidade, pois nao é utilizado
 function pergunteEspecialista_hide_publishing_actions(){
