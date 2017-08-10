@@ -15,29 +15,37 @@
     <div class="container">
     <div class="row footer-widgets">
 
-      <?php if (is_active_sidebar('footer1')){ ?>
-        <div class="col-sm-3 footer-widgets-area">
-        <?php dynamic_sidebar('footer1'); ?>
-        </div>
-      <?php } ?>
 
-      <?php if (is_active_sidebar('footer2')){ ?>
         <div class="col-sm-3 footer-widgets-area">
-        <?php dynamic_sidebar('footer2'); ?>
+            <?php if (is_active_sidebar('footer1')){ ?>
+              <?php dynamic_sidebar('footer1'); ?>
+            <?php } ?>
         </div>
-      <?php } ?>
 
-      <?php if (is_active_sidebar('footer3')){ ?>
-        <div class="col-sm-3 footer-widgets-area">
-        <?php dynamic_sidebar('footer3'); ?>
-        </div>
-      <?php } ?>
 
-      <?php if (is_active_sidebar('footer4')){ ?>
+
         <div class="col-sm-3 footer-widgets-area">
-        <?php dynamic_sidebar('footer4'); ?>
+            <?php if (is_active_sidebar('footer2')){ ?>
+              <?php dynamic_sidebar('footer2'); ?>
+            <?php } ?>
         </div>
-      <?php } ?>
+
+
+
+        <div class="col-sm-3 footer-widgets-area">
+          <?php if (is_active_sidebar('footer3')){ ?>
+            <?php dynamic_sidebar('footer3'); ?>
+          <?php } ?>
+        </div>
+
+
+
+        <div class="col-sm-3 footer-widgets-area">
+          <?php if (is_active_sidebar('footer4')){ ?>
+            <?php dynamic_sidebar('footer4'); ?>
+          <?php } ?>
+        </div>
+
 
     </div>
   </div>
