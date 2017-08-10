@@ -12,7 +12,8 @@ if($slides->have_posts()){ ?>
     <ul class="bxslider">
   <?php while($slides->have_posts()){ $slides->the_post(); ?>
       <li>
-        <?php the_post_thumbnail('slides'); ?></a>
+        <?php the_post_thumbnail('slides'); ?>
+            <div class="textDetail"><p><?php echo get_the_title(); ?></p></div>
       </li>
 
 <?php } ?>
