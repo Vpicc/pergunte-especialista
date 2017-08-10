@@ -16,25 +16,25 @@
     <div class="row footer-widgets">
 
       <?php if (is_active_sidebar('footer1')){ ?>
-        <div class="col-md-4 footer-widgets-area">
+        <div class="col-sm-3 footer-widgets-area">
         <?php dynamic_sidebar('footer1'); ?>
         </div>
       <?php } ?>
 
       <?php if (is_active_sidebar('footer2')){ ?>
-        <div class="col-md-4 footer-widgets-area">
+        <div class="col-sm-3 footer-widgets-area">
         <?php dynamic_sidebar('footer2'); ?>
         </div>
       <?php } ?>
 
       <?php if (is_active_sidebar('footer3')){ ?>
-        <div class="col-md-4 footer-widgets-area">
+        <div class="col-sm-3 footer-widgets-area">
         <?php dynamic_sidebar('footer3'); ?>
         </div>
       <?php } ?>
 
       <?php if (is_active_sidebar('footer4')){ ?>
-        <div class="col-md-4 footer-widgets-area">
+        <div class="col-sm-3 footer-widgets-area">
         <?php dynamic_sidebar('footer4'); ?>
         </div>
       <?php } ?>
