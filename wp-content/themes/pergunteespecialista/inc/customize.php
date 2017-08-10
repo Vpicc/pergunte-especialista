@@ -475,6 +475,10 @@ function pergunteEspecialista_customize_css(){ ?>
 			  background-color: <?php echo get_theme_mod('pe_footer_color');?>;
 			}
 
+      .footer-widgets{
+        background-color: <?php echo get_theme_mod('pe_footer_color');?>;
+      }
+
 			/* Cor de Texto de menu de Footer */
 
 			.footer-menu a{

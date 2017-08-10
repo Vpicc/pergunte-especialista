@@ -133,20 +133,20 @@ article.post:last-of-type{
 }
 
 /* Area de Widget do Footer */
-.footer-widgets-area{
-  width: 25%;
-  float: left;
-  padding-right: 40px;
-  box-sizing: border-box;
+.footer-widgets{
+  background-color: #006ec3;
+  margin-left:0px;
+  margin-right:0px;
 }
-
-.footer-widgets-area{
+/*footer-widgets-area{
   margin-left: 20px;
   width: 22%;
   float: left;
   padding-right: 40px;
   box-sizing: border-box;
-}
+}*/
+
+
 
 
 /* Menus de navegacao */

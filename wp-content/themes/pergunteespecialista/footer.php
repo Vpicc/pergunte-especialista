@@ -12,33 +12,35 @@
         </div>
     </div>
     <?php } ?>
-    <div class="footer-widgets clearfix">
+    <div class="container">
+    <div class="row footer-widgets">
 
       <?php if (is_active_sidebar('footer1')){ ?>
-        <div class="footer-widgets-area">
+        <div class="col-md-4 footer-widgets-area">
         <?php dynamic_sidebar('footer1'); ?>
         </div>
       <?php } ?>
 
       <?php if (is_active_sidebar('footer2')){ ?>
-        <div class="footer-widgets-area">
+        <div class="col-md-4 footer-widgets-area">
         <?php dynamic_sidebar('footer2'); ?>
         </div>
       <?php } ?>
 
       <?php if (is_active_sidebar('footer3')){ ?>
-        <div class="footer-widgets-area">
+        <div class="col-md-4 footer-widgets-area">
         <?php dynamic_sidebar('footer3'); ?>
         </div>
       <?php } ?>
 
       <?php if (is_active_sidebar('footer4')){ ?>
-        <div class="footer-widgets-area">
+        <div class="col-md-4 footer-widgets-area">
         <?php dynamic_sidebar('footer4'); ?>
         </div>
       <?php } ?>
 
     </div>
+  </div>
 
       <p class="footer-text clearfix"><?php bloginfo('name');?> - &copy; <?php echo date('Y');?></p>
 
