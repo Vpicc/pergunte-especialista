@@ -376,6 +376,14 @@ function pergunteEspecialista_customize_css(){ ?>
 				font-family: <?php echo get_theme_mod('pe_font_select'); ?>, sans-serif;
 				font-size: <?php echo get_theme_mod('pe_font_size'); ?>px;
 			}
+
+      p{
+        font-size: <?php echo get_theme_mod('pe_font_size'); ?>px;
+      }
+
+      #front_content{
+        font-size: <?php echo get_theme_mod('pe_font_size'); ?>px;
+      }
 			/* Fonte dos titulos do blog */
 
 			h2.post-title a{

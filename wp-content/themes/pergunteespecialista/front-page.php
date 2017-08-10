@@ -27,10 +27,10 @@ if($slides->have_posts()){ ?>
     ?>
 
     <h2><?php the_title(); ?><h2>
-    <?php the_content();?>
+    <p id="front_content"><?php echo get_the_content();?></p>
 
     <?php }} else {
-    echo 'Não foi encontrado nenhum post</p>';
+    echo 'Não foi encontrado nenhum post';
     } ?>
 
   </div>
@@ -60,7 +60,7 @@ if($slides->have_posts()){ ?>
       ));
 
     } else {
-        echo 'Não foi encontrado nenhum post</p>';
+        echo 'Não foi encontrado nenhum post';
       }
     wp_reset_postdata();
     ?>  </div>
