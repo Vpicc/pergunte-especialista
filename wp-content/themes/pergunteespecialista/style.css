@@ -559,18 +559,31 @@ article.post-gallery h2{
 
 .mob-nav ul li a{
   text-decoration: none;
-  color: #89661a;
+  font-weight: bold;
+  color: #DDD;
+  font-size: 32px;
 
 }
 .mob-nav .menu-item-has-children > a{
-  color: #89661a;
+  color: #DDD;
+  font-size: 32px;
 }
 .mob-nav .menu-item-has-children > ul a{
-  color: #DDD;
+  color: #BBB;
+  font-weight: normal;
+  font-size: 24px;
 }
 
+.mob-nav .menu-item-has-children > ul ul a{
+  color: #BBB;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+
 .mob-nav ul ul .menu-item-has-children > a{
-  color: #89661a;
+  color: #FFF;
+  font-size: 24px;
 }
 
 .mob-nav ul ul{
