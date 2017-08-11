@@ -7,17 +7,40 @@ jQuery(document).ready(function($){
     $( "#searchform" ).toggle('fast');
   });
 
-  // Slider
   $(document).ready(function(){
-  $('.bxslider').bxSlider({
-    pause: 7000,
-    speed: 1000,
-    controls: true,
-    auto: true,
-    pager: false,
-    autoHover: true,
+    // Slider
+    $('.bxslider').bxSlider({
+      pause: 7000,
+      speed: 1000,
+      controls: true,
+      auto: true,
+      pager: false,
+      autoHover: true,
+    });
+
   });
-});
+
+  //
+
+  $("#pe_toggle").click(function(){
+    $( "#pe_popout" ).toggle('fast');
+    $('body,html').toggleClass('no-scroll');
+  });
+
+  $("#pe_closeButton").click(function(){
+    $( "#pe_popout" ).toggle('fast');
+    $('body,html').toggleClass('no-scroll');
+  });
+
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+
 
 // Paginacao, adiciona bootstrap aos botoes
 $('.page-numbers').addClass('btn');

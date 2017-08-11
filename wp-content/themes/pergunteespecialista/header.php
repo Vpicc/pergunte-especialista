@@ -9,7 +9,18 @@
 
 <body <?php body_class(); ?>>
 
-  <div class="container">
+  <div id="pe_popout" class="mob-nav">
+    <div class="mob-nav-container">
+      <div class="mob-nav-scroll">
+  <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'mob-menu' ) ); ?>
+
+      </div>
+    </div>
+      <a id="pe_closeButton">X</a>
+  </div>
+
+  <div class="site-container">
+
 
     <!-- site-header -->
     <header class="site-header">
@@ -32,7 +43,14 @@
     </button>
 
 
-      <nav class="site-nav">
+
+<a  class="btn" id="pe_toggle">&#9776;</a>
+
+
+
+
+
+      <nav class="site-nav" id="nav-wrap">
         <?php
         $args = array(
           'theme_location' => 'primary',
