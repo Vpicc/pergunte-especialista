@@ -55,11 +55,18 @@ $('#contact-form-pergunta').on('submit', function(e){
 
   var form = $(this);
 
+  var recaptcha = "0";
+
   var name = form.find('#name').val(),
       email = form.find('#email').val(),
       job = form.find('#job').val(),
       message = tinyMCE.activeEditor.getContent(),
       ajaxurl = form.data('url');
+
+  if (typeof grecaptcha !== 'undefined') {
+    var recaptcha = grecaptcha.getResponse();
+  }
+
 
 
   // Checa se todos os campos foram preenchidos
@@ -78,6 +85,12 @@ $('#contact-form-pergunta').on('submit', function(e){
   }
   return;
 }
+  if(recaptcha == ""){
+    $('.js-form-recaptcha-error').slideDown(300);
+    return;
+  }
+
+  $('.js-form-loading').slideDown(300);  
   // Desativando inputs
   form.find('input, button, textarea').attr('disabled','disabled');
   tinymce.activeEditor.getBody().setAttribute('contenteditable', false);
@@ -91,6 +104,7 @@ $('#contact-form-pergunta').on('submit', function(e){
       email : email,
       message : message,
       job: job,
+      recaptcha: recaptcha,
       action : 'pergunteEspecialistaSaveUserContactForm'
     },
     error : function(response){
@@ -107,7 +121,15 @@ $('#contact-form-pergunta').on('submit', function(e){
         tinymce.activeEditor.getBody().setAttribute('contenteditable', true);
       } else {
         // Sucesso
-        console.log('Mensagem salva!');
+        if($('#recaptcha_fail').show()){
+          $('#recaptcha_fail').hide();
+        }
+        if($('#pergunte_fail').show()){
+          $('#pergunte_fail').hide();
+        }
+        if($('#pergunte_loading').show()){
+          $('#pergunte_loading').hide();
+        }
         $('.js-form-success').slideDown(300);
       }
     }

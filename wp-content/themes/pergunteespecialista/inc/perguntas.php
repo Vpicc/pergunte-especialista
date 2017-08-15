@@ -46,7 +46,25 @@ function pergunteEspecialistaSaveUserContactForm(){
 	$email = wp_strip_all_tags($_POST["email"]);
 	$job = wp_strip_all_tags($_POST["job"]);
 	$message = wp_kses_post($_POST["message"]);
+	$secret = get_option('Google_recaptcha_secret');
+	$response=wp_strip_all_tags($_POST["recaptcha"]);
 
+	//wp_die($secret);
+	// Verifica se o reCaptcha é valido
+	if($secret != ""){
+	$verify=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$secret}&response={$response}");
+
+	$captcha_success=json_decode($verify);
+
+	if ($captcha_success->success==false) {
+		echo 0;
+		die();
+		return;
+	}
+
+}
+
+// Salva o Post
 $args = array(
 	'post_title' => $title,
 	'post_content' => $message,

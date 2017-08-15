@@ -27,10 +27,16 @@
 			?>
 			<small class="text-danger form-control-msg">É necessário preencher este campo.</small>
 	</div>
+	<?php $GAPICode = get_option('Google_recaptcha');
+	if(@$GAPICode != ''){ ?>
+			<div class="g-recaptcha" data-sitekey="<?php echo $GAPICode;?>"></div>
+		<?php }?>
 	<button id="submit_button" class="btn btn-default" type="submit">Enviar Pergunta</button>
 		<input type="hidden" name="submitted" id="submitted" value="true" />
 
 	<small class="text-success form-control-msg js-form-success">Pergunta enviada!</small>
-	<small class="text-danger form-control-msg js-form-error">Houve um problema ao enviar. Tente novamente.</small>
+	<small id="pergunte_fail" class="text-danger form-control-msg js-form-error">Houve um problema ao enviar. Tente novamente.</small>
+	<small  id="recaptcha_fail" class="text-danger form-control-msg js-form-recaptcha-error">É necessário validar o reCaptcha</small>
+	<small  id="pergunte_loading" class="text-info form-control-msg js-form-loading">Enviando pergunta...</small>
 
 </form>
