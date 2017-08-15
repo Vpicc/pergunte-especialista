@@ -90,7 +90,13 @@ $('#contact-form-pergunta').on('submit', function(e){
     return;
   }
 
-  $('.js-form-loading').slideDown(300);  
+  if($('#recaptcha_fail').show()){
+    $('#recaptcha_fail').hide();
+  }
+  if($('#pergunte_fail').show()){
+    $('#pergunte_fail').hide();
+  }
+  $('.js-form-loading').slideDown(300);
   // Desativando inputs
   form.find('input, button, textarea').attr('disabled','disabled');
   tinymce.activeEditor.getBody().setAttribute('contenteditable', false);
@@ -116,6 +122,12 @@ $('#contact-form-pergunta').on('submit', function(e){
     success : function(response){
       if( response == 0){
         // Erro
+        if($('#recaptcha_fail').show()){
+          $('#recaptcha_fail').hide();
+        }
+        if($('#pergunte_loading').show()){
+          $('#pergunte_loading').hide();
+        }
         $('.js-form-error').slideDown(300);
         form.find('input, button, textarea').removeAttr('disabled','disabled');
         tinymce.activeEditor.getBody().setAttribute('contenteditable', true);
