@@ -47,7 +47,7 @@ function pergunteEspecialistaSaveUserContactForm(){
 	$job = wp_strip_all_tags($_POST["job"]);
 	$message = wp_kses_post($_POST["message"]);
 	$secret = get_option('Google_recaptcha_secret');
-	$response=wp_strip_all_tags($_POST["recaptcha"]);
+	$response = wp_strip_all_tags($_POST["recaptcha"]);
 
 	//wp_die($secret);
 	// Verifica se o reCaptcha é valido

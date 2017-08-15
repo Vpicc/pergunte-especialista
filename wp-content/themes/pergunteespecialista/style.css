@@ -644,3 +644,17 @@ article.post-gallery h2{
 .no-scroll{
   overflow-y: hidden;
 }
+
+/* Links rapidos */
+.quick-img{
+  margin-top: 20px;
+}
+.quick-row{
+  margin-top: 10px;
+}
+.quick-img-single{
+  text-align:center;
+}
+.quick-img-text{
+  text-align: center;
+}

@@ -34,6 +34,98 @@ if($slides->have_posts()){ ?>
     } ?>
 
   </div>
+  <?php if(get_theme_mod('pe_quick_img_display') == "Yes"){ ?>
+  <div class="quick-img container">
+    <div class="quick-row row">
+      <div class="quick-column col-md-4">
+        <div class="quick-img-single">
+          <a href="<?php echo get_permalink(get_theme_mod('pe_quick_image1_link')); ?>">
+            <img src="<?php echo wp_get_attachment_url(get_theme_mod('pe_quick_image1_setting')); ?>"></a>
+        </div>
+        <div class="quick-img-text">
+          <p><a href="<?php echo get_permalink(get_theme_mod('pe_quick_image1_link')); ?>">
+            <?php echo get_theme_mod('pe_quick_image1_headline'); ?></a></p>
+              <?php echo wpautop(get_theme_mod('pe_quick_image1_text')); ?>
+
+        </div>
+
+      </div>
+
+      <div class="quick-column col-md-4">
+        <div class="quick-img-single">
+          <a href="<?php echo get_permalink(get_theme_mod('pe_quick_image2_link')); ?>">
+            <img src="<?php echo wp_get_attachment_url(get_theme_mod('pe_quick_image2_setting')); ?>"></a>
+        </div>
+        <div class="quick-img-text">
+          <p><a href="<?php echo get_permalink(get_theme_mod('pe_quick_image2_link')); ?>">
+            <?php echo get_theme_mod('pe_quick_image2_headline'); ?></a></p>
+              <?php echo wpautop(get_theme_mod('pe_quick_image2_text')); ?>
+
+        </div>
+
+      </div>
+
+      <div class="quick-column col-md-4">
+        <div class="quick-img-single">
+          <a href="<?php echo get_permalink(get_theme_mod('pe_quick_image3_link')); ?>">
+            <img src="<?php echo wp_get_attachment_url(get_theme_mod('pe_quick_image3_setting')); ?>"></a>
+        </div>
+        <div class="quick-img-text">
+          <p><a href="<?php echo get_permalink(get_theme_mod('pe_quick_image3_link')); ?>">
+            <?php echo get_theme_mod('pe_quick_image3_headline'); ?></a></p>
+              <?php echo wpautop(get_theme_mod('pe_quick_image3_text')); ?>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="quick-row row">
+      <div class="quick-column col-md-4">
+        <div class="quick-img-single">
+          <a href="<?php echo get_permalink(get_theme_mod('pe_quick_image4_link')); ?>">
+            <img src="<?php echo wp_get_attachment_url(get_theme_mod('pe_quick_image4_setting')); ?>"></a>
+        </div>
+        <div class="quick-img-text">
+          <p><a href="<?php echo get_permalink(get_theme_mod('pe_quick_image4_link')); ?>">
+            <?php echo get_theme_mod('pe_quick_image4_headline'); ?></a></p>
+              <?php echo wpautop(get_theme_mod('pe_quick_image4_text')); ?>
+
+        </div>
+
+      </div>
+
+      <div class="quick-column col-md-4">
+        <div class="quick-img-single">
+          <a href="<?php echo get_permalink(get_theme_mod('pe_quick_image5_link')); ?>">
+            <img src="<?php echo wp_get_attachment_url(get_theme_mod('pe_quick_image5_setting')); ?>"></a>
+        </div>
+        <div class="quick-img-text">
+          <p><a href="<?php echo get_permalink(get_theme_mod('pe_quick_image5_link')); ?>">
+            <?php echo get_theme_mod('pe_quick_image5_headline'); ?></a></p>
+              <?php echo wpautop(get_theme_mod('pe_quick_image5_text')); ?>
+
+        </div>
+
+      </div>
+
+      <div class="quick-column col-md-4">
+        <div class="quick-img-single">
+          <a href="<?php echo get_permalink(get_theme_mod('pe_quick_image6_link')); ?>">
+            <img src="<?php echo wp_get_attachment_url(get_theme_mod('pe_quick_image6_setting')); ?>"></a>
+        </div>
+        <div class="quick-img-text">
+          <p><a href="<?php echo get_permalink(get_theme_mod('pe_quick_image6_link')); ?>">
+            <?php echo get_theme_mod('pe_quick_image6_headline'); ?></a></p>
+              <?php echo wpautop(get_theme_mod('pe_quick_image6_text')); ?>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+  <?php } ?>
 
   <div class="front-posts">
     <?php // Loop dos ultimos posts

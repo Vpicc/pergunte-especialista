@@ -20,7 +20,7 @@ jQuery(document).ready(function($){
 
   });
 
-  //
+  // Menu de mobile
 
   $("#pe_toggle").click(function(){
     $( "#pe_popout" ).toggle('fast');

@@ -188,7 +188,7 @@ function pergunteEspecialista_customize_fonts($wp_customize){
 
 	 // Controle de tamanho de fonte
 	 $wp_customize->add_setting('pe_font_size', array(
-     'default'=> '16',
+     'default'=> '66',
    ));
 
    $wp_customize->add_control(new WP_Customize_Control($wp_customize,
@@ -430,7 +430,7 @@ function pergunteEspecialista_customize_css(){ ?>
 			/* Cor de Texto de Menu */
 
 			.site-header nav ul li a{
-				-webkit-transition: color  0.3s ease-in-out;
+				-webkit-transition: color 0.3s ease-in-out;
 				color: <?php echo get_theme_mod('pe_menu_text_color');?>;
 			}
 
@@ -720,6 +720,334 @@ function pergunteEspecialista_background_image($wp_customize){
 }
 
 add_action('customize_register', 'pergunteEspecialista_background_image');
+
+
+// Adiciona links rapidos em imagens
+
+function pergunteEspecialista_quick_img($wp_customize){
+  $wp_customize->add_section('pe_quick_img_section', array(
+    'title' => __('Links Rapidos em Imagens', 'Pergunte a um Especialista'),
+  ));
+
+  // Pergunta se quer ou nao exibir
+  $wp_customize->add_setting('pe_quick_img_display', array(
+    'default'=> 'No',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_img_display_control', array(
+     'label'=> 'Exibir Links Rapidos do Website?',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_img_display',
+     'type'=> 'select',
+     'choices'=> array('No'=> 'Não', 'Yes'=>'Sim')
+  )));
+
+  // Imagem 1
+
+  $wp_customize->add_setting('pe_quick_image1_setting');
+
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize,
+  	'pe_quick_image1_control', array(
+    'label'=> 'Imagem 1',
+    'section'=> 'pe_quick_img_section',
+    'settings'=> 'pe_quick_image1_setting',
+    'width' => 100,
+    'height' => 100
+  )));
+
+  // Titulo
+  $wp_customize->add_setting('pe_quick_image1_headline', array(
+    'default'=> '',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image1_headline_control', array(
+     'label'=> 'Título',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image1_headline'
+   )));
+
+
+  // Link
+  $wp_customize->add_setting('pe_quick_image1_link');
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image1_link_control', array(
+     'label'=> 'Link',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image1_link',
+     'type'=> 'dropdown-pages'
+   )));
+
+  // Texto
+  $wp_customize->add_setting('pe_quick_image1_text', array(
+    'default'=> '',
+  ));
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image1_text_control', array(
+     'label'=> 'Título',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image1_text',
+     'type'=> 'textarea'
+   )));
+
+
+  // Imagem 2
+
+  $wp_customize->add_setting('pe_quick_image2_setting');
+
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize,
+    'pe_quick_image2_control', array(
+    'label'=> 'Imagem 2',
+    'section'=> 'pe_quick_img_section',
+    'settings'=> 'pe_quick_image2_setting',
+    'width' => 100,
+    'height' => 100
+  )));
+
+  // Titulo
+  $wp_customize->add_setting('pe_quick_image2_headline', array(
+    'default'=> '',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image2_headline_control', array(
+     'label'=> 'Título',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image2_headline'
+   )));
+
+
+  // Link
+  $wp_customize->add_setting('pe_quick_image2_link');
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image2_link_control', array(
+     'label'=> 'Link',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image2_link',
+     'type'=> 'dropdown-pages'
+   )));
+
+  // Texto
+  $wp_customize->add_setting('pe_quick_image2_text', array(
+    'default'=> '',
+  ));
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image2_text_control', array(
+     'label'=> 'Título',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image2_text',
+     'type'=> 'textarea'
+   )));
+
+
+  // Imagem 3
+
+  $wp_customize->add_setting('pe_quick_image3_setting');
+
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize,
+  	'pe_quick_image3_control', array(
+    'label'=> 'Imagem 3',
+    'section'=> 'pe_quick_img_section',
+    'settings'=> 'pe_quick_image3_setting',
+    'width' => 100,
+    'height' => 100
+  )));
+
+  // Titulo
+  $wp_customize->add_setting('pe_quick_image3_headline', array(
+    'default'=> '',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image3_headline_control', array(
+     'label'=> 'Título',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image3_headline'
+   )));
+
+
+  // Link
+  $wp_customize->add_setting('pe_quick_image3_link');
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image3_link_control', array(
+     'label'=> 'Link',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image3_link',
+     'type'=> 'dropdown-pages'
+   )));
+
+  // Texto
+  $wp_customize->add_setting('pe_quick_image3_text', array(
+    'default'=> '',
+  ));
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image3_text_control', array(
+     'label'=> 'Título',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image3_text',
+     'type'=> 'textarea'
+   )));
+
+
+  // Imagem 4
+
+  $wp_customize->add_setting('pe_quick_image4_setting');
+
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize,
+    'pe_quick_image4_control', array(
+    'label'=> 'Imagem 4',
+    'section'=> 'pe_quick_img_section',
+    'settings'=> 'pe_quick_image4_setting',
+    'width' => 100,
+    'height' => 100
+  )));
+
+  // Titulo
+  $wp_customize->add_setting('pe_quick_image4_headline', array(
+    'default'=> '',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image4_headline_control', array(
+     'label'=> 'Título',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image4_headline'
+   )));
+
+
+  // Link
+  $wp_customize->add_setting('pe_quick_image4_link');
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image4_link_control', array(
+     'label'=> 'Link',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image4_link',
+     'type'=> 'dropdown-pages'
+   )));
+
+  // Texto
+  $wp_customize->add_setting('pe_quick_image4_text', array(
+    'default'=> '',
+  ));
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image4_text_control', array(
+     'label'=> 'Título',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image4_text',
+     'type'=> 'textarea'
+   )));
+
+
+  // Imagem 5
+
+  $wp_customize->add_setting('pe_quick_image5_setting');
+
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize,
+    'pe_quick_image5_control', array(
+    'label'=> 'Imagem 5',
+    'section'=> 'pe_quick_img_section',
+    'settings'=> 'pe_quick_image5_setting',
+    'width' => 100,
+    'height' => 100
+  )));
+
+  // Titulo
+  $wp_customize->add_setting('pe_quick_image5_headline', array(
+    'default'=> '',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image5_headline_control', array(
+     'label'=> 'Título',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image5_headline'
+   )));
+
+
+  // Link
+  $wp_customize->add_setting('pe_quick_image5_link');
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image5_link_control', array(
+     'label'=> 'Link',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image5_link',
+     'type'=> 'dropdown-pages'
+   )));
+
+  // Texto
+  $wp_customize->add_setting('pe_quick_image5_text', array(
+    'default'=> '',
+  ));
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image5_text_control', array(
+     'label'=> 'Título',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image5_text',
+     'type'=> 'textarea'
+   )));
+
+
+  // Imagem 6
+
+  $wp_customize->add_setting('pe_quick_image6_setting');
+
+  $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize,
+    'pe_quick_image6_control', array(
+    'label'=> 'Imagem 6',
+    'section'=> 'pe_quick_img_section',
+    'settings'=> 'pe_quick_image6_setting',
+    'width' => 100,
+    'height' => 100
+  )));
+
+  // Titulo
+  $wp_customize->add_setting('pe_quick_image6_headline', array(
+    'default'=> '',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image6_headline_control', array(
+     'label'=> 'Título',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image6_headline'
+   )));
+
+
+  // Link
+  $wp_customize->add_setting('pe_quick_image6_link');
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image6_link_control', array(
+     'label'=> 'Link',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image6_link',
+     'type'=> 'dropdown-pages'
+   )));
+
+  // Texto
+  $wp_customize->add_setting('pe_quick_image6_text', array(
+    'default'=> '',
+  ));
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_image6_text_control', array(
+     'label'=> 'Título',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_image6_text',
+     'type'=> 'textarea'
+   )));
+
+
+
+}
+
+add_action('customize_register', 'pergunteEspecialista_quick_img');
+
 
 
 
