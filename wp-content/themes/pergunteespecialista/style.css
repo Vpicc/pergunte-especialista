@@ -622,7 +622,7 @@ article.post-gallery h2{
   color: #AAA;
 }
 
-@media (max-width: 768px){
+@media (max-width: 800px){
 
   .site-header nav ul li{
     display: none;
