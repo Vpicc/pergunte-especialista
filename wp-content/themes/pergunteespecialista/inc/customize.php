@@ -188,7 +188,7 @@ function pergunteEspecialista_customize_fonts($wp_customize){
 
 	 // Controle de tamanho de fonte
 	 $wp_customize->add_setting('pe_font_size', array(
-     'default'=> '66',
+     'default'=> '16',
    ));
 
    $wp_customize->add_control(new WP_Customize_Control($wp_customize,
@@ -541,7 +541,7 @@ function pergunteEspecialista_customize_css(){ ?>
         padding-top: <?php echo get_theme_mod('pe_padding_top_search_select');?>px;
         padding-bottom: <?php echo get_theme_mod('pe_padding_bottom_search_select');?>px;
         padding-right: <?php echo get_theme_mod('pe_padding_side_search_select');?>px;
-        padding-let:<?php echo get_theme_mod('pe_padding_side_search_select');?>px;
+        padding-left:<?php echo get_theme_mod('pe_padding_side_search_select');?>px;
         font-size: <?php echo get_theme_mod('pe_font_size_search_select');?>px;
       }
 

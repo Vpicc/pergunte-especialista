@@ -168,7 +168,7 @@ article.post:last-of-type{
 
 /* Site Header Menu */
 .site-header nav ul li{
-  width: 120px;
+  width: 150px;
   text-align: center;
 }
 .site-header nav ul li a:link,
@@ -210,7 +210,7 @@ article.post:last-of-type{
 }
 
 .site-header ul ul ul li{
-  margin-left: 120px;
+  margin-left: 150px;
   height: inherit;
   width: 120px;
 }
@@ -502,6 +502,16 @@ article.post-gallery h2{
 
 .has-error .form-control-msg{
   display: block;
+}
+
+/* Tabelas */
+
+table:nth-child(even) {
+	background-color: #f2f2f2
+}
+
+td{
+	padding-left: 10px;
 }
 
 /* Versão para celular */
