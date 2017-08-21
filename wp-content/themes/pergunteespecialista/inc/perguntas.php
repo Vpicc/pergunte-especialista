@@ -85,7 +85,7 @@ $args = array(
 		$subject = 'Pergunte a um Especialista - ' . $title;
 		$headers[] = 'From: ' . get_bloginfo('name') . '<'. $to .'>';
 		$headers[] = 'Reply-To: ' . $title . '<'. $email .'>';
-		$headers[] = 'Content-Type: text/html; charset=\"ISO-8859-1\"';
+		$headers[] = 'Content-Type: text/html; charset=ISO-8859-1';
 
 		wp_mail($to, $subject, $message, $headers);
 

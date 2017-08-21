@@ -216,7 +216,7 @@ add_action('customize_register', 'pergunteEspecialista_customize_fonts');
 
 
 function pe_load_fonts() {
-	$fonte = 'http://fonts.googleapis.com/css?family=' . str_replace(' ','+',get_theme_mod('pe_font_select'));
+	$fonte = 'https://fonts.googleapis.com/css?family=' . str_replace(' ','+',get_theme_mod('pe_font_select'));
 	wp_register_style('et-googleFonts', $fonte);
   wp_enqueue_style( 'et-googleFonts');
 }
