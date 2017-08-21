@@ -85,7 +85,7 @@ $args = array(
 		$subject = 'Pergunte a um Especialista - ' . $title;
 		$headers[] = 'From: ' . get_bloginfo('name') . '<'. $to .'>';
 		$headers[] = 'Reply-To: ' . $title . '<'. $email .'>';
-		$headers[] = 'Content-Type: text/html: charset=UTF-8';
+		$headers[] = 'Content-Type: text/html; charset=\"ISO-8859-1\"';
 
 		wp_mail($to, $subject, $message, $headers);
 
@@ -230,7 +230,7 @@ function pergunteEspecialista_mailto_data($post_id){
 	$subject = 'Pergunte a um Especialista - ' . $title;
 	$headers[] = 'From: ' . get_bloginfo('name') . '<'. $from .'>';
 	$headers[] = 'Reply-To: ' . $title . '<'. $email .'>';
-	$headers[] = 'Content-Type: text/html: charset=UTF-8';
+	$headers[] = 'Content-Type: text/html; charset=\"ISO-8859-1\"';
 
 	wp_mail($to, $subject, $content, $headers);
 
