@@ -18,7 +18,7 @@
 		<label for="message" class="control-label">Mensagem:</label><br>
 			<?php
 			wp_editor( '', 'message', array( 'tinymce'=> array(
-                 				'toolbar1'=> 'styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | table | url | link image | equation |',
+                 				'toolbar1'=> 'styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | table | url | link image | equation | mathTex',
                        ),
 								'media_buttons' => false,
 								'textarea_name' => 'message' ,
