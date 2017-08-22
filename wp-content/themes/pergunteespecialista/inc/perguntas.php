@@ -76,18 +76,30 @@ $args = array(
 	)
 
 );
-
 	$post_id = wp_insert_post($args);
 
 	if($post_id !== 0){
 		// Mandar email quando uma pergunta for enviada
+		$argarray = array('role' => 'administrator');
+		$user_info = get_users($argarray);
+		foreach($user_info as $k => $valor){
+  			$multiple_recipients[] = $valor->user_email;
+		}
+		$argarray = array('role' => 'editor');
+		$user_info = get_users($argarray);
+		foreach($user_info as $k => $valor){
+		  $multiple_recipients[] = $valor->user_email;
+		}
 		$to = get_bloginfo( 'admin_email' );
 		$subject = 'Pergunte a um Especialista - ' . $title;
 		$headers[] = 'From: ' . get_bloginfo('name') . '<'. $to .'>';
 		$headers[] = 'Reply-To: ' . $title . '<'. $email .'>';
 		$headers[] = 'Content-Type: text/html; charset=ISO-8859-1';
 
-		wp_mail($to, $subject, $message, $headers);
+		foreach($multiple_recipients as $email_address)
+		{
+   			wp_mail($email_address, $subject, $message, $headers);
+		}
 
 		echo $post_id;
 	} else{
