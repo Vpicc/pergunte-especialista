@@ -19,6 +19,7 @@
 			<?php
 			wp_editor( '', 'message', array( 'tinymce'=> array(
                  				'toolbar1'=> 'styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist | table | url | link image | equation | mathTex',
+												'toolbar2'=> ''
                        ),
 								'media_buttons' => false,
 								'textarea_name' => 'message' ,

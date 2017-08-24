@@ -45,10 +45,17 @@ function closeNav() {
 // Paginacao, adiciona bootstrap aos botoes
 $('.page-numbers').addClass('btn');
 
-
 // Submissao de Perguntas
 $('#contact-form-pergunta').on('submit', function(e){
+  pe_submit(e);
+});
 
+}(jQuery));
+
+
+
+
+function pe_submit(e){
   e.preventDefault();
   $('.has-error').removeClass('has-error');
     tinymce.activeEditor.getBody().setAttribute('contenteditable', true);
@@ -62,6 +69,7 @@ $('#contact-form-pergunta').on('submit', function(e){
       job = form.find('#job').val(),
       message = tinyMCE.activeEditor.getContent(),
       ajaxurl = form.data('url');
+
 
   if (typeof grecaptcha !== 'undefined') {
     var recaptcha = grecaptcha.getResponse();
@@ -148,6 +156,5 @@ $('#contact-form-pergunta').on('submit', function(e){
 
 
   });
-});
 
-}(jQuery));
+}
