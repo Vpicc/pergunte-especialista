@@ -52,9 +52,6 @@ $('#contact-form-pergunta').on('submit', function(e){
 
 }(jQuery));
 
-
-
-
 function pe_submit(e){
   e.preventDefault();
   $('.has-error').removeClass('has-error');
