@@ -249,14 +249,16 @@ function pergunteEspecialista_mailto_data($post_id){
 	}
 
 	if(!isset($_POST['pe_mailto_field'])){
-			return;
+		return;
+	}
+
+	if(!isset($_POST['pe_mailto_comment'])){
+		return;
 	}
 
 	if(!wp_verify_nonce($_POST['pergunteEspecialista_mailto_meta_box_nonce'],'pergunteEspecialista_mailto_data')){
 		return;
 	}
-
-
 
 	if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){
 		return;
@@ -266,15 +268,22 @@ function pergunteEspecialista_mailto_data($post_id){
 		return;
 	}
 
+
 	$mailtofield = sanitize_email(wp_strip_all_tags($_POST["pe_mailto_field"]));
 
 	$comment = sanitize_textarea_field($_POST['pe_mailto_comment']);
 
 	$question=apply_filters('the_content', get_post_field('post_content'));
 
+	if($question == ''){
+		return;
+	}
+
 	$email = sanitize_text_field($_POST['pergunteEspecialista_email_field']);
 
-	$content = 'Comentário: <br>' . $comment . 'Pergunta: <br>' . $question;
+	$content = 'Comentário: <br>' . $comment . '<br><br><br>' . 'Pergunta: <br>' . $question;
+
+	remove_action('save_post', 'pergunteEspecialista_mailto_data');
 
 	// Mandar email
 	$to = $mailtofield;
@@ -286,8 +295,7 @@ function pergunteEspecialista_mailto_data($post_id){
 
 	wp_mail($to, $subject, $content, $headers);
 
-
-
+	add_action('save_post', 'pergunteEspecialista_mailto_data');
 
 }
 
