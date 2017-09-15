@@ -47,12 +47,6 @@ $('.page-numbers').addClass('btn');
 
 // Submissao de Perguntas
 $('#contact-form-pergunta').on('submit', function(e){
-  pe_submit(e);
-});
-
-}(jQuery));
-
-function pe_submit(e){
   e.preventDefault();
   $('.has-error').removeClass('has-error');
     tinymce.activeEditor.getBody().setAttribute('contenteditable', true);
@@ -64,6 +58,8 @@ function pe_submit(e){
   var name = form.find('#name').val(),
       email = form.find('#email').val(),
       job = form.find('#job').val(),
+      location = form.find('#location').val(),
+      subject = form.find('#subject').val(),
       message = tinyMCE.activeEditor.getContent(),
       ajaxurl = form.data('url');
 
@@ -72,10 +68,8 @@ function pe_submit(e){
     var recaptcha = grecaptcha.getResponse();
   }
 
-
-
   // Checa se todos os campos foram preenchidos
-  if(name === '' || email === '' || message === '' || job === ''){
+  if(name === '' || email === '' || message === '' || job === '' || location === '' || subject === ''){
   if(name === ''){
     $('#name').parent('.form-group').addClass('has-error');
   }
@@ -87,6 +81,12 @@ function pe_submit(e){
   }
   if(job === ''){
     $('#job').parent('.form-group').addClass('has-error');
+  }
+  if(location === ''){
+    $('#location').parent('.form-group').addClass('has-error');
+  }
+  if(subject === ''){
+    $('#subject').parent('.form-group').addClass('has-error');
   }
   return;
 }
@@ -115,6 +115,8 @@ function pe_submit(e){
       email : email,
       message : message,
       job: job,
+      location: location,
+      subject: subject,
       recaptcha: recaptcha,
       action : 'pergunteEspecialistaSaveUserContactForm'
     },
@@ -154,4 +156,7 @@ function pe_submit(e){
 
   });
 
-}
+
+});
+
+}(jQuery));

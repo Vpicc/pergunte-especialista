@@ -22,7 +22,7 @@ get_header();
         the_time('F, Y');
         echo " às ";
         the_time('h:m');
-        ?> | Por <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>"><?php the_author();?></a> | Postado em
+        ?> | Postado em
 
         <?php $categories = get_the_category();
         $separator = ", ";
@@ -79,7 +79,7 @@ if(comments_open()){
           the_time('F, Y');
           echo " às ";
           the_time('h:m');
-          ?> | Por <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>"><?php the_author();?></a> | Postado em
+          ?> | Postado em
 
           <?php $categories = get_the_category();
           $separator = ", ";

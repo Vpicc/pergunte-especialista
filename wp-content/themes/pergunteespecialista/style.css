@@ -436,7 +436,10 @@ article.post-gallery h2{
   text-align: center;
   font-weight: normal;
 }
-
+#front_content{
+  margin-left: 10px;
+  margin-right: 10px;
+}
 .front-posts{
   margin-left: 20px;
   margin-right: 20px;

@@ -10,8 +10,18 @@
 		<small class="text-danger form-control-msg">É necessário preencher este campo.</small>
 	</div>
 	<div class="form-group">
+		<label for="location" class="control-label">Cidade e/ou Estado:</label><br>
+		<input id="location" class="form-control" name="location" type="text"><br>
+		<small class="text-danger form-control-msg">É necessário preencher este campo.</small>
+	</div>
+	<div class="form-group">
 		<label for="job" class="control-label">Profissão:</label><br>
 		<input id="job" class="form-control" name="job" type="text"><br>
+		<small class="text-danger form-control-msg">É necessário preencher este campo.</small>
+	</div>
+	<div class="form-group">
+		<label for="subject" class="control-label">Assunto:</label><br>
+		<input id="subject" class="form-control" name="subject" type="text"><br>
 		<small class="text-danger form-control-msg">É necessário preencher este campo.</small>
 	</div>
 	<div id="warnmessage" class="form-group">

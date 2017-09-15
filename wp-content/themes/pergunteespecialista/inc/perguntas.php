@@ -42,7 +42,9 @@ function pergunteEspecialista_perguntas_post_type(){
 // Salva o Form
 function pergunteEspecialistaSaveUserContactForm(){
 
-	$title = wp_strip_all_tags($_POST["name"]);
+	$title = wp_strip_all_tags($_POST["subject"]);
+	$location = wp_strip_all_tags($_POST["location"]);
+	$name = wp_strip_all_tags($_POST["name"]);
 	$email = wp_strip_all_tags($_POST["email"]);
 	$job = wp_strip_all_tags($_POST["job"]);
 	$message = wp_kses_post($_POST["message"]);
@@ -72,7 +74,10 @@ $args = array(
 	'post_type' => 'contact-pergunta',
 	'meta_input' => array(
 		'_contact_email_value_key' => $email,
-		'_contact_job_value_key' => $job
+		'_contact_job_value_key' => $job,
+		'_contact_name_value_key' => $name,
+		'_contact_location_value_key' => $location,
+		'_author_value_key' => get_bloginfo('name')
 	)
 
 );
@@ -93,7 +98,7 @@ $args = array(
 		$to = get_bloginfo( 'admin_email' );
 		$subject = 'Pergunte a um Especialista - ' . $title;
 		$headers[] = 'From: ' . get_bloginfo('name') . '<'. $to .'>';
-		$headers[] = 'Reply-To: ' . $title . '<'. $email .'>';
+		$headers[] = 'Reply-To: ' . $name . '<'. $email .'>';
 		$headers[] = 'Content-Type: text/html; charset=UTF-8';
 
 		foreach($multiple_recipients as $email_address)
@@ -122,10 +127,10 @@ add_action('init','pergunteEspecialista_perguntas_post_type');
 function pergunteEspecialista_set_perguntas_columns($columns){
 
 		$newColumns = array();
-		$newColumns['title'] = 'Nome Completo';
+		$newColumns['title'] = 'Assunto';
 		$newColumns['message'] = 'Mensagem';
 		$newColumns['email'] = 'Email';
-		$newColumns['job'] = 'Profissão';
+		$newColumns['location'] = 'Local';
 		$newColumns['date'] = 'Data';
 
 		return $newColumns;
@@ -148,10 +153,10 @@ function pergunteEspecialista_perguntas_custom_column($column, $post_id){
 			echo '<a href="mailto:"'.$email.'">'.$email.'</a>';
 			break;
 
-		case 'job':
+		case 'location':
 
-		$job = get_post_meta( $post_id, '_contact_job_value_key', true);
-		echo $job;
+		$location = get_post_meta( $post_id, '_contact_location_value_key', true);
+		echo $location;
 		break;
 	}
 }
@@ -163,14 +168,47 @@ function pergunteEspecialista_remove_meta_box(){
 }
 add_action( 'admin_menu', 'pergunteEspecialista_remove_meta_box' );
 
-// Adiciona a meta-box para colocar o email do contato
+// Adiciona meta-boxes do contato
 function pergunteEspecialista_pergunta_add_meta_box(){
+	add_meta_box('contact_name', 'Nome do Usuário', 'pergunteEspecialista_pergunta_name_callback', 'contact-pergunta', 'side');
 	add_meta_box('contact_email', 'Email do Usuário', 'pergunteEspecialista_pergunta_email_callback', 'contact-pergunta', 'side');
+	add_meta_box('contact_location', 'Local do Usuário', 'pergunteEspecialista_pergunta_location_callback', 'contact-pergunta', 'side');
 	add_meta_box('contact_job', 'Profissão do Usuário', 'pergunteEspecialista_pergunta_job_callback', 'contact-pergunta', 'side');
+	add_meta_box('author_question', 'Autoria da Resposta:', 'pergunteEspecialista_pergunta_author_callback', 'contact-pergunta', 'normal');
 	add_meta_box('mail_question', 'Encaminhar para Email:', 'pergunteEspecialista_pergunta_mailto_callback', 'contact-pergunta', 'normal');
 }
 
 add_action('add_meta_boxes', 'pergunteEspecialista_pergunta_add_meta_box');
+
+function pergunteEspecialista_pergunta_author_callback($post){
+	wp_nonce_field( 'pergunteEspecialista_save_contact_author_data','pergunteEspecialista_name_meta_box_nonce');
+
+	$value = get_post_meta($post->ID,'_author_value_key', true);
+
+	echo '<label for="pergunteEspecialista_author_field">Autor: </label>';
+	echo '<input type="text" id="pergunteEspecialista_author_field" name="pergunteEspecialista_author_field" value="'.esc_attr($value).'"
+	size="25"/>';
+}
+
+function pergunteEspecialista_pergunta_name_callback($post){
+	wp_nonce_field( 'pergunteEspecialista_save_contact_name_data','pergunteEspecialista_name_meta_box_nonce');
+
+	$value = get_post_meta($post->ID,'_contact_name_value_key', true);
+
+	echo '<label for="pergunteEspecialista_name_field">Nome do Usuário</label>';
+	echo '<input type="text" id="pergunteEspecialista_name_field" name="pergunteEspecialista_name_field" value="'.esc_attr($value).'"
+	size="25"/>';
+}
+
+function pergunteEspecialista_pergunta_location_callback($post){
+	wp_nonce_field( 'pergunteEspecialista_save_contact_location_data','pergunteEspecialista_name_meta_box_nonce');
+
+	$value = get_post_meta($post->ID,'_contact_location_value_key', true);
+
+	echo '<label for="pergunteEspecialista_location_field">Local do Usuário</label>';
+	echo '<input type="text" id="pergunteEspecialista_location_field" name="pergunteEspecialista_location_field" value="'.esc_attr($value).'"
+	size="25"/>';
+}
 
 function pergunteEspecialista_pergunta_email_callback($post){
 	wp_nonce_field( 'pergunteEspecialista_save_contact_email_data','pergunteEspecialista_email_meta_box_nonce');
@@ -196,11 +234,12 @@ function pergunteEspecialista_pergunta_mailto_callback(){
 	wp_nonce_field( 'pergunteEspecialista_mailto_data','pergunteEspecialista_mailto_meta_box_nonce');
 
 	echo '<form method="POST" action="">';
-	echo '<label>Encaminhar pergunta para email:</label>';
-	echo '<input type="email" name="pe_mailto_field" size="25"/>';
+	echo '<label>Encaminhar pergunta para email:</label><br>';
+	echo '<input type="email" name="pe_mailto_field" size="25"/><br>';
+	echo '<label>Comentários:</label><br>';
+	echo '<textarea name="pe_mailto_comment" rows="4" cols="100"></textarea><br>';
 	echo 	'<button type="submit">Enviar Pergunta</button>';
 	echo '</form>';
-
 
 }
 
@@ -229,19 +268,20 @@ function pergunteEspecialista_mailto_data($post_id){
 
 	$mailtofield = sanitize_email(wp_strip_all_tags($_POST["pe_mailto_field"]));
 
-	$title=apply_filters('the_title', get_post_field('post_title'));
+	$comment = sanitize_textarea_field($_POST['pe_mailto_comment']);
 
-	$content=apply_filters('the_content', get_post_field('post_content'));
+	$question=apply_filters('the_content', get_post_field('post_content'));
 
 	$email = sanitize_text_field($_POST['pergunteEspecialista_email_field']);
 
+	$content = 'Comentário: <br>' . $comment . 'Pergunta: <br>' . $question;
 
 	// Mandar email
 	$to = $mailtofield;
 	$from = get_bloginfo( 'admin_email' );
 	$subject = 'Pergunte a um Especialista - ' . $title;
 	$headers[] = 'From: ' . get_bloginfo('name') . '<'. $from .'>';
-	$headers[] = 'Reply-To: ' . $title . '<'. $email .'>';
+	$headers[] = 'Reply-To: '.'<'. get_bloginfo( 'admin_email' ) .'>';
 	$headers[] = 'Content-Type: text/html; charset=UTF-8';
 
 	wp_mail($to, $subject, $content, $headers);
@@ -318,6 +358,102 @@ function pergunteEspecialista_save_contact_email_data($post_id){
 add_action('save_post', 'pergunteEspecialista_save_contact_email_data');
 
 
+
+// Funcao que salva o nome do perguntante
+function pergunteEspecialista_save_contact_name_data($post_id){
+
+	if(!isset($_POST['pergunteEspecialista_name_meta_box_nonce'])){
+		return;
+	}
+
+	if(!wp_verify_nonce($_POST['pergunteEspecialista_name_meta_box_nonce'],'pergunteEspecialista_save_contact_name_data')){
+		return;
+	}
+
+	if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){
+		return;
+	}
+
+	if(!current_user_can('edit_post',$post_id)){
+		return;
+	}
+
+	if(!isset($_POST['pergunteEspecialista_name_field'])){
+		return;
+	}
+
+	$my_data = sanitize_text_field($_POST['pergunteEspecialista_name_field']);
+
+	update_post_meta($post_id, '_contact_name_value_key', $my_data);
+
+}
+
+add_action('save_post', 'pergunteEspecialista_save_contact_name_data');
+
+// Funcao que salva o local do perguntante
+function pergunteEspecialista_save_contact_location_data($post_id){
+
+	if(!isset($_POST['pergunteEspecialista_location_meta_box_nonce'])){
+		return;
+	}
+
+	if(!wp_verify_nonce($_POST['pergunteEspecialista_location_meta_box_nonce'],'pergunteEspecialista_save_contact_location_data')){
+		return;
+	}
+
+	if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){
+		return;
+	}
+
+	if(!current_user_can('edit_post',$post_id)){
+		return;
+	}
+
+	if(!isset($_POST['pergunteEspecialista_location_field'])){
+		return;
+	}
+
+	$my_data = sanitize_text_field($_POST['pergunteEspecialista_location_field']);
+
+	update_post_meta($post_id, '_contact_location_value_key', $my_data);
+
+}
+
+add_action('save_post', 'pergunteEspecialista_save_contact_location_data');
+
+// Funcao que salva o autor da resposta
+function pergunteEspecialista_save_contact_author_data($post_id){
+
+	if(!isset($_POST['pergunteEspecialista_author_meta_box_nonce'])){
+		return;
+	}
+
+	if(!wp_verify_nonce($_POST['pergunteEspecialista_author_meta_box_nonce'],'pergunteEspecialista_save_contact_author_data')){
+		return;
+	}
+
+	if(defined('DOING_AUTOSAVE') && DOING_AUTOSAVE){
+		return;
+	}
+
+	if(!current_user_can('edit_post',$post_id)){
+		return;
+	}
+
+	if(!isset($_POST['pergunteEspecialista_author_field'])){
+		return;
+	}
+
+	$my_data = sanitize_text_field($_POST['pergunteEspecialista_author_field']);
+
+	update_post_meta($post_id, '_contact_author_value_key', $my_data);
+
+}
+
+add_action('save_post', 'pergunteEspecialista_save_contact_author_data');
+
+
+
 // Quando a pergunta é publicada, cria-se automaticamente um post rascunho
 function pergunteEspecialista_create_post_draft($postid, $post){
 		if(isset($postid)){
@@ -347,7 +483,7 @@ function pergunteEspecialista_create_post_draft($postid, $post){
 
 			$content=wp_kses_post($_POST['content']);
 
-			$text = $title . " escreveu:<br>" . "<blockquote>" . $content . "</blockquote>";
+			$text = "<blockquote>" . $content . "</blockquote>" . "<b>". "Respondido por: ". $_POST['pergunteEspecialista_author_field'] . "</b>";
 
 			$args = array(
 				'post_title' => $title,
