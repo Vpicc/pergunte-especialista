@@ -26,4 +26,12 @@ function pergunteEspecialista_setup(){
 }
 
 add_action( 'after_setup_theme','pergunteEspecialista_setup');
+
+// Função que cria excerpts
+function pe_create_excerpt( $text = '' ) {
+    $excerpt_length = apply_filters( 'excerpt_length', 55 );
+    $excerpt_more = apply_filters( 'excerpt_more', ' ' . '[&hellip;]' );
+
+    return wp_trim_words( $text, $excerpt_length, $excerpt_more );
+}
  ?>

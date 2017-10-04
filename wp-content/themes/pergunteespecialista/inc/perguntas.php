@@ -30,14 +30,52 @@ function pergunteEspecialista_perguntas_post_type(){
 			'capabilities' => array(
             'create_posts' => false
         ),
+			'taxonomies' => array('post_tag','category'),
 			'supports' => array(
-				'editor',
 				'title',
-				'author'
+				'author',
+				'thumbnail',
 			)
 		);
 		register_post_type('contact-pergunta', $args);
 }
+
+// Cria editores de perguntas e respostas
+function pe_perguntas_respostas_editors(){
+    global $post;
+    if( 'contact-pergunta' != $post->post_type )
+        return;
+
+    $editor1 = get_post_meta( $post->ID, '_perguntas_editor', true);
+    $editor2 = get_post_meta( $post->ID, '_respostas_editor', true);
+
+    wp_nonce_field( plugin_basename( __FILE__ ), 'pe_perguntas_respostas' );
+    echo '<h2>Pergunta</h2>';
+    echo wp_editor( $editor1, 'perguntas_editor', array( 'textarea_name' => 'perguntas_editor' ) );
+    echo '<h2>Resposta</h2>';
+    echo wp_editor( $editor2, 'respostas_editor', array( 'textarea_name' => 'respostas_editor' ) );
+}
+
+function pe_save_perguntas_respostas( $post_id, $post_object ){
+    if( !isset( $post_object->post_type ) || 'contact-pergunta' != $post_object->post_type )
+        return;
+
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+        return;
+
+    if ( !isset( $_POST['pe_perguntas_respostas'] ) || !wp_verify_nonce( $_POST['pe_perguntas_respostas'], plugin_basename( __FILE__ ) ) )
+        return;
+
+    if ( isset( $_POST['perguntas_editor'] )  )
+        update_post_meta( $post_id, '_perguntas_editor', $_POST['perguntas_editor'] );
+
+    if ( isset( $_POST['respostas_editor'] )  )
+        update_post_meta( $post_id, '_respostas_editor', $_POST['respostas_editor'] );
+}
+
+add_action( 'edit_form_after_editor', 'pe_perguntas_respostas_editors' );
+add_action( 'save_post', 'pe_save_perguntas_respostas', 10, 2 );
+
 
 // Salva o Form
 function pergunteEspecialistaSaveUserContactForm(){
@@ -69,7 +107,6 @@ function pergunteEspecialistaSaveUserContactForm(){
 // Salva o Post
 $args = array(
 	'post_title' => $title,
-	'post_content' => $message,
 	'post_author' => 1,
 	'post_type' => 'contact-pergunta',
 	'meta_input' => array(
@@ -77,6 +114,7 @@ $args = array(
 		'_contact_job_value_key' => $job,
 		'_contact_name_value_key' => $name,
 		'_contact_location_value_key' => $location,
+		'_perguntas_editor' => $message,
 		'_author_value_key' => get_bloginfo('name')
 	)
 
@@ -144,7 +182,8 @@ function pergunteEspecialista_perguntas_custom_column($column, $post_id){
 
 		case 'message':
 
-			echo get_the_excerpt();
+			$message = pe_create_excerpt(get_post_meta( $post_id, '_perguntas_editor', true));
+			echo $message;
 			break;
 
 		case 'email':
@@ -237,7 +276,7 @@ function pergunteEspecialista_pergunta_mailto_callback(){
 	echo '<label>Encaminhar pergunta para email:</label><br>';
 	echo '<input type="email" name="pe_mailto_field" size="25"/><br>';
 	echo '<label>Comentários:</label><br>';
-	echo '<textarea name="pe_mailto_comment" rows="4" cols="100"></textarea><br>';
+	echo '<textarea name="pe_mailto_comment" rows="4" cols="25"></textarea><br>';
 	echo 	'<button type="submit">Enviar Pergunta</button>';
 	echo '</form>';
 
@@ -273,7 +312,7 @@ function pergunteEspecialista_mailto_data($post_id){
 
 	$comment = sanitize_textarea_field($_POST['pe_mailto_comment']);
 
-	$question=apply_filters('the_content', get_post_field('post_content'));
+	$question=apply_filters('the_content', get_post_field('perguntas_editor'));
 
 	if($question == ''){
 		return;
@@ -459,74 +498,4 @@ function pergunteEspecialista_save_contact_author_data($post_id){
 }
 
 add_action('save_post', 'pergunteEspecialista_save_contact_author_data');
-
-
-
-// Quando a pergunta é publicada, cria-se automaticamente um post rascunho
-function pergunteEspecialista_create_post_draft($postid, $post){
-		if(isset($postid)){
-			if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE )
-			 	return;
-
-			if(!current_user_can('edit_post',$post_id))
-			 	return;
-
-			if ( wp_is_post_revision( $post_id ) )
-				return;
-
-
-			$post_type = get_post_type( $post_id );
-
-			$post_status = get_post_status( $post_id );
-
-			if ( "contact-pergunta" != $post_type )
-			 return;
-
-		if('contact-pergunta' == $post_type && $post_status == 'draft'){
-
-
-			$user = get_current_user_id();
-
-			$title=wp_strip_all_tags(get_post_field('post_title'));
-
-			$content=wp_kses_post($_POST['content']);
-
-			$text = "<blockquote>" . $content . "</blockquote>" . "<b>". "Respondido por: ". $_POST['pergunteEspecialista_author_field'] . "</b>";
-
-			$args = array(
-				'post_title' => $title,
-				'post_content' => $text,
-				'post_author' => $user,
-				'post_type' => 'post',
-				'post_status' => 'draft',
-			);
-
-				$post_id = wp_insert_post($args);
-
-				echo $post_id;
-		}
-
-	}
-
-}
-
-add_action('publish_contact-pergunta','pergunteEspecialista_create_post_draft');
-
-// Esconde a funcao de visibilidade, pois nao é utilizado
-function pergunteEspecialista_hide_publishing_actions(){
-        $my_post_type = 'contact-pergunta';
-        global $post;
-        if($post->post_type == $my_post_type){
-            echo '
-                <style type="text/css">
-
-                    #visibility{
-                        display:none;
-                    }
-                </style>
-            ';
-        }
-}
-add_action('admin_head-post.php', 'pergunteEspecialista_hide_publishing_actions');
-add_action('admin_head-post-new.php', 'pergunteEspecialista_hide_publishing_actions');
  ?>
