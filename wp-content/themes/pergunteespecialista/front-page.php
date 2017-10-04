@@ -135,14 +135,22 @@ if($slides->have_posts()){ ?>
 
 
     $allPosts = new WP_Query(array(
-      'post_type'=> 'post',
+      'post_type'=> array('contact-pergunta','post'),
       'posts_per_page'=> 4,
+      'orderby' => 'date',
       'paged'=> $ourCurrentPage
     ));
     if($allPosts->have_posts()){
       while($allPosts->have_posts()){ $allPosts->the_post(); ?>
 
-        <?php get_template_part('content', get_post_format()); ?>
+        <?php
+        if( 'contact-pergunta' != $post->post_type ){
+          get_template_part('content', get_post_format());
+        } else{
+          get_template_part('content-contact-pergunta', get_post_format());
+        }
+
+         ?>
       <?php }
 
       echo paginate_links(array(

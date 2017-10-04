@@ -34,4 +34,5 @@ function pe_create_excerpt( $text = '' ) {
 
     return wp_trim_words( $text, $excerpt_length, $excerpt_more );
 }
+
  ?>

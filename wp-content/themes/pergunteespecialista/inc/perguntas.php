@@ -20,6 +20,8 @@ function pergunteEspecialista_perguntas_post_type(){
 		);
 		$args = array(
 			'labels' => $labels,
+			'public' => true,
+			'has_archive' => true,
 			'show_ui' => true,
 			'show_in_menu' => true,
 			'hierarchical' => false,
@@ -35,10 +37,31 @@ function pergunteEspecialista_perguntas_post_type(){
 				'title',
 				'author',
 				'thumbnail',
+				'comments',
 			)
 		);
 		register_post_type('contact-pergunta', $args);
 }
+
+add_action('init','pergunteEspecialista_perguntas_post_type');
+
+// Função que altera queries para aceitar post type pergunta
+function wpa_cpt_in_categories( $query ){
+    if ( ! is_admin()
+        && $query->is_category()
+        && $query->is_main_query() ) {
+            $query->set( 'post_type', array( 'post', 'contact-pergunta' ) );
+    }
+		if ( ! is_admin()
+		    && $query->is_tag()
+        && $query->is_main_query() ) {
+        $query->set( 'post_type', array( 'post', 'contact-pergunta' ) );
+    }
+
+}
+
+add_action( 'pre_get_posts', 'wpa_cpt_in_categories' );
+
 
 // Cria editores de perguntas e respostas
 function pe_perguntas_respostas_editors(){
@@ -160,8 +183,6 @@ add_action('wp_ajax_pergunteEspecialistaSaveUserContactForm', 'pergunteEspeciali
 
 
 // Gera as colunas do post type
-add_action('init','pergunteEspecialista_perguntas_post_type');
-
 function pergunteEspecialista_set_perguntas_columns($columns){
 
 		$newColumns = array();
