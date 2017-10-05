@@ -57,6 +57,12 @@ function wpa_cpt_in_categories( $query ){
         && $query->is_main_query() ) {
         $query->set( 'post_type', array( 'post', 'contact-pergunta' ) );
     }
+		if ( ! is_admin()
+		    && $query->is_search()
+        && $query->is_main_query() ) {
+
+
+    }
 
 }
 
@@ -94,6 +100,7 @@ function pe_save_perguntas_respostas( $post_id, $post_object ){
 
     if ( isset( $_POST['respostas_editor'] )  )
         update_post_meta( $post_id, '_respostas_editor', $_POST['respostas_editor'] );
+
 }
 
 add_action( 'edit_form_after_editor', 'pe_perguntas_respostas_editors' );
