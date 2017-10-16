@@ -50,20 +50,16 @@ function wpa_cpt_in_categories( $query ){
     if ( ! is_admin()
         && $query->is_category()
         && $query->is_main_query() ) {
-            $query->set( 'post_type', array( 'post', 'contact-pergunta' ) );
-    }
-		if ( ! is_admin()
+          $query->set( 'post_type', array( 'post', 'contact-pergunta' ) );
+    }else	if ( ! is_admin()
 		    && $query->is_tag()
         && $query->is_main_query() ) {
-        $query->set( 'post_type', array( 'post', 'contact-pergunta' ) );
-    }
-		if ( ! is_admin()
-		    && $query->is_search()
-        && $query->is_main_query() ) {
-
-
-    }
-
+        	$query->set( 'post_type', array( 'post', 'contact-pergunta' ) );
+    } else if( ! is_admin()
+		&& $query->is_home()
+	 	&& $query->is_main_query()){
+					$query->set( 'post_type', array( 'post', 'contact-pergunta' ) );
+		}
 }
 
 add_action( 'pre_get_posts', 'wpa_cpt_in_categories' );
@@ -193,6 +189,7 @@ add_action('wp_ajax_pergunteEspecialistaSaveUserContactForm', 'pergunteEspeciali
 function pergunteEspecialista_set_perguntas_columns($columns){
 
 		$newColumns = array();
+		$newColumns['cb']='cb';
 		$newColumns['title'] = 'Assunto';
 		$newColumns['message'] = 'Mensagem';
 		$newColumns['email'] = 'Email';
