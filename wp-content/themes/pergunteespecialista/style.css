@@ -801,11 +801,11 @@ div.hd-search #searchsubmit:hover{
 }
 
 .footer-callout{
-  background-color: <?php echo get_theme_mod('pe_footer_callout_background_color');?>;
+  background-color: #DDD;
 }
 
 .footer-callout-text{
-  color: #DDD;
+  color: #000;
 }
 
 /* Padding de Menu */
