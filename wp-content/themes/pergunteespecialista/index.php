@@ -29,7 +29,11 @@
   <?php
   if(have_posts()){
     while(have_posts()){the_post();
-      get_template_part('content', get_post_format());
+      if( 'contact-pergunta' != $post->post_type ){
+        get_template_part('content', get_post_format());
+      } else{
+        get_template_part('content-contact-pergunta', get_post_format());
+      }
     ?>
 
   <?php }
