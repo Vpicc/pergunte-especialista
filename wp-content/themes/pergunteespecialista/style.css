@@ -672,3 +672,178 @@ td{
 .quick-img-text{
   text-align: center;
 }
+
+
+/* Configurações iniciais de style */
+body{
+  background-color: #F4F5F7;
+  font-size: 16px;
+}
+
+p{
+  font-size: 16px;
+}
+
+#front_content{
+  font-size: 16px;
+}
+/* Fonte dos titulos do blog */
+
+h2.post-title a{
+    font-size: 30px;
+}
+
+/* Cor do Header */
+.site-header{
+  background-color: #006ec3;
+}
+/* Cor de links */
+a:link,
+a:visited{
+    color: #006ec3;
+}
+/* Cor de Menu */
+.site-header nav ul li a:link,
+.site-header nav ul li a:visited{
+  -webkit-transition: background-color  0.3s ease-in-out;
+  background-color: #006ec3;
+}
+
+/* Cor de highlight de menu*/
+
+.site-header nav ul li:hover > a{
+  -webkit-transition: background-color  0.3s ease-in-out;
+  background-color: #0046a3;
+  -webkit-transition: color  0.3s ease-in-out;
+  color: #FFF;
+}
+
+/* Cor de Menu Selecionado */
+.site-header nav ul li.current_page_item > a,
+.site-header nav ul li.current_page_item > a:visited,
+.site-header nav ul li.current-menu-item > a,
+.site-header nav ul li.current-menu-item > a:visited,
+.site-header nav ul li.current-menu-ancestor > a,
+.site-header nav ul li.current-menu-parent > a,
+.site-header nav ul li.current-menu-parent li.current_page_item > a,
+.site-header nav ul li.current-menu-parent li.current-menu-item > a{
+  background-color: #00056b;
+}
+
+/* Cor de Texto de Menu */
+
+.site-header nav ul li a{
+  -webkit-transition: color 0.3s ease-in-out;
+  color: #FFF;
+}
+
+/* Cor de botoes */
+div.hd-search #searchsubmit{
+  background-color: #006ec3;
+}
+
+#pe_search_button{
+  background-color: #006ec3;
+}
+
+.btn{
+  background-color: #006ec3;
+}
+
+/* Cor de Texto de botao */
+div.hd-search #searchsubmit{
+  color: #FFF;
+}
+
+.btn{
+  color: #FFF;
+}
+
+/* Cor de Highlight de botao*/
+div.hd-search #searchsubmit:hover{
+  background-color: #0046a3;
+}
+
+#pe_search_button:hover{
+  background-color: #0046a3;
+}
+
+.btn:hover{
+  background-color: #0046a3;
+}
+
+/* Cor de Footer */
+
+.site-footer{
+  background-color: #006ec3;
+}
+
+.footer-widgets{
+  background-color: #006ec3;
+}
+
+/* Cor de Texto de menu de Footer */
+
+.footer-menu a{
+  color: #FFF;
+}
+
+.footer-text{
+  color: #FFF;
+}
+
+.footer-widgets-area{
+  color: #FFF;
+}
+
+.footer-widgets-area caption{
+  color: #FFF;
+}
+
+.footer-callout{
+  background-color: <?php echo get_theme_mod('pe_footer_callout_background_color');?>;
+}
+
+.footer-callout-text{
+  color: #DDD;
+}
+
+/* Padding de Menu */
+
+.site-header nav ul li a:link,
+.site-header nav ul li a:visited{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+/* Tamanho de fonte de Menu */
+
+.site-header nav ul li a:link,
+.site-header nav ul li a:visited{
+  font-size: 16px;
+}
+
+/* Margin de submenu */
+
+.site-header ul ul {
+  margin-top: 64px;
+}
+
+/* Padding de submenu */
+
+.site-header ul ul li a:link,
+.site-header ul ul li a:visited{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Botao de pesquisa */
+#pe_search_button{
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-size: 50px;
+}
