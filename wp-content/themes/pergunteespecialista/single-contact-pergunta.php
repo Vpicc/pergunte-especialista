@@ -53,9 +53,9 @@ get_header();
       <b><?php echo "Respondido por: " . get_post_meta( get_the_id(), '_author_value_key', true)?> </b>
         <br><br>
         <?php echo get_post_meta( get_the_id(), '_respostas_editor', true)?>
+        <br>
+        <?php the_content();?>
     </article>
-
-  </article>
 
 <?php }
 
@@ -116,6 +116,8 @@ if(comments_open()){
       <b><?php echo "Respondido por: " . get_post_meta( get_the_id(), '_author_value_key', true)?> </b>
         <br><br>
         <?php echo get_post_meta( get_the_id(), '_respostas_editor', true)?>
+        <br>
+        <?php the_content();?>
     </article>
 
   <?php }
