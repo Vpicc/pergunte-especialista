@@ -250,8 +250,7 @@ function pergunteEspecialista_pergunta_author_callback($post){
 	$value = get_post_meta($post->ID,'_author_value_key', true);
 
 	echo '<label for="pergunteEspecialista_author_field">Autor: </label>';
-	echo '<input type="text" id="pergunteEspecialista_author_field" name="pergunteEspecialista_author_field" value="'.esc_attr($value).'"
-	size="25"/>';
+	echo '<input type="text" style="width:99%" id="pergunteEspecialista_author_field" name="pergunteEspecialista_author_field" value="'.esc_attr($value).'"/>';
 }
 
 function pergunteEspecialista_pergunta_name_callback($post){
@@ -260,8 +259,7 @@ function pergunteEspecialista_pergunta_name_callback($post){
 	$value = get_post_meta($post->ID,'_contact_name_value_key', true);
 
 	echo '<label for="pergunteEspecialista_name_field">Nome do Usuário</label>';
-	echo '<input type="text" id="pergunteEspecialista_name_field" name="pergunteEspecialista_name_field" value="'.esc_attr($value).'"
-	size="25"/>';
+	echo '<input type="text" id="pergunteEspecialista_name_field" style="width:99%" name="pergunteEspecialista_name_field" value="'.esc_attr($value).'"/>';
 }
 
 function pergunteEspecialista_pergunta_location_callback($post){
@@ -270,8 +268,7 @@ function pergunteEspecialista_pergunta_location_callback($post){
 	$value = get_post_meta($post->ID,'_contact_location_value_key', true);
 
 	echo '<label for="pergunteEspecialista_location_field">Local do Usuário</label>';
-	echo '<input type="text" id="pergunteEspecialista_location_field" name="pergunteEspecialista_location_field" value="'.esc_attr($value).'"
-	size="25"/>';
+	echo '<input type="text" id="pergunteEspecialista_location_field" style="width:99%" name="pergunteEspecialista_location_field" value="'.esc_attr($value).'"/>';
 }
 
 function pergunteEspecialista_pergunta_email_callback($post){
@@ -280,8 +277,7 @@ function pergunteEspecialista_pergunta_email_callback($post){
 	$value = get_post_meta($post->ID,'_contact_email_value_key', true);
 
 	echo '<label for="pergunteEspecialista_email_field">Email do Usuário</label>';
-	echo '<input type="email" id="pergunteEspecialista_email_field" name="pergunteEspecialista_email_field" value="'.esc_attr($value).'"
-	size="25"/>';
+	echo '<input type="email" id="pergunteEspecialista_email_field" style="width:99%" name="pergunteEspecialista_email_field" value="'.esc_attr($value).'"/>';
 }
 
 function pergunteEspecialista_pergunta_job_callback($post){
@@ -290,21 +286,22 @@ function pergunteEspecialista_pergunta_job_callback($post){
 	$value = get_post_meta($post->ID,'_contact_job_value_key', true);
 
 	echo '<label for="pergunteEspecialista_job_field">Profissão do Usuário</label>';
-	echo '<input type="text" id="pergunteEspecialista_job_field" name="pergunteEspecialista_job_field" value="'.esc_attr($value).'"
-	size="25"/>';
+	echo '<input type="text" id="pergunteEspecialista_job_field" style="width:99%" name="pergunteEspecialista_job_field" value="'.esc_attr($value).'"/>';
 }
 
 function pergunteEspecialista_pergunta_mailto_callback(){
 	wp_nonce_field( 'pergunteEspecialista_mailto_data','pergunteEspecialista_mailto_meta_box_nonce');
-
+	ob_start();
+	include_once get_template_directory().'/inc/std_mail.php';
+	$placeholder = ob_get_clean();
+	//$placeholder = file_get_contents(get_template_directory().'/inc/std_mail.php');
 	echo '<form method="POST" action="">';
 	echo '<label>Encaminhar pergunta para email:</label><br>';
-	echo '<input type="email" name="pe_mailto_field" size="25"/><br>';
+	echo '<input type="email" style="width:99%" name="pe_mailto_field"/><br>';
 	echo '<label>Comentários:</label><br>';
-	echo '<textarea name="pe_mailto_comment" rows="4" cols="25"></textarea><br>';
+	echo '<textarea name="pe_mailto_comment" rows="6" style="width:99%">'. $placeholder .'</textarea><br>';
 	echo 	'<button type="submit">Enviar Pergunta</button>';
 	echo '</form>';
-
 }
 
 function pergunteEspecialista_mailto_data($post_id){
