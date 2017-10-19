@@ -245,7 +245,7 @@ function pergunteEspecialista_pergunta_add_meta_box(){
 add_action('add_meta_boxes', 'pergunteEspecialista_pergunta_add_meta_box');
 
 function pergunteEspecialista_pergunta_author_callback($post){
-	wp_nonce_field( 'pergunteEspecialista_save_contact_author_data','pergunteEspecialista_name_meta_box_nonce');
+	wp_nonce_field( 'pergunteEspecialista_save_contact_author_data','pergunteEspecialista_author_meta_box_nonce');
 
 	$value = get_post_meta($post->ID,'_author_value_key', true);
 
@@ -263,7 +263,7 @@ function pergunteEspecialista_pergunta_name_callback($post){
 }
 
 function pergunteEspecialista_pergunta_location_callback($post){
-	wp_nonce_field( 'pergunteEspecialista_save_contact_location_data','pergunteEspecialista_name_meta_box_nonce');
+	wp_nonce_field( 'pergunteEspecialista_save_contact_location_data','pergunteEspecialista_location_meta_box_nonce');
 
 	$value = get_post_meta($post->ID,'_contact_location_value_key', true);
 
@@ -305,6 +305,7 @@ function pergunteEspecialista_pergunta_mailto_callback(){
 }
 
 function pergunteEspecialista_mailto_data($post_id){
+
 	if(!isset($_POST['pergunteEspecialista_mailto_meta_box_nonce'])){
 		return;
 	}
@@ -330,17 +331,22 @@ function pergunteEspecialista_mailto_data($post_id){
 	}
 
 
+
 	$mailtofield = sanitize_email(wp_strip_all_tags($_POST["pe_mailto_field"]));
 
 	$comment = sanitize_textarea_field($_POST['pe_mailto_comment']);
 
-	$question=apply_filters('the_content', get_post_field('perguntas_editor'));
+	$question=apply_filters('the_content', get_post_meta( get_the_id(), '_perguntas_editor', true));
 
 	if($question == ''){
 		return;
 	}
 
 	$email = sanitize_text_field($_POST['pergunteEspecialista_email_field']);
+
+	if($email == ''){
+		return;
+	}
 
 	$content = 'Comentário: <br>' . $comment . '<br><br><br>' . 'Pergunta: <br>' . $question;
 
@@ -493,10 +499,10 @@ add_action('save_post', 'pergunteEspecialista_save_contact_location_data');
 // Funcao que salva o autor da resposta
 function pergunteEspecialista_save_contact_author_data($post_id){
 
+
 	if(!isset($_POST['pergunteEspecialista_author_meta_box_nonce'])){
 		return;
 	}
-
 	if(!wp_verify_nonce($_POST['pergunteEspecialista_author_meta_box_nonce'],'pergunteEspecialista_save_contact_author_data')){
 		return;
 	}
@@ -515,7 +521,7 @@ function pergunteEspecialista_save_contact_author_data($post_id){
 
 	$my_data = sanitize_text_field($_POST['pergunteEspecialista_author_field']);
 
-	update_post_meta($post_id, '_contact_author_value_key', $my_data);
+	update_post_meta($post_id, '_author_value_key', $my_data);
 
 }
 
