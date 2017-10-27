@@ -10,5 +10,6 @@
 	require_once get_template_directory(  ) . '/inc/slider.php';
 	require_once get_template_directory(  ) . '/inc/customize.php';
 	require_once get_template_directory(  ) . '/inc/perguntas.php';
+	require_once get_template_directory(  ) . '/inc/dl/dlmenu.php';
 
 ?>

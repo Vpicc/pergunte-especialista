@@ -41,7 +41,6 @@ function closeNav() {
 }
 
 
-
 // Paginacao, adiciona bootstrap aos botoes
 $('.page-numbers').addClass('btn');
 
