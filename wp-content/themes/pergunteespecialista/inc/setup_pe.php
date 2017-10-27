@@ -35,4 +35,13 @@ function pe_create_excerpt( $text = '' ) {
     return wp_trim_words( $text, $excerpt_length, $excerpt_more );
 }
 
+// Recria os filtros default para ajustar a formatação de posts meta como perguntas e respostas
+add_filter( 'meta_content', 'wptexturize'                       );
+add_filter( 'meta_content', 'convert_smilies',              20  );
+add_filter( 'meta_content', 'convert_chars'                     );
+add_filter( 'meta_content', 'wpautop'                           );
+add_filter( 'meta_content', 'shortcode_unautop'                 );
+add_filter( 'meta_content', 'prepend_attachment'                );
+add_filter( 'meta_content', 'wp_make_content_images_responsive' );
+
  ?>

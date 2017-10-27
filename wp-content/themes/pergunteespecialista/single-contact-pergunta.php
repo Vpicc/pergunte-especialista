@@ -48,11 +48,19 @@ get_header();
       </div><!-- /post-thumbnail -->
 
       <blockquote>
-        <?php echo get_post_meta( get_the_id(), '_perguntas_editor', true)?>
+        <?php
+          $unformatted_pergunta = get_post_meta( get_the_id(), '_perguntas_editor', true);
+          $formatted_pergunta = apply_filters('meta_content', $unformatted_pergunta);
+          echo $formatted_pergunta;
+        ?>
       </blockquote>
-      <b><?php echo "Respondido por: " . get_post_meta( get_the_id(), '_author_value_key', true)?> </b>
+      <b><?php echo "Respondido por: " . get_post_meta( get_the_id(), '_author_value_key', true);?> </b>
         <br><br>
-        <?php echo get_post_meta( get_the_id(), '_respostas_editor', true)?>
+        <?php
+          $unformatted_resposta = get_post_meta( get_the_id(), '_respostas_editor', true);
+          $formatted_resposta = apply_filters('meta_content', $unformatted_resposta);
+          echo $formatted_resposta;
+        ?>
         <br>
         <?php the_content();?>
     </article>
@@ -111,11 +119,19 @@ if(comments_open()){
         </div><!-- /post-thumbnail -->
 
       <blockquote>
-        <?php echo get_post_meta( get_the_id(), '_perguntas_editor', true)?>
+        <?php
+          $unformatted_pergunta = get_post_meta( get_the_id(), '_perguntas_editor', true);
+          $formatted_pergunta = apply_filters('meta_content', $unformatted_pergunta);
+          echo $formatted_pergunta;
+        ?>
       </blockquote>
-      <b><?php echo "Respondido por: " . get_post_meta( get_the_id(), '_author_value_key', true)?> </b>
+      <b><?php echo "Respondido por: " . get_post_meta( get_the_id(), '_author_value_key', true);?> </b>
         <br><br>
-        <?php echo get_post_meta( get_the_id(), '_respostas_editor', true)?>
+        <?php
+          $unformatted_resposta = get_post_meta( get_the_id(), '_respostas_editor', true);
+          $formatted_resposta = apply_filters('meta_content', $unformatted_resposta);
+          echo $formatted_resposta;
+        ?>
         <br>
         <?php the_content();?>
     </article>

@@ -334,21 +334,26 @@ function pergunteEspecialista_mailto_data($post_id){
 
 	$mailtofield = sanitize_email(wp_strip_all_tags($_POST["pe_mailto_field"]));
 
-	$comment = sanitize_textarea_field($_POST['pe_mailto_comment']);
+	$comment = nl2br(sanitize_textarea_field($_POST['pe_mailto_comment']));
 
-	$question=apply_filters('the_content', get_post_meta( get_the_id(), '_perguntas_editor', true));
+	$question=apply_filters('post_meta', get_post_meta( get_the_id(), '_perguntas_editor', true));
 
 	if($question == ''){
 		return;
 	}
 
+
 	$email = sanitize_text_field($_POST['pergunteEspecialista_email_field']);
+
 
 	if($email == ''){
 		return;
 	}
 
-	$content = 'Comentário: <br>' . $comment . '<br><br><br>' . 'Pergunta: <br>' . $question;
+	$title = get_the_title(get_the_id());
+
+
+	$content = stripslashes($comment) . '<br><br><br>' . 'Pergunta: <br>' . $question;
 
 	remove_action('save_post', 'pergunteEspecialista_mailto_data');
 
@@ -356,7 +361,7 @@ function pergunteEspecialista_mailto_data($post_id){
 	$to = $mailtofield;
 	$from = get_bloginfo( 'admin_email' );
 	$subject = 'Pergunte a um Especialista - ' . $title;
-	$headers[] = 'From: ' . get_bloginfo('name') . '<'. $from .'>';
+	$headers[] = 'From: ' . get_bloginfo('name'). '.' . '<'. $from .'>';
 	$headers[] = 'Reply-To: '.'<'. get_bloginfo( 'admin_email' ) .'>';
 	$headers[] = 'Content-Type: text/html; charset=UTF-8';
 
