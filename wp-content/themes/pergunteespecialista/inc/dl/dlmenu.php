@@ -50,6 +50,7 @@ if ( isset( $_GET[ 'export' ] ) && $_GET[ 'export' ] == 'html'
 
 function html_export_process(){
 		global $post;
+		global $wpdb;
 
 		header('Content-Disposition: attachment; filename="Posts_export.html"');
 		header('Content-Type: text/html'); # Don't use application/force-download - it's not a real MIME type, and the Content-Disposition header is sufficient

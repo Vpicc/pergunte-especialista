@@ -47,7 +47,12 @@
         $unformatted_resposta = get_post_meta( get_the_id(), '_respostas_editor', true);
         $formatted_resposta = apply_filters('meta_content', $unformatted_resposta);
         echo $formatted_resposta;
-        the_content();
+        $result = $wpdb->get_results('SELECT '. $wpdb->prefix .'post_views.count FROM `'.$wpdb->prefix.'post_views` WHERE id = '. get_the_id() .' AND type = 4');
+        if($result){
+          echo "Total de Visualizações: ". $result[0]->count;
+        }else {
+          echo "Total de Visualizações: 0";
+        }
       ?>
       <br>
 
