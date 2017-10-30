@@ -28,11 +28,11 @@ function pergunteEspecialista_exphtml_option(){
 
 
 function pe_exphtml_res(){
-	echo '<button>Exportar</button>';
+	echo '<a href="'.get_site_url().'/?export=html&style=1">Exportar</a>';
 }
 
 function pe_exphtml_vis(){
-	echo '<button>Exportar</button>';
+	echo '<a href="'.get_site_url().'/?export=html&style=2">Exportar</a>';
 }
 
 if ( isset( $_GET[ 'export' ] ) && $_GET[ 'export' ] == 'html'
@@ -40,14 +40,14 @@ if ( isset( $_GET[ 'export' ] ) && $_GET[ 'export' ] == 'html'
 	if(current_user_can('editor') || current_user_can('administrator'))
 		add_action( 'wp_loaded', 'html_export_process');
 }
-/*
+
 if ( isset( $_GET[ 'export' ] ) && $_GET[ 'export' ] == 'html'
  && isset($_GET['style']) && $_GET['style'] == '2' ) {
 	if(current_user_can('editor') || current_user_can('administrator'))
 		add_action( 'wp_loaded', 'html_export_process_small');
 }
-*/
 
+// Funcao que exporta HTML de posts completos
 function html_export_process(){
 		global $post;
 		global $wpdb;
@@ -79,9 +79,11 @@ function html_export_process(){
 	 }
 	 exit();
 }
-/*
-	 function html_export_process_small(){
+
+// Funcao que exporta HTML com informacoes dos posts
+function html_export_process_small(){
 	 		global $post;
+			global $wpdb;
 
 	 		header('Content-Disposition: attachment; filename="Posts_export.html"');
 	 		header('Content-Type: text/html'); # Don't use application/force-download - it's not a real MIME type, and the Content-Disposition header is sufficient
@@ -112,6 +114,6 @@ function html_export_process(){
 		exit();
 }
 
-*/
+
 
 ?>
