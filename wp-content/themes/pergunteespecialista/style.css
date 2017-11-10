@@ -510,8 +510,12 @@ article.post-gallery h2{
 
 /* Tabelas */
 
-table:nth-child(even) {
+tr:nth-child(even) {
 	background-color: #f2f2f2;
+}
+
+article.post table{
+  max-width: 900px !important;
 }
 
 td{
