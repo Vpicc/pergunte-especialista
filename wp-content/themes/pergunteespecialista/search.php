@@ -6,10 +6,11 @@ if ($output == "") {
     $output = htmlentities(utf8_encode($_GET['s']), 0, "UTF-8");
 }
 
+
 //Query para o campo de perguntas, respostas e autor
   $args = array(
   'post_type'  => array('contact-pergunta'),
-  'posts_per_page' => 10,
+  'posts_per_page' => -1,
   'meta_query' => array(
      'relation' => 'OR',
       array(
@@ -98,7 +99,6 @@ if ( $search_query->have_posts() || have_posts() ) {?>
     }
 
     echo paginate_links(array(
-      'total'=> $final_query->max_num_pages,
       'prev_next'=> true));
     wp_reset_postdata();
 
