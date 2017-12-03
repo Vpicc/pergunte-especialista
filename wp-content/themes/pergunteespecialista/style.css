@@ -514,6 +514,11 @@ tr:nth-child(even) {
 	background-color: #f2f2f2;
 }
 
+.site-footer tr:nth-child(even){
+
+	background-color: inherit;
+}
+
 article.post table{
   width: 99% !important;
 }
@@ -876,3 +881,8 @@ img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 .alignright { float: right; }
 .alignleft { float: left; }
 .aligncenter { display: block; margin-left: auto; margin-right: auto; }
+
+
+textarea#comment{
+	width: 99%;
+}
