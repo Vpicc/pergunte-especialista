@@ -515,7 +515,7 @@ tr:nth-child(even) {
 }
 
 article.post table{
-  max-width: 900px !important;
+  width: 99% !important;
 }
 
 td{
@@ -525,6 +525,11 @@ td{
 /* Versão para celular */
 
 @media (max-width: 1100px) {
+
+  article.page h2{
+  font-size: 200%;
+  }
+
 
   .has-thumbnail{
     padding-left: 0px;
