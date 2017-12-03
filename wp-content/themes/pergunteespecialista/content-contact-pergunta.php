@@ -11,7 +11,7 @@
       echo " de ";
       the_time('F, Y');
       echo " às ";
-      the_time('h:m');
+      the_time('G:i');
       ?> | Postado em
 
       <?php $categories = get_the_category();
