@@ -1,6 +1,11 @@
 <?php
 get_header();
 
+$output = htmlentities($_GET['s'], 0, "UTF-8");
+if ($output == "") {
+    $output = htmlentities(utf8_encode($_GET['s']), 0, "UTF-8");
+}
+
 //Query para o campo de perguntas, respostas e autor
   $args = array(
   'post_type'  => array('contact-pergunta'),
@@ -21,6 +26,24 @@ get_header();
           'key'     => '_author_value_key',
           'value'   => esc_sql($_GET['s']),
           'compare' => 'LIKE'
+      ),
+      array(
+          'key'     => '_perguntas_editor',
+          'value'   => esc_sql($output),
+          'compare' => 'LIKE',
+    			'type'		=> 'CHAR'
+      ),
+      array(
+          'key'     => '_respostas_editor',
+          'value'   => esc_sql($output),
+          'compare' => 'LIKE',
+    			'type'		=> 'CHAR'
+      ),
+      array(
+          'key'     => '_author_value_key',
+          'value'   => esc_sql($output),
+          'compare' => 'LIKE',
+    			'type'		=> 'CHAR'
       )
   )
 );
