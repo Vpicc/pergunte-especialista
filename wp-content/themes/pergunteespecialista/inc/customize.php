@@ -229,6 +229,45 @@ function pergunteEspecialista_customize_menu($wp_customize){
     'title' => __('Tamanho de Menu', 'Pergunte a um Especialista'),
   ));
 
+  // Margin top menu principal
+  $wp_customize->add_setting('pe_margin_top_select', array(
+    'default'=> '0',
+  ));
+
+	// Controle
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_margin_top_control', array(
+     'label'=> 'Margin Top menu Principal',
+     'section'=> 'pe_menu_section',
+     'settings'=> 'pe_margin_top_select'
+   )));
+
+   // Margin top botao pesquisa
+   $wp_customize->add_setting('pe_search_margin_top_select', array(
+     'default'=> '0',
+   ));
+
+  // Controle
+   $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+    'pe_search_margin_top_control', array(
+      'label'=> 'Margin Top Botão de Pesquisa',
+      'section'=> 'pe_menu_section',
+      'settings'=> 'pe_search_margin_top_select'
+    )));
+
+   // Width menu principal
+   $wp_customize->add_setting('pe_width_select', array(
+     'default'=> '150',
+   ));
+
+ 	// Controle
+   $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+    'pe_width_control', array(
+      'label'=> 'Width menu Principal',
+      'section'=> 'pe_menu_section',
+      'settings'=> 'pe_width_select'
+    )));
+
 	// Padding top
 	$wp_customize->add_setting('pe_padding_top_select', array(
     'default'=> '40',
@@ -503,6 +542,34 @@ function pergunteEspecialista_customize_css(){ ?>
 
       .footer-callout-text{
         color: <?php echo get_theme_mod('pe_footer_callout_text_color');?>;
+      }
+
+      /* Margin de Menu */
+
+      .site-header nav ul li a{
+        margin-top: <?php echo get_theme_mod('pe_margin_top_select');?>px;
+      }
+
+      button#pe_search_button{
+        margin-top: <?php echo get_theme_mod('pe_search_margin_top_select');?>px;
+      }
+
+      /* Width de Menu */
+
+      .site-header nav ul li{
+        width: <?php echo get_theme_mod('pe_width_select');?>px;
+      }
+
+      .site-header nav ul ul li{
+        width: <?php echo get_theme_mod('pe_width_select');?>px;
+      }
+
+      .site-header nav ul ul ul ul{
+        margin-left: <?php echo get_theme_mod('pe_width_select');?>px;
+      }
+
+      .site-header nav ul ul ul{
+        margin-left: <?php echo get_theme_mod('pe_width_select');?>px;
       }
 
       /* Padding de Menu */

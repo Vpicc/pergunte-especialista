@@ -191,6 +191,10 @@ article.post:last-of-type{
 	z-index: 99999;
 }
 
+.site-header nav ul ul li a{
+  margin-top: 0px;
+}
+
 .site-header ul ul li a:link,
 .site-header ul ul li a:visited{
 	padding-top: 10px;
@@ -207,13 +211,16 @@ article.post:last-of-type{
 }
 
 .site-header ul ul ul{
-  margin-top: -38px;
+  margin-top: -38px !important;
+}
+
+.site-header nav ul ul ul{
+  margin-left: 150px;
 }
 
 .site-header ul ul ul li{
-  margin-left: 150px;
   height: inherit;
-  width: 120px;
+  width: 150px;
 }
 
 /* Site Footer Menu */
@@ -841,6 +848,10 @@ div.hd-search #searchsubmit:hover{
   padding-bottom: 40px;
   padding-left: 18px;
   padding-right: 18px;
+}
+
+.site-header nav ul li a{
+  margin-top: 0px;
 }
 
 /* Tamanho de fonte de Menu */
