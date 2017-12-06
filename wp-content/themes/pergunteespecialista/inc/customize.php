@@ -546,7 +546,7 @@ function pergunteEspecialista_customize_css(){ ?>
 
       /* Margin de Menu */
 
-      .site-header nav ul li a{
+      .site-header nav{
         margin-top: <?php echo get_theme_mod('pe_margin_top_select');?>px;
       }
 
@@ -588,6 +588,7 @@ function pergunteEspecialista_customize_css(){ ?>
       .site-header nav ul li a:visited{
         font-size: <?php echo get_theme_mod('pe_font_size_menu_select');?>px;
       }
+
 
       /* Margin de submenu */
 

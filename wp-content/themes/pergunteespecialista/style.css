@@ -854,6 +854,10 @@ div.hd-search #searchsubmit:hover{
   margin-top: 0px;
 }
 
+.site-header nav{
+  margin-top: 0px;
+}
+
 /* Tamanho de fonte de Menu */
 
 .site-header nav ul li a:link,
@@ -864,7 +868,7 @@ div.hd-search #searchsubmit:hover{
 /* Margin de submenu */
 
 .site-header ul ul {
-  margin-top: 64px;
+  margin-top: 0px;
 }
 
 /* Padding de submenu */
