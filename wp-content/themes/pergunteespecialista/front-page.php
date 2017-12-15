@@ -34,8 +34,9 @@ if($slides->have_posts()){ ?>
     } ?>
 
   </div>
-  <?php if(get_theme_mod('pe_quick_img_display') == "Yes"){ ?>
+
   <div class="quick-img container">
+    <?php if(get_theme_mod('pe_quick_img_display1') == "Yes"){ ?>
     <div class="quick-row row">
       <div class="quick-column col-md-4">
         <div class="quick-img-single">
@@ -50,7 +51,7 @@ if($slides->have_posts()){ ?>
         </div>
 
       </div>
-
+  <?php } if(get_theme_mod('pe_quick_img_display2') == "Yes"){?>
       <div class="quick-column col-md-4">
         <div class="quick-img-single">
           <a href="<?php echo get_permalink(get_theme_mod('pe_quick_image2_link')); ?>">
@@ -64,6 +65,8 @@ if($slides->have_posts()){ ?>
         </div>
 
       </div>
+
+      <?php } if(get_theme_mod('pe_quick_img_display3') == "Yes"){?>
 
       <div class="quick-column col-md-4">
         <div class="quick-img-single">
@@ -79,6 +82,8 @@ if($slides->have_posts()){ ?>
 
       </div>
     </div>
+
+    <?php } if(get_theme_mod('pe_quick_img_display4') == "Yes"){?>
     <div class="quick-row row">
       <div class="quick-column col-md-4">
         <div class="quick-img-single">
@@ -94,6 +99,8 @@ if($slides->have_posts()){ ?>
 
       </div>
 
+      <?php } if(get_theme_mod('pe_quick_img_display5') == "Yes"){?>
+
       <div class="quick-column col-md-4">
         <div class="quick-img-single">
           <a href="<?php echo get_permalink(get_theme_mod('pe_quick_image5_link')); ?>">
@@ -107,7 +114,7 @@ if($slides->have_posts()){ ?>
         </div>
 
       </div>
-
+      <?php } if(get_theme_mod('pe_quick_img_display6') == "Yes"){?>
       <div class="quick-column col-md-4">
         <div class="quick-img-single">
           <a href="<?php echo get_permalink(get_theme_mod('pe_quick_image6_link')); ?>">
@@ -123,9 +130,9 @@ if($slides->have_posts()){ ?>
 
 
     </div>
-
-  </div>
   <?php } ?>
+  </div>
+
 
   <div class="front-posts">
     <?php // Loop dos ultimos posts

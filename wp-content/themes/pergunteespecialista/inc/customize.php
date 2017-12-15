@@ -798,15 +798,15 @@ function pergunteEspecialista_quick_img($wp_customize){
   ));
 
   // Pergunta se quer ou nao exibir
-  $wp_customize->add_setting('pe_quick_img_display', array(
+  $wp_customize->add_setting('pe_quick_img_display1', array(
     'default'=> 'No',
   ));
 
   $wp_customize->add_control(new WP_Customize_Control($wp_customize,
-   'pe_quick_img_display_control', array(
-     'label'=> 'Exibir Links Rapidos do Website?',
+   'pe_quick_img_display1_control', array(
+     'label'=> 'Exibir Link Rapido 1?',
      'section'=> 'pe_quick_img_section',
-     'settings'=> 'pe_quick_img_display',
+     'settings'=> 'pe_quick_img_display1',
      'type'=> 'select',
      'choices'=> array('No'=> 'Não', 'Yes'=>'Sim')
   )));
@@ -863,6 +863,20 @@ function pergunteEspecialista_quick_img($wp_customize){
 
   // Imagem 2
 
+  // Pergunta se quer ou nao exibir
+  $wp_customize->add_setting('pe_quick_img_display2', array(
+    'default'=> 'No',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_img_display2_control', array(
+     'label'=> 'Exibir Link Rapido 2?',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_img_display2',
+     'type'=> 'select',
+     'choices'=> array('No'=> 'Não', 'Yes'=>'Sim')
+  )));
+
   $wp_customize->add_setting('pe_quick_image2_setting');
 
   $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize,
@@ -912,6 +926,20 @@ function pergunteEspecialista_quick_img($wp_customize){
 
 
   // Imagem 3
+
+  // Pergunta se quer ou nao exibir
+  $wp_customize->add_setting('pe_quick_img_display3', array(
+    'default'=> 'No',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_img_display3_control', array(
+     'label'=> 'Exibir Link Rapido 3?',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_img_display3',
+     'type'=> 'select',
+     'choices'=> array('No'=> 'Não', 'Yes'=>'Sim')
+  )));
 
   $wp_customize->add_setting('pe_quick_image3_setting');
 
@@ -963,6 +991,20 @@ function pergunteEspecialista_quick_img($wp_customize){
 
   // Imagem 4
 
+  // Pergunta se quer ou nao exibir
+  $wp_customize->add_setting('pe_quick_img_display4', array(
+    'default'=> 'No',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_img_display4_control', array(
+     'label'=> 'Exibir Link Rapido 4?',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_img_display4',
+     'type'=> 'select',
+     'choices'=> array('No'=> 'Não', 'Yes'=>'Sim')
+  )));
+
   $wp_customize->add_setting('pe_quick_image4_setting');
 
   $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize,
@@ -1013,6 +1055,20 @@ function pergunteEspecialista_quick_img($wp_customize){
 
   // Imagem 5
 
+  // Pergunta se quer ou nao exibir
+  $wp_customize->add_setting('pe_quick_img_display5', array(
+    'default'=> 'No',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_img_display5_control', array(
+     'label'=> 'Exibir Link Rapido 5?',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_img_display5',
+     'type'=> 'select',
+     'choices'=> array('No'=> 'Não', 'Yes'=>'Sim')
+  )));
+
   $wp_customize->add_setting('pe_quick_image5_setting');
 
   $wp_customize->add_control(new WP_Customize_Cropped_Image_Control($wp_customize,
@@ -1062,6 +1118,21 @@ function pergunteEspecialista_quick_img($wp_customize){
 
 
   // Imagem 6
+
+  // Pergunta se quer ou nao exibir
+
+  $wp_customize->add_setting('pe_quick_img_display6', array(
+    'default'=> 'No',
+  ));
+
+  $wp_customize->add_control(new WP_Customize_Control($wp_customize,
+   'pe_quick_img_display6_control', array(
+     'label'=> 'Exibir Link Rapido 6?',
+     'section'=> 'pe_quick_img_section',
+     'settings'=> 'pe_quick_img_display6',
+     'type'=> 'select',
+     'choices'=> array('No'=> 'Não', 'Yes'=>'Sim')
+  )));
 
   $wp_customize->add_setting('pe_quick_image6_setting');
 
