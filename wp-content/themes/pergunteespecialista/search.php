@@ -1,113 +1,90 @@
 <?php
 get_header();
 
-$output = htmlentities($_GET['s'], 0, "UTF-8");
-if ($output == "") {
-    $output = htmlentities(utf8_encode($_GET['s']), 0, "UTF-8");
-}
+global $wpdb;?>
 
+  <?php
 
-//Query para o campo de perguntas, respostas e autor
-  $args = array(
-  'post_type'  => array('contact-pergunta'),
-  'posts_per_page' => -1,
-  'meta_query' => array(
-     'relation' => 'OR',
-      array(
-          'key'     => '_perguntas_editor',
-          'value'   => esc_sql($_GET['s']),
-          'compare' => 'LIKE'
-      ),
-      array(
-          'key'     => '_respostas_editor',
-          'value'   => esc_sql($_GET['s']),
-          'compare' => 'LIKE'
-      ),
-      array(
-          'key'     => '_author_value_key',
-          'value'   => esc_sql($_GET['s']),
-          'compare' => 'LIKE'
-      ),
-      array(
-          'key'     => '_perguntas_editor',
-          'value'   => esc_sql($output),
-          'compare' => 'LIKE',
-    			'type'		=> 'CHAR'
-      ),
-      array(
-          'key'     => '_respostas_editor',
-          'value'   => esc_sql($output),
-          'compare' => 'LIKE',
-    			'type'		=> 'CHAR'
-      ),
-      array(
-          'key'     => '_author_value_key',
-          'value'   => esc_sql($output),
-          'compare' => 'LIKE',
-    			'type'		=> 'CHAR'
-      )
-  )
-);
+  //$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
-$search_query = new WP_Query( $args );
-
-if ( $search_query->have_posts() || have_posts() ) {?>
-
-  <h2>Resultados da Pesquisa: <?php the_search_query(); ?></h2>
-<?php
-  $perguntas_array = array();
-  $posts_array = array();
-  if($search_query->have_posts()){
-    while( $search_query->have_posts() ) {$search_query->the_post();
-        array_push($perguntas_array, get_the_id());
-    }
+  $searchword = esc_sql($_GET['s']);
+  $output = htmlentities($_GET['s'], 0, "UTF-8");
+  if ($output == "") {
+      $output = htmlentities(utf8_encode($_GET['s']), 0, "UTF-8");
   }
+  $searchwordHTML = esc_sql($output);
+
+ $querystr = "
+    (SELECT DISTINCT $wpdb->posts.*
+    FROM $wpdb->posts, $wpdb->postmeta
+    WHERE $wpdb->posts.ID = $wpdb->postmeta.post_id
+    AND (($wpdb->postmeta.meta_key = '_respostas_editor'
+    AND $wpdb->postmeta.meta_value LIKE '%$searchword%')
+    OR ($wpdb->postmeta.meta_key = '_perguntas_editor'
+    AND $wpdb->postmeta.meta_value LIKE '%$searchword%')
+    OR ($wpdb->postmeta.meta_key = '_author_value_key'
+    AND $wpdb->postmeta.meta_value LIKE '%$searchword%')
+    OR ($wpdb->postmeta.meta_key = '_respostas_editor'
+    AND $wpdb->postmeta.meta_value LIKE '%$searchwordHTML%')
+    OR ($wpdb->postmeta.meta_key = '_perguntas_editor'
+    AND $wpdb->postmeta.meta_value LIKE '%$searchwordHTML%')
+    OR ($wpdb->postmeta.meta_key = '_author_value_key'
+    AND $wpdb->postmeta.meta_value LIKE '%$searchwordHTML%'))
+    AND $wpdb->posts.post_status = 'publish'
+    AND $wpdb->posts.post_type = 'contact-pergunta'
+    AND $wpdb->posts.post_date < NOW())
+    UNION
+    (SELECT DISTINCT $wpdb->posts.*
+    FROM $wpdb->posts, $wpdb->postmeta WHERE $wpdb->posts.ID = $wpdb->postmeta.post_id
+    AND ($wpdb->posts.post_title LIKE '%$searchword%'
+    OR $wpdb->posts.post_title LIKE '%$searchwordHTML%'
+    OR $wpdb->posts.post_content LIKE '%$searchword%'
+    OR $wpdb->posts.post_content LIKE '%$searchwordHTML%'))
+    ORDER BY post_date DESC
+ ";
+
+ $pageposts = $wpdb->get_results($querystr);
+
+ $perguntas_array = array();
+
+ if ($pageposts){?>
+   <h2>Resultados da Pesquisa: <?php the_search_query(); ?></h2>
+   <?php
+   global $post;
+   foreach ($pageposts as $post){
+     setup_postdata($post);
+     array_push($perguntas_array, get_the_id());
+   }
 
 
-// Query para posts e titulos de respostas
-  if(have_posts()){ ?>
+   $arg2 = array(
+   'post_type' => 'any',
+   'post__in' => $perguntas_array,
+   'orderby' => 'date',
+   'posts_per_page' => -1,
+   'ignore_sticky_posts' => 1
 
-    <?php
-    while(have_posts()){the_post();
-      array_push($perguntas_array, get_the_id());
-    ?>
-<?php }}
-  // Une os posts e perguntas, descarta os repetidos e organiza por data
-    $mergePosts = array_merge( $perguntas_array, $posts_array );
-    $uniquePosts = array_unique($mergePosts);
+   );
 
-    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+   $final_query = new WP_Query($arg2);
 
-    $arg2 = array(
-    'post_type' => 'any',
-    'post__in' => $uniquePosts,
-    'paged' => $paged,
-    'orderby' => 'date',
-    'posts_per_page' => 10,
-    'ignore_sticky_posts' => 1
+   while($final_query->have_posts()){$final_query->the_post();
+     if( 'contact-pergunta' != $post->post_type ){
+       get_template_part('content', get_post_format());
+     } else{
+       get_template_part('content-contact-pergunta', get_post_format());
+     }
+   }
 
-    );
-
-    $final_query = new WP_Query($arg2);
-
-    while($final_query->have_posts()){$final_query->the_post();
-      if( 'contact-pergunta' != $post->post_type ){
-        get_template_part('content', get_post_format());
-      } else{
-        get_template_part('content-contact-pergunta', get_post_format());
-      }
-    }
-
-    echo paginate_links(array(
-      'prev_next'=> true));
+  // echo paginate_links();
     wp_reset_postdata();
 
-} else { ?>
-    <h2>
-      Não foi encontrado nenhum post para a pesquisa: <?php the_search_query(); ?>
-    </h2>
-<?php  }
+ }else{ ?>
+   <h2>
+     Não foi encontrado nenhum post para a pesquisa: <?php the_search_query(); ?>
+   </h2>
+ <?php }
 
-get_footer();
+ get_footer();
 
  ?>
