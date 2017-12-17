@@ -14,6 +14,12 @@ global $wpdb;?>
   }
   $searchwordHTML = esc_sql($output);
 
+  $words = explode(' ', $searchword);
+  $wordsHTML = explode(' ', $searchword);
+
+  $searchword = implode('%',$words);
+  $searchwordHTML = implode('%',$words);
+
  $querystr = "
     (SELECT DISTINCT $wpdb->posts.*
     FROM $wpdb->posts, $wpdb->postmeta
